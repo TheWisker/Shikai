@@ -1,0 +1,22 @@
+@mixin position($pos: 0) {
+    top: $pos;
+    right: $pos;
+    bottom: $pos;
+    left: $pos;
+}
+
+@mixin flex($pos: center) {
+    display: flex;
+    align-items: $pos;
+    justify-content: $pos;
+}
+
+.centered {
+    @include flex;
+    @include position;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    
+    background-color: red;
+}

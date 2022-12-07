@@ -1,0 +1,80 @@
+
+
+$ratio: 30%;
+
+@mixin bounds($width: 100%, $rt: 1) {
+    width: $width;
+    aspect-ratio: $rt;
+}
+
+@mixin flex($align: center, $justify: center) {
+    justify-content: $justify;
+    align-items: $align;
+    display: flex;
+}
+
+
+
+.session {
+    @include flex;
+    @include bounds(45%, 1.6);
+    background-color: green;
+    border-radius: 18px;
+    clip:auto;
+}
+
+.sidebar {
+    @include flex;
+    height: 100%;
+
+    border-radius: 18px 0 0 18px;
+
+    width: $ratio;
+    flex-direction: column;
+    background-color: blue;
+}
+
+.login {
+    height: 100%;
+    width: 100% - $ratio;
+
+    border-radius: 0 18px 18px 0;
+    background-color: yellow;
+}
+
+.logo {
+    @include flex;
+    @include bounds;
+    border-radius: 18px 0 0 0;
+    background-color: black;
+    img {width: 60%;}
+    flex-grow: 0;
+}
+
+.options {
+    @include flex;
+    width: 100%;
+    flex-grow: 1;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.button {
+    @include flex(center, start);
+    width: 60%;
+    height: 10%;
+    margin: 5% auto;
+
+
+    img {
+        margin: 0 10px;
+   
+        width: 15%;
+    }
+    b {
+        margin: 8px 0 0 0;
+
+        color: white;
+        
+    }
+}

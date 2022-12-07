@@ -1,0 +1,85 @@
+.session {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 45%;
+  aspect-ratio: 1.6;
+  background-color: green;
+  border-radius: 18px;
+  clip: auto;
+}
+
+.sidebar {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  border-radius: 18px 0 0 18px;
+  width: 30%;
+  flex-direction: column;
+  background-color: blue;
+}
+
+.login {
+  height: 100%;
+  width: 70%;
+  border-radius: 0 18px 18px 0;
+  background-color: yellow;
+}
+
+.logo {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 18px 0 0 0;
+  background-color: black;
+  flex-grow: 0;
+}
+.logo img {
+  width: 60%;
+}
+
+.options {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.button {
+  justify-content: start;
+  align-items: center;
+  display: flex;
+  width: 60%;
+  height: 10%;
+  margin: 5% auto;
+}
+.button img {
+  margin: 0 10px;
+  width: 15%;
+}
+.button b {
+  margin: 8px 0 0 0;
+  color: white;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
