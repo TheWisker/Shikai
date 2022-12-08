@@ -1,85 +1,188 @@
-.session {
-  justify-content: center;
-  align-items: center;
+.loginwindow {
+  overflow: hidden; /* be careful!*/
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin: -250px 0 0 -425px;
+  border-radius: 4px;
+  width: 850px;
+  height: 500px;
+  background-color: red;
   display: flex;
-  width: 45%;
-  aspect-ratio: 1.6;
-  background-color: green;
-  border-radius: 18px;
-  clip: auto;
+  /*
+
+  transform: translate(-50%, -50%);
+  -webkit-transform: scale(.7);
+  transform: scale(.7);
+  -webkit-animation: window-fade-in .5s forwards;
+  animation: window-fade-in .5s forwards;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;*/
 }
 
-.sidebar {
-  justify-content: center;
-  align-items: center;
+.optionbar {
   display: flex;
-  height: 100%;
-  border-radius: 18px 0 0 18px;
-  width: 30%;
   flex-direction: column;
-  background-color: blue;
+  width: 30%;
+  background: rgb(20, 44, 57);
+  height: 100%;
+  padding: 15px 35px;
 }
 
-.login {
+.userbar {
   height: 100%;
   width: 70%;
-  border-radius: 0 18px 18px 0;
-  background-color: yellow;
+  background: linear-gradient(rgb(240, 197, 147) 0%, rgb(122, 215, 240) 100%);
+  padding: 15px 35px;
+}
+
+*, ::after, ::before {
+  box-sizing: inherit;
 }
 
 .logo {
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  padding-top: 35px;
+  height: 40%;
   width: 100%;
-  aspect-ratio: 1;
-  border-radius: 18px 0 0 0;
-  background-color: black;
-  flex-grow: 0;
+  display: flex;
 }
 .logo img {
-  width: 60%;
+  margin: 0 auto auto auto;
+  height: 70%;
+  object-fit: scale-down;
 }
 
-.options {
+.option {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.icon {
+  margin-right: 10px;
+  width: 30px;
+}
+.icon img {
+  height: 20px;
+  width: 30px;
+  fill: rgb(107, 187, 225);
+}
+
+.text {
+  font-size: 1.33em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.infobar {
+  height: 5%;
+  padding-top: 15px;
+}
+
+.hostname {
+  color: hsla(0deg, 0%, 100%, 0.65);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 70%;
+  float: left;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.clock {
+  opacity: 1;
+  text-align: right;
+  width: 30%;
+  transition: opacity 1s;
+  color: white;
+  float: left;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.avatarbar {
+  height: 35%;
+  padding-top: 15px;
+  display: flex;
   justify-content: center;
-  align-items: center;
-  display: flex;
-  width: 100%;
-  flex-grow: 1;
-  flex-direction: column;
-  min-height: 0;
+}
+.avatarbar img {
+  height: 100%;
+  object-fit: scale-down;
 }
 
-.button {
-  justify-content: start;
-  align-items: center;
-  display: flex;
-  width: 60%;
-  height: 10%;
-  margin: 5% auto;
-}
-.button img {
-  margin: 0 10px;
-  width: 15%;
-}
-.button b {
-  margin: 8px 0 0 0;
+.username {
+  text-align: center;
+  font-size: 2.66em;
+  font-style: italic;
+  font-weight: 700;
   color: white;
 }
 
-.centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  height: 100%;
+.passbar {
+  margin: 15px auto;
+  width: 200px;
+}
+
+.password {
+  color: #fff;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  font-size: 14pt;
+  font-weight: 700;
+  letter-spacing: 2px;
+  /*padding-left: .5em;
+  padding-right: .5em;*/
   width: 100%;
-  background-color: red;
+}
+
+.submitbar {
+  display: flex;
+  margin: 0 auto;
+  width: 200px;
+  height: 30px;
+}
+
+.sessionswitch {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  transition: background-position 0.2s ease-in-out;
+  font-size: 0.75em;
+  height: 30px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.2em;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: rgb(0, 0, 0);
+  border-radius: 4px;
+  color: white;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.submitswitch {
+  border-radius: 4px;
+  height: 30px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+  width: 30px;
+  background-color: rgb(0, 0, 0);
 }
 
 /*# sourceMappingURL=style.css.map */
