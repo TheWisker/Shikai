@@ -1,14 +1,13 @@
 import React from "react";
-import ReactDOM from "reactdom";
 
-import {shutdown, restart, sleep, hibernate} from "./commands"
+import {shutdown, restart, sleep, hibernate} from "../../../Greeter/Commands"
 
-import Shutdown from "../assets/media/buttons/shutdown.svg";
-import Restart from "../assets/media/buttons/reboot.svg";
-import Sleep from "../assets/media/buttons/sleep.svg";
-import Hibernate from "../assets/media/buttons/hibernate.svg";
+import Shutdown from "../../../../assets/media/commands/shutdown.svg";
+import Restart from "../../../../assets/media/commands/reboot.svg";
+import Sleep from "../../../../assets/media/commands/sleep.svg";
+import Hibernate from "../../../../assets/media/commands/hibernate.svg";
 
-window.lightdm = {
+window.lightdm = { // Debug
     "can_hibernate": true,
     "can_restart": false,
     "can_shutdown": true,
@@ -33,8 +32,8 @@ class Option extends React.Component {
     }
 }
 
-export default function assemble() {
-    let array = []; let root = document.getElementById("options");
+export default Options.assemble = () => {
+    let array = [];
     options.filter((option) => {return option.bool}).forEach((option, i) => {array[i] = <Option text={option.text} func={option.func} icon={<option.icon/>}/>});
-    ReactDOM.render(<React.Fragment>{array}</React.Fragment>, root);
+    return (<div>{array}</div>);
 }

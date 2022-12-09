@@ -1,5 +1,5 @@
-import Sidebar from "./Sidebar"
+import LoginWindow from "./LoginWindow"
 
 export default Components.launch = () => {
-    Sidebar.launch();
+    LoginWindow.launch();
 }

@@ -7,16 +7,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 import React from "react";
-import ReactDOM from "reactdom";
 
-import { shutdown, restart, sleep, hibernate } from "./commands";
+import { shutdown, restart, sleep, hibernate } from "../../../Greeter/Commands";
 
-import Shutdown from "../assets/media/buttons/shutdown.svg";
-import Restart from "../assets/media/buttons/reboot.svg";
-import Sleep from "../assets/media/buttons/sleep.svg";
-import Hibernate from "../assets/media/buttons/hibernate.svg";
+import Shutdown from "../../../../assets/media/commands/shutdown.svg";
+import Restart from "../../../../assets/media/commands/reboot.svg";
+import Sleep from "../../../../assets/media/commands/sleep.svg";
+import Hibernate from "../../../../assets/media/commands/hibernate.svg";
 
-window.lightdm = {
+window.lightdm = { // Debug
     "can_hibernate": true,
     "can_restart": false,
     "can_shutdown": true,
@@ -57,16 +56,16 @@ var Option = function (_React$Component) {
     return Option;
 }(React.Component);
 
-export default function assemble() {
-    var array = [];var root = document.getElementById("options");
+export default Options.assemble = function () {
+    var array = [];
     options.filter(function (option) {
         return option.bool;
     }).forEach(function (option, i) {
         array[i] = React.createElement(Option, { text: option.text, func: option.func, icon: React.createElement(option.icon, null) });
     });
-    ReactDOM.render(React.createElement(
-        React.Fragment,
+    return React.createElement(
+        "div",
         null,
         array
-    ), root);
-}
+    );
+};

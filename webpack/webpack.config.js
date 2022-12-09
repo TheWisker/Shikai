@@ -14,10 +14,10 @@ const isProduction = process.env.NODE_ENV == 'production';
 //const compressedPostCSSConfig = [ ...uncompressedPostCSSConfig, require('cssnano')({ 'preset': 'default' }) ];
 
 const config = {
-    entry: path.resolve("../src/js/main.js"),
+    entry: path.resolve("../src/js/Main.js"),
     output: {
         path: path.resolve("../out"),
-        filename: "main.js",
+        filename: "Main.js",
     },
     //devServer: {
         //open: true,
@@ -94,7 +94,7 @@ const config = {
     resolve: {
         extensions: [ ".js", ".min.js", ".jsx" ],
         mainFiles: ["Main"],
-        modules: [ "../src/js", "../src/js/libraries", "./node_modules", "../src"]
+        modules: ["../src/js", "../src/js/Libraries", "./node_modules", "../src"]
     }
 };
 

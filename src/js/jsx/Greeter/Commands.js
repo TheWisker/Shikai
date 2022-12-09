@@ -1,5 +1,3 @@
-//function window.lightdm.can_suspend ? ae("Suspending system.", window.lightdm.suspend) : window.notifications.generate("".concat(e, " is disabled on this system."), "error")
-
 function execute(bool, message, callback) {
     if (bool) {
         //window.notifications.generate(message);
