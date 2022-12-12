@@ -6,18 +6,18 @@ import Session from "./Session"
 
 import Arrow from "../../../../assets/media/icons/arrow.svg"
 
-class _Userbar extends React.Component {
+export default class Userbar extends React.Component {
     render() {
         return (
             <div class="userbar">
-                {Avatar.assemble()}
-                {Username.assemble()}
+                <Avatar src="assets/media/arch-logo.png"/>
+                <Username name="luwak"/>
                 <form>
                     <div class="passbar">
                         <input id="password" class="password"></input>
                     </div>
                     <div class="submitbar">
-                        {Session.assemble()}
+                        <Session name="Cinnamon (Software)"/>
                         <div class="submitswitch">
                             <Arrow/>
                         </div>
@@ -28,5 +28,3 @@ class _Userbar extends React.Component {
         )
     }
 }
-
-export default Userbar.assemble = () => {return <_Userbar/>}

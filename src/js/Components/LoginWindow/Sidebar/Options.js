@@ -17,12 +17,19 @@ import Hibernate from "../../../../assets/media/commands/hibernate.svg";
 
 window.lightdm = { // Debug
     "can_hibernate": true,
-    "can_restart": false,
+    "can_restart": true,
     "can_shutdown": true,
     "can_suspend": true
 };
+/*
+const options = [
+    {text: "shutdown", icon: Shutdown, func: shutdown, bool: window.lightdm.can_shutdown},
+    {text: "restart", icon: Restart, func: restart, bool: window.lightdm.can_restart},
+    {text: "sleep", icon: Sleep, func: sleep, bool: window.lightdm.can_suspend},
+    {text: "hibernate", icon: Hibernate, func: hibernate, bool: window.lightdm.can_hibernate}
+]*/
 
-var options = [{ text: "shutdown", icon: Shutdown, func: shutdown, bool: window.lightdm.can_shutdown }, { text: "restart", icon: Restart, func: restart, bool: window.lightdm.can_restart }, { text: "sleep", icon: Sleep, func: sleep, bool: window.lightdm.can_suspend }, { text: "hibernate", icon: Hibernate, func: hibernate, bool: window.lightdm.can_hibernate }];
+var options = [{ text: "sleep", icon: Sleep, func: sleep, bool: window.lightdm.can_suspend }, { text: "restart", icon: Restart, func: restart, bool: window.lightdm.can_restart }, { text: "shutdown", icon: Shutdown, func: shutdown, bool: window.lightdm.can_shutdown }, { text: "hibernate", icon: Hibernate, func: hibernate, bool: window.lightdm.can_hibernate }];
 
 var Option = function (_React$Component) {
     _inherits(Option, _React$Component);
@@ -38,7 +45,7 @@ var Option = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 "div",
-                { "class": "option", onClick: this.props.func },
+                { "class": "command", onClick: this.props.func },
                 React.createElement(
                     "div",
                     { "class": "icon" },
@@ -56,16 +63,33 @@ var Option = function (_React$Component) {
     return Option;
 }(React.Component);
 
-export default Options.assemble = function () {
-    var array = [];
-    options.filter(function (option) {
-        return option.bool;
-    }).forEach(function (option, i) {
-        array[i] = React.createElement(Option, { text: option.text, func: option.func, icon: React.createElement(option.icon, null) });
-    });
-    return React.createElement(
-        "div",
-        null,
-        array
-    );
-};
+var Options = function (_React$Component2) {
+    _inherits(Options, _React$Component2);
+
+    function Options() {
+        _classCallCheck(this, Options);
+
+        return _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).apply(this, arguments));
+    }
+
+    _createClass(Options, [{
+        key: "render",
+        value: function render() {
+            var array = [];
+            options.filter(function (option) {
+                return option.bool;
+            }).forEach(function (option, i) {
+                array[i] = React.createElement(Option, { text: option.text, func: option.func, icon: React.createElement(option.icon, null) });
+            });
+            return React.createElement(
+                "div",
+                { "class": "commandbar" },
+                array
+            );
+        }
+    }]);
+
+    return Options;
+}(React.Component);
+
+export default Options;

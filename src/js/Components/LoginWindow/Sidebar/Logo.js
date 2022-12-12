@@ -8,29 +8,27 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 import React from "react";
 
-var _Logo = function (_React$Component) {
-    _inherits(_Logo, _React$Component);
+var Logo = function (_React$Component) {
+    _inherits(Logo, _React$Component);
 
-    function _Logo() {
-        _classCallCheck(this, _Logo);
+    function Logo() {
+        _classCallCheck(this, Logo);
 
-        return _possibleConstructorReturn(this, (_Logo.__proto__ || Object.getPrototypeOf(_Logo)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Logo.__proto__ || Object.getPrototypeOf(Logo)).apply(this, arguments));
     }
 
-    _createClass(_Logo, [{
+    _createClass(Logo, [{
         key: "render",
         value: function render() {
             return React.createElement(
                 "div",
                 { "class": "logo" },
-                React.createElement("img", { src: this.props.logo })
+                React.createElement("img", { src: this.props.src })
             );
         }
     }]);
 
-    return _Logo;
+    return Logo;
 }(React.Component);
 
-export default Logo.assemble = function () {
-    return React.createElement(_Logo, { logo: "assets/media/arch-logo.png" });
-};
+export default Logo;

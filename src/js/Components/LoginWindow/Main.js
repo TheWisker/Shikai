@@ -1,14 +1,14 @@
 import React from "react";
-import ReactDom from "reactdom";
+import ReactDOM from "reactdom";
 
 import Sidebar from "./Sidebar";
 import Userbar from "./Userbar";
 
-export default LoginWindow.launch = function () {
+export default function LoginLaunch() {
     ReactDOM.render(React.createElement(
         React.Fragment,
         null,
-        Sidebar.assemble(),
-        Userbar.assemble()
+        React.createElement(Sidebar, null),
+        React.createElement(Userbar, null)
     ), document.getElementById("loginroot"));
-};
+}

@@ -1,0 +1,19 @@
+@mixin flex($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin flex-center($direction: row) {
+    @include flex($direction);
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin square($x: 100%) {
+    height: $x;
+    width: $x;
+}
+
+@mixin box() {
+    box-sizing: border-box;
+}

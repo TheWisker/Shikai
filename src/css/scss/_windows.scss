@@ -4,33 +4,13 @@ $login_width: 850px;
 $login_height: 500px;
 
 .loginwindow {
-
-    overflow: hidden; /* be careful!*/
     top: 50%;
     left: 50%;
+    display: flex;
     position: absolute;
-    
+    overflow: hidden;
+    border-radius: 16px;
     margin: -#{math.div($login_height, 2)} 0 0 -#{math.div($login_width, 2)};
-    border-radius: 4px;
     width: $login_width;
     height: $login_height;
-    
-    background-color: red;
-    display: flex;
-
-
-
-    /*
-    
-    transform: translate(-50%, -50%);
-    -webkit-transform: scale(.7);
-    transform: scale(.7);
-    -webkit-animation: window-fade-in .5s forwards;
-    animation: window-fade-in .5s forwards;
-    animation-timing-function: ease;
-    animation-delay: 0s;
-    -webkit-animation-delay: .2s;
-    animation-delay: .2s;
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;*/
 }

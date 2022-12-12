@@ -12,40 +12,38 @@ import Logo from "./Logo";
 import Options from "./Options";
 import Clock from "./Clock";
 
-var _Sidebar = function (_React$Component) {
-    _inherits(_Sidebar, _React$Component);
+var Sidebar = function (_React$Component) {
+    _inherits(Sidebar, _React$Component);
 
-    function _Sidebar() {
-        _classCallCheck(this, _Sidebar);
+    function Sidebar() {
+        _classCallCheck(this, Sidebar);
 
-        return _possibleConstructorReturn(this, (_Sidebar.__proto__ || Object.getPrototypeOf(_Sidebar)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).apply(this, arguments));
     }
 
-    _createClass(_Sidebar, [{
+    _createClass(Sidebar, [{
         key: "render",
         value: function render() {
             return React.createElement(
                 "div",
-                { "class": "optionbar" },
-                Logo.assemble(),
-                Options.assemble(),
+                { "class": "sidebar" },
+                React.createElement(Logo, { src: "assets/media/arch-logo.png" }),
+                React.createElement(Options, null),
                 React.createElement(
                     "div",
-                    { clas: "infobar" },
+                    { "class": "bottombar" },
                     React.createElement(
                         "div",
                         { "class": "hostname" },
                         "MERCURY"
                     ),
-                    Clock.assemble()
+                    React.createElement(Clock, { format: "%H:%S" })
                 )
             );
         }
     }]);
 
-    return _Sidebar;
+    return Sidebar;
 }(React.Component);
 
-export default Sidebar.assemble = function () {
-    return React.createElement(_Sidebar, null);
-};
+export default Sidebar;

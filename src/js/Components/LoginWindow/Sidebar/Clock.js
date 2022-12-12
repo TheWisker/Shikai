@@ -8,7 +8,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 import React from "react";
 
-export var Clock = function (_React$Component) {
+import format from "../../../Tools/Formatter";
+
+var Clock = function (_React$Component) {
     _inherits(Clock, _React$Component);
 
     function Clock(props) {
@@ -16,7 +18,7 @@ export var Clock = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Clock.__proto__ || Object.getPrototypeOf(Clock)).call(this, props));
 
-        _this.state = { running: false, time: "" };
+        _this.state = { running: false, time: "__:__" };
         return _this;
     }
 
@@ -33,20 +35,20 @@ export var Clock = function (_React$Component) {
     }, {
         key: "update",
         value: function update() {
-            this.setState({ time: Strftime(this.props.settings.time_format) });
+            this.setState({ time: format(new Date(), this.props.format) });
         }
     }, {
         key: "render",
         value: function render() {
-            var currentTime = this.state.time;
-            if (this.state.initialized === true && this.props.settings.time_enabled === true) {} else if (this.props.settings.time_enabled === false) {}
             return React.createElement(
                 "div",
                 null,
-                currentTime
+                this.state.time
             );
         }
     }]);
 
     return Clock;
 }(React.Component);
+
+export default Clock;

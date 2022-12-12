@@ -1,9 +1,11 @@
 import React from "react";
 
-export class Clock extends React.Component {
+import format from "../../../Tools/Formatter";
+
+export default class Clock extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {running: false, time: ""};
+        this.state = {running: false, time: "__:__"};
     }
   
     componentDidMount() {
@@ -13,15 +15,9 @@ export class Clock extends React.Component {
         }, 1000);
     }
   
-    update() {this.setState({time: Strftime(this.props.settings.time_format)});}
+    update() {this.setState({time: format(new Date(), this.props.format)});}
   
     render() {
-        let currentTime = this.state.time;
-        if (this.state.initialized === true && this.props.settings.time_enabled === true) {
-
-        } else if (this.props.settings.time_enabled === false) {
-
-        }
-        return (<div>{ currentTime }</div>);
+        return (<div>{this.state.time}</div>);
     }
 }

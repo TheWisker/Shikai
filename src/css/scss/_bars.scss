@@ -1,94 +1,58 @@
+@use "general";
 
-
-.optionbar {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    background: rgb(20, 44, 57);
-    height: 100%;
+%main-padding {
     padding: 15px 35px;
+}
+
+.sidebar {
+    @include general.flex(column);
+    @include general.square;
+    @include general.box;
+    @extend %main-padding;
+
+    opacity: 0.9;
+    min-width: 0;
+    flex-shrink: 7;
+    background: rgb(20, 44, 57);
 }
 
 .userbar {
-    height: 100%;
-    width: 70%;
+    @include general.square;
+    @include general.box;
+    @extend %main-padding;
+
+    opacity: 0.8;
+    flex-shrink: 3;
     background: linear-gradient(rgb(240, 197, 147) 0%, rgb(122, 215, 240) 100%);
-    padding: 15px 35px;
 }
 
-*, ::after, ::before {
-    box-sizing: inherit;
+.commandbar {
+    @include general.flex(column);
+    @include general.square;
+    @include general.box;
+    //@extend %main-padding;
+
+    //background: red;
+
+    flex-shrink: 4; // 50%
 }
 
+.bottombar {
+    @include general.flex; //?
+    @include general.square;
+    @include general.box;
+ /*
+40 4 20 5
+50 5 20 4
+10 1 20 20
 
-.logo {
-    padding-top: 35px;
-    height: 40%;
-    width: 100%;
-    display: flex;
-    img {
-        margin: 0 auto auto auto;
-        height: 70%;
-        object-fit: scale-down;
-    }
-}
 
-.option {
-    display: flex;
-    margin-bottom: 25px;
-}
-
-.icon {
-    margin-right: 10px;
-    width: 30px;
-    svg {
-        height: 20px;
-        width: 30px;
-        fill: rgb(107, 187, 225);
-    }
-}
-
-.text {
-    font-size: 1.33em;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-.infobar {
-    height: 5%;
+ */
+    flex-shrink: 20; // 10%
+    //height: 10%;
     padding-top: 15px;
-
 }
 
-.hostname {
-    color: hsla(0,0%,100%,.65);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-transform: uppercase;
-    white-space: nowrap;
-    width: 70%;
-    float: left;
-    font-size: .75em;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.clock {
-    opacity: 1;
-
-
-    text-align: right;
-    width: 30%;
-    transition: opacity 1s;
-    color: white;
-
-
-    float: left;
-    font-size: .75em;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
 
 .avatarbar {
     height: 35%;
@@ -113,20 +77,7 @@
     margin: 15px auto;
     width: 200px;
 }
-.password {
-    color: #fff;
-    background: none;
-    outline: none;
-    border: none;
-    border-bottom: 2px solid rgba(0,0,0,.06);
-    border-radius: 3px;
-    font-size: 14pt;
-    font-weight: 700;
-    letter-spacing: 2px;
-    /*padding-left: .5em;
-    padding-right: .5em;*/
-    width: 100%;
-}
+
 
 .submitbar {
 
@@ -134,35 +85,4 @@
 margin: 0 auto;
 width: 200px;
 height: 30px;
-}
-.sessionswitch {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15px;
-    transition: background-position .2s ease-in-out;
-    font-size: .75em;
-    height: 30px;
-    font-weight: 700;
-    font-style: italic;
-    line-height: 1.2em;
-    vertical-align: middle;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-
-    background-color: rgb(0, 0, 0);
-    border-radius: 4px;
-    color: white;
-    box-shadow: 0 2px 3px rgba(0,0,0,.05);
-    text-shadow: 1px 1px 1px rgba(0,0,0,.12);
-}
-
-.submitswitch {
-    border-radius: 4px;
-    height: 30px;
-    box-shadow: 0 2px 3px rgba(0,0,0,.05);
-    width: 30px;
-    background-color: rgb(0, 0, 0);
 }

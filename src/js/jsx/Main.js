@@ -1,10 +1,10 @@
 import "../css/scss/style.scss";
 
-import Components from "./Components"
+import ComponentsLaunch from "./Components"
 
 export default function launch() {
+    ComponentsLaunch();
     document.getElementById("password").focus();
-    Components.launch();
 };
 
 window.onload = () => {

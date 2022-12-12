@@ -8,16 +8,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 import React from "react";
 
-var _Username = function (_React$Component) {
-    _inherits(_Username, _React$Component);
+var Username = function (_React$Component) {
+    _inherits(Username, _React$Component);
 
-    function _Username() {
-        _classCallCheck(this, _Username);
+    function Username() {
+        _classCallCheck(this, Username);
 
-        return _possibleConstructorReturn(this, (_Username.__proto__ || Object.getPrototypeOf(_Username)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Username.__proto__ || Object.getPrototypeOf(Username)).apply(this, arguments));
     }
 
-    _createClass(_Username, [{
+    _createClass(Username, [{
         key: "render",
         value: function render() {
             return React.createElement(
@@ -28,9 +28,7 @@ var _Username = function (_React$Component) {
         }
     }]);
 
-    return _Username;
+    return Username;
 }(React.Component);
 
-export default Username.assemble = function () {
-    return React.createElement(_Username, { name: "Luwak" });
-};
+export default Username;

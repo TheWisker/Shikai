@@ -8,29 +8,27 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 import React from "react";
 
-var _Avatar = function (_React$Component) {
-    _inherits(_Avatar, _React$Component);
+var Avatar = function (_React$Component) {
+    _inherits(Avatar, _React$Component);
 
-    function _Avatar() {
-        _classCallCheck(this, _Avatar);
+    function Avatar() {
+        _classCallCheck(this, Avatar);
 
-        return _possibleConstructorReturn(this, (_Avatar.__proto__ || Object.getPrototypeOf(_Avatar)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Avatar.__proto__ || Object.getPrototypeOf(Avatar)).apply(this, arguments));
     }
 
-    _createClass(_Avatar, [{
+    _createClass(Avatar, [{
         key: "render",
         value: function render() {
             return React.createElement(
                 "div",
                 { "class": "avatarbar" },
-                React.createElement("img", { src: this.props.avatar })
+                React.createElement("img", { src: this.props.src })
             );
         }
     }]);
 
-    return _Avatar;
+    return Avatar;
 }(React.Component);
 
-export default Avatar.assemble = function () {
-    return React.createElement(_Avatar, { avatar: "assets/media/arch-logo.png" });
-};
+export default Avatar;

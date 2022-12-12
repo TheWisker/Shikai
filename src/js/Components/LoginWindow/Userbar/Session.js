@@ -8,16 +8,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 import React from "react";
 
-var _Session = function (_React$Component) {
-    _inherits(_Session, _React$Component);
+var Session = function (_React$Component) {
+    _inherits(Session, _React$Component);
 
-    function _Session() {
-        _classCallCheck(this, _Session);
+    function Session() {
+        _classCallCheck(this, Session);
 
-        return _possibleConstructorReturn(this, (_Session.__proto__ || Object.getPrototypeOf(_Session)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Session.__proto__ || Object.getPrototypeOf(Session)).apply(this, arguments));
     }
 
-    _createClass(_Session, [{
+    _createClass(Session, [{
         key: "render",
         value: function render() {
             return React.createElement(
@@ -28,9 +28,7 @@ var _Session = function (_React$Component) {
         }
     }]);
 
-    return _Session;
+    return Session;
 }(React.Component);
 
-export default Session.assemble = function () {
-    return React.createElement(_Session, { name: "Cinnamon (Software)" });
-};
+export default Session;

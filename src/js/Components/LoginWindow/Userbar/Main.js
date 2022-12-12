@@ -14,23 +14,23 @@ import Session from "./Session";
 
 import Arrow from "../../../../assets/media/icons/arrow.svg";
 
-var _Userbar = function (_React$Component) {
-    _inherits(_Userbar, _React$Component);
+var Userbar = function (_React$Component) {
+    _inherits(Userbar, _React$Component);
 
-    function _Userbar() {
-        _classCallCheck(this, _Userbar);
+    function Userbar() {
+        _classCallCheck(this, Userbar);
 
-        return _possibleConstructorReturn(this, (_Userbar.__proto__ || Object.getPrototypeOf(_Userbar)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Userbar.__proto__ || Object.getPrototypeOf(Userbar)).apply(this, arguments));
     }
 
-    _createClass(_Userbar, [{
+    _createClass(Userbar, [{
         key: "render",
         value: function render() {
             return React.createElement(
                 "div",
                 { "class": "userbar" },
-                Avatar.assemble(),
-                Username.assemble(),
+                React.createElement(Avatar, { src: "assets/media/arch-logo.png" }),
+                React.createElement(Username, { name: "luwak" }),
                 React.createElement(
                     "form",
                     null,
@@ -42,7 +42,7 @@ var _Userbar = function (_React$Component) {
                     React.createElement(
                         "div",
                         { "class": "submitbar" },
-                        Session.assemble(),
+                        React.createElement(Session, { name: "Cinnamon (Software)" }),
                         React.createElement(
                             "div",
                             { "class": "submitswitch" },
@@ -59,9 +59,7 @@ var _Userbar = function (_React$Component) {
         }
     }]);
 
-    return _Userbar;
+    return Userbar;
 }(React.Component);
 
-export default Userbar.assemble = function () {
-    return React.createElement(_Userbar, null);
-};
+export default Userbar;

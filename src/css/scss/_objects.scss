@@ -1,0 +1,124 @@
+@use "general";
+
+.logo {
+    @include general.flex;
+    @include general.square;
+    @include general.box;
+
+    flex-shrink: 5;
+    padding: 35px 0 0 0;
+    //height: 40%;
+
+    img {
+        @include general.box;
+
+        height: 70%;
+        object-fit: scale-down;
+        margin: 0 auto auto auto;
+    }
+}
+
+.command {
+    @include general.flex;
+
+    margin: 0 0 25px 0;
+    
+    .icon {
+        @include general.flex-center;
+    
+        height: 100%;
+        width: 30px;
+        margin: 0 5px 0 10px;
+    
+        svg {
+            height: 20px;
+            width: 30px;
+            fill: rgb(107, 187, 225);
+        }
+    }
+    
+    .text {
+        color: #fff;
+        font-size: 1.5em;
+        font-weight: 1000;
+        text-transform: uppercase;
+        font-family: "Aesthetic Iosevka Original", sans;
+    }
+}
+
+
+
+.hostname {
+    color: hsla(0,0%,100%,.65);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 70%;
+    float: left;
+    font-size: .75em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.clock {
+    opacity: 1;
+
+
+    text-align: right;
+    width: 30%;
+    transition: opacity 1s;
+    color: white;
+
+
+    float: left;
+    font-size: .75em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.password {
+    color: #fff;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgba(0,0,0,.06);
+    border-radius: 3px;
+    font-size: 14pt;
+    font-weight: 700;
+    letter-spacing: 2px;
+    /*padding-left: .5em;
+    padding-right: .5em;*/
+    width: 100%;
+}
+.sessionswitch {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    transition: background-position .2s ease-in-out;
+    font-size: .75em;
+    height: 30px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.2em;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px;
+    color: white;
+    box-shadow: 0 2px 3px rgba(0,0,0,.05);
+    text-shadow: 1px 1px 1px rgba(0,0,0,.12);
+}
+
+.submitswitch {
+    border-radius: 4px;
+    height: 30px;
+    box-shadow: 0 2px 3px rgba(0,0,0,.05);
+    width: 30px;
+    background-color: rgb(0, 0, 0);
+}

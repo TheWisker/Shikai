@@ -1,5 +1,5 @@
-import LoginWindow from "./LoginWindow"
+import LoginLaunch from "./LoginWindow"
 
-export default Components.launch = () => {
-    LoginWindow.launch();
+export default function ComponentsLaunch() {
+    LoginLaunch();
 }
