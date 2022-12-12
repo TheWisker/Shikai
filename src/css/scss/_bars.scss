@@ -41,16 +41,19 @@
     @include general.flex; //?
     @include general.square;
     @include general.box;
- /*
-40 4 20 5
-50 5 20 4
-10 1 20 20
 
-
- */
-    flex-shrink: 20; // 10%
-    //height: 10%;
+    flex-shrink: 20;
     padding-top: 15px;
+
+    .text {
+        color: white;
+
+
+            font-size: 0.9em;
+            font-weight: 1000;
+
+            font-family: "Aesthetic Iosevka Original", sans;
+    }
 }
 
 

@@ -7,7 +7,6 @@
 
     flex-shrink: 5;
     padding: 35px 0 0 0;
-    //height: 40%;
 
     img {
         @include general.box;
@@ -46,30 +45,29 @@
     }
 }
 
-
-
 .hostname {
-    color: hsla(0,0%,100%,.65);
+    color: rgba(255, 255, 255, 0.65);
+
     overflow: hidden;
     text-overflow: ellipsis;
     text-transform: uppercase;
     white-space: nowrap;
+
     width: 70%;
-    float: left;
-    font-size: .75em;
-    font-weight: 700;
-    letter-spacing: 1px;
+
+    font-size: 0.9em;
+    font-weight: 1000;
+
+    font-family: "Aesthetic Iosevka Original", sans;
 }
 
 .clock {
     opacity: 1;
 
-
     text-align: right;
     width: 30%;
     transition: opacity 1s;
     color: white;
-
 
     float: left;
     font-size: .75em;

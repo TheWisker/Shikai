@@ -11,8 +11,8 @@ export default class Sidebar extends React.Component {
                 <Logo src="assets/media/arch-logo.png"/>
                 <Options/>
                 <div class="bottombar">
-                    <div class="hostname">MERCURY</div>
-                    <Clock format="%H:%S"/>
+                    <div class="hostname">ArchyLuwak</div>
+                    <Clock format="%H:%M:%S"/>
                 </div>
             </div>
         )
