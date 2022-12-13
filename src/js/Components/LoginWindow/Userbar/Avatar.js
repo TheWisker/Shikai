@@ -23,7 +23,7 @@ var Avatar = function (_React$Component) {
             return React.createElement(
                 "div",
                 { "class": "avatarbar" },
-                React.createElement("img", { src: this.props.src })
+                React.createElement("div", { style: { backgroundImage: "url(" + this.props.src + ")", backgroundColor: this.props.color, borderColor: this.props.color } })
             );
         }
     }]);

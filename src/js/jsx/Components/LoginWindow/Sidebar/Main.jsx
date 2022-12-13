@@ -12,6 +12,7 @@ export default class Sidebar extends React.Component {
                 <Options/>
                 <div class="bottombar">
                     <div class="hostname">ArchyLuwak</div>
+                    <div class="expand"></div>
                     <Clock format="%H:%M:%S"/>
                 </div>
             </div>

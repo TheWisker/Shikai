@@ -37,6 +37,7 @@ var Sidebar = function (_React$Component) {
                         { "class": "hostname" },
                         "ArchyLuwak"
                     ),
+                    React.createElement("div", { "class": "expand" }),
                     React.createElement(Clock, { format: "%H:%M:%S" })
                 )
             );

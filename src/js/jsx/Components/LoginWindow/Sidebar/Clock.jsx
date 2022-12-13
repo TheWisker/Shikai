@@ -5,7 +5,7 @@ import format from "../../../Tools/Formatter";
 export default class Clock extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {running: false, time: "__:__"};
+        this.state = {running: false, time: "__:__:__"};
     }
   
     componentDidMount() {

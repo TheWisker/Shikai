@@ -20,6 +20,7 @@
 .command {
     @include general.flex;
 
+    cursor: pointer;
     margin: 0 0 25px 0;
     
     .icon {
@@ -46,77 +47,52 @@
 }
 
 .hostname {
-    color: rgba(255, 255, 255, 0.65);
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-transform: uppercase;
-    white-space: nowrap;
-
-    width: 70%;
-
     font-size: 0.9em;
     font-weight: 1000;
-
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
     font-family: "Aesthetic Iosevka Original", sans;
 }
 
-.clock {
-    opacity: 1;
+.expand {
+    @include general.square;
+}
 
-    text-align: right;
-    width: 30%;
-    transition: opacity 1s;
+.username {
     color: white;
-
-    float: left;
-    font-size: .75em;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 2.5em;
+    font-weight: 1000;
+    text-align: center;
+    font-family: "Aesthetic Iosevka Original", sans;
 }
 
-.password {
-    color: #fff;
-    background: none;
-    outline: none;
-    border: none;
-    border-bottom: 2px solid rgba(0,0,0,.06);
-    border-radius: 3px;
-    font-size: 14pt;
-    font-weight: 700;
-    letter-spacing: 2px;
-    /*padding-left: .5em;
-    padding-right: .5em;*/
-    width: 100%;
-}
-.sessionswitch {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15px;
-    transition: background-position .2s ease-in-out;
-    font-size: .75em;
+.session {
+    @include general.flex-center;
+
+    width: 200px;
     height: 30px;
-    font-weight: 700;
-    font-style: italic;
-    line-height: 1.2em;
-    vertical-align: middle;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-
-    background-color: rgb(0, 0, 0);
-    border-radius: 4px;
     color: white;
-    box-shadow: 0 2px 3px rgba(0,0,0,.05);
-    text-shadow: 1px 1px 1px rgba(0,0,0,.12);
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 0.9em;
+    font-weight: 1000;
+    margin: 20px 0 0 0;
+    white-space: nowrap;
+    border-radius: 16px;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    background-color: rgb(0, 0, 0);
+    font-family: "Aesthetic Iosevka Original", sans;
 }
 
+
+
+/*
 .submitswitch {
     border-radius: 4px;
     height: 30px;
     box-shadow: 0 2px 3px rgba(0,0,0,.05);
     width: 30px;
     background-color: rgb(0, 0, 0);
-}
+}*/

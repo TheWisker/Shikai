@@ -18,7 +18,7 @@ var Clock = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Clock.__proto__ || Object.getPrototypeOf(Clock)).call(this, props));
 
-        _this.state = { running: false, time: "__:__" };
+        _this.state = { running: false, time: "__:__:__" };
         return _this;
     }
 

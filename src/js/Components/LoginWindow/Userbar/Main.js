@@ -12,7 +12,7 @@ import Avatar from "./Avatar";
 import Username from "./Username";
 import Session from "./Session";
 
-import Arrow from "../../../../assets/media/icons/arrow.svg";
+//import Arrow from "../../../../assets/media/icons/arrow.svg"
 
 var Userbar = function (_React$Component) {
     _inherits(Userbar, _React$Component);
@@ -29,31 +29,26 @@ var Userbar = function (_React$Component) {
             return React.createElement(
                 "div",
                 { "class": "userbar" },
-                React.createElement(Avatar, { src: "assets/media/arch-logo.png" }),
+                React.createElement(Avatar, { src: "assets/media/arch-logo.png", color: "black" }),
                 React.createElement(Username, { name: "luwak" }),
                 React.createElement(
                     "form",
-                    null,
+                    { "class": "expand" },
                     React.createElement(
                         "div",
-                        { "class": "passbar" },
-                        React.createElement("input", { id: "password", "class": "password" })
-                    ),
-                    React.createElement(
-                        "div",
-                        { "class": "submitbar" },
-                        React.createElement(Session, { name: "Cinnamon (Software)" }),
-                        React.createElement(
-                            "div",
-                            { "class": "submitswitch" },
-                            React.createElement(Arrow, null)
-                        )
+                        { "class": "mainbar" },
+                        React.createElement("input", { id: "password" }),
+                        React.createElement(Session, { name: "Cinnamon (Software)" })
                     )
                 ),
                 React.createElement(
                     "div",
-                    { "class": "userswitch" },
-                    "Switch User"
+                    { "class": "bottombar" },
+                    React.createElement(
+                        "div",
+                        { "class": "text" },
+                        "Switch User"
+                    )
                 )
             );
         }
@@ -61,5 +56,12 @@ var Userbar = function (_React$Component) {
 
     return Userbar;
 }(React.Component);
+
+/*
+<div class="submitswitch">
+    <Arrow/>
+</div>
+*/
+
 
 export default Userbar;
