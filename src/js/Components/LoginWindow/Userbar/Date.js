@@ -10,19 +10,19 @@ import React from "react";
 
 import format from "../../../Tools/Formatter";
 
-var Clock = function (_React$Component) {
-    _inherits(Clock, _React$Component);
+var _Date = function (_React$Component) {
+    _inherits(_Date, _React$Component);
 
-    function Clock(props) {
-        _classCallCheck(this, Clock);
+    function _Date(props) {
+        _classCallCheck(this, _Date);
 
-        var _this = _possibleConstructorReturn(this, (Clock.__proto__ || Object.getPrototypeOf(Clock)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (_Date.__proto__ || Object.getPrototypeOf(_Date)).call(this, props));
 
-        _this.state = { running: false, time: "__:__:__" };
+        _this.state = { running: false, date: "__/__/__" };
         return _this;
     }
 
-    _createClass(Clock, [{
+    _createClass(_Date, [{
         key: "componentDidMount",
         value: function componentDidMount() {
             var _this2 = this;
@@ -31,12 +31,12 @@ var Clock = function (_React$Component) {
             setInterval(function () {
                 _this2.update();
                 _this2.setState({ running: true });
-            }, 1000);
+            }, 60000);
         }
     }, {
         key: "update",
         value: function update() {
-            this.setState({ time: format(new Date(), this.props.format) });
+            this.setState({ date: format(new Date(), this.props.format) });
         }
     }, {
         key: "render",
@@ -44,12 +44,12 @@ var Clock = function (_React$Component) {
             return React.createElement(
                 "div",
                 { "class": "text" },
-                this.state.time
+                this.state.date
             );
         }
     }]);
 
-    return Clock;
+    return _Date;
 }(React.Component);
 
-export default Clock;
+export default _Date;

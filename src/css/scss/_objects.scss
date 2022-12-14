@@ -26,14 +26,13 @@
     .icon {
         @include general.flex-center;
     
-        height: 100%;
         width: 30px;
-        margin: 0 5px 0 10px;
+        height: 100%;
+        margin: 0 15px 0 10px;
     
         svg {
-            height: 20px;
             width: 30px;
-            fill: rgb(107, 187, 225);
+            height: 30px;
         }
     }
     
@@ -44,6 +43,14 @@
         text-transform: uppercase;
         font-family: "Aesthetic Iosevka Original", sans;
     }
+}
+
+.SVGPath {
+    fill: rgb(107, 187, 225);
+}
+
+.SVGBackground {
+    fill: black;
 }
 
 .hostname {

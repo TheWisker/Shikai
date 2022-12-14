@@ -11,6 +11,7 @@ import React from "react";
 import Avatar from "./Avatar";
 import Username from "./Username";
 import Session from "./Session";
+import Date from "./Date";
 
 //import Arrow from "../../../../assets/media/icons/arrow.svg"
 
@@ -29,7 +30,7 @@ var Userbar = function (_React$Component) {
             return React.createElement(
                 "div",
                 { "class": "userbar" },
-                React.createElement(Avatar, { src: "assets/media/arch-logo.png", color: "black" }),
+                React.createElement(Avatar, { src: "assets/media/profile.jpg", color: "black" }),
                 React.createElement(Username, { name: "luwak" }),
                 React.createElement(
                     "form",
@@ -48,7 +49,9 @@ var Userbar = function (_React$Component) {
                         "div",
                         { "class": "text" },
                         "Switch User"
-                    )
+                    ),
+                    React.createElement("div", { "class": "expand" }),
+                    React.createElement(Date, { format: "%B %D, %Y" })
                 )
             );
         }
