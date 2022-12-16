@@ -10,34 +10,43 @@
 "use strict";
 
 export default function format(date, format, utc) {
-    const months = {
+    var months = {
         long: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Noemvber", "December"],
         short: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    }
-    const days = {
+    };
+    var days = {
         long: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         short: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-    }
+    };
 
     function zeroFormat(n, ln) {
         n = n + "";
-        while (n.length < (ln || 2)) n = "0" + n;
-        return n;
+        while (n.length < (ln || 2)) {
+            n = "0" + n;
+        }return n;
     }
-    
+
     //Literal
     format = format.replaceAll(/(%%)/g, "\x01%\x01");
 
     //Year
     format = format.replaceAll(/(%Y)/g, utc ? date.getUTCFullYear() : date.getFullYear());
     format = format.replaceAll(/(%y)/g, date.getYear());
-    format = format.replaceAll(/(%J)/g, () => {
-        let count = utc ? date.getUTCDate() : date.getDate();
-        for (let i = (utc ? date.getUTCMonth() : date.getMonth()); i > 0; i--) {
+    format = format.replaceAll(/(%J)/g, function () {
+        var count = utc ? date.getUTCDate() : date.getDate();
+        for (var i = utc ? date.getUTCMonth() : date.getMonth(); i > 0; i--) {
             if (i != 1) {
-                if ((i <= 6 && (i % 2) == 0) || (i >= 7 && (i % 2) == 1)) {count += 31;} else {count += 30;}
+                if (i <= 6 && i % 2 == 0 || i >= 7 && i % 2 == 1) {
+                    count += 31;
+                } else {
+                    count += 30;
+                }
             } else {
-                if (((utc ? date.getUTCFullYear() : date.getFullYear()) % 4) == 0) {count += 29;} else {count += 28;}
+                if ((utc ? date.getUTCFullYear() : date.getFullYear()) % 4 == 0) {
+                    count += 29;
+                } else {
+                    count += 28;
+                }
             }
         }
         return count;
@@ -60,10 +69,10 @@ export default function format(date, format, utc) {
 
     //Hours
     format = format.replaceAll(/(%H)/g, zeroFormat(utc ? date.getUTCHours() : date.getHours()));
-    format = format.replaceAll(/(%I)/g, zeroFormat((utc ? date.getUTCHours() : date.getHours()) > 12 ? (utc ? date.getUTCHours() : date.getHours()) - 12 : (utc ? date.getUTCHours() : date.getHours())));
+    format = format.replaceAll(/(%I)/g, zeroFormat((utc ? date.getUTCHours() : date.getHours()) > 12 ? (utc ? date.getUTCHours() : date.getHours()) - 12 : utc ? date.getUTCHours() : date.getHours()));
     format = format.replaceAll(/(%h)/g, utc ? date.getUTCHours() : date.getHours());
-    format = format.replaceAll(/(%i)/g, (utc ? date.getUTCHours() : date.getHours()) > 12 ? (utc ? date.getUTCHours() : date.getHours()) - 12 : (utc ? date.getUTCHours() : date.getHours()));
-    
+    format = format.replaceAll(/(%i)/g, (utc ? date.getUTCHours() : date.getHours()) > 12 ? (utc ? date.getUTCHours() : date.getHours()) - 12 : utc ? date.getUTCHours() : date.getHours());
+
     //Minutes
     format = format.replaceAll(/(%K)/g, zeroFormat(utc ? date.getUTCMinutes() : date.getMinutes()));
     format = format.replaceAll(/(%k)/g, utc ? date.getUTCMinutes() : date.getMinutes());
@@ -78,7 +87,7 @@ export default function format(date, format, utc) {
     //Hundredths of a second
     format = format.replaceAll(/(%Q)/g, zeroFormat(Math.round(utc ? date.getUTCMilliseconds() : date.getMilliseconds() / 10), 2));
     format = format.replaceAll(/(%q)/g, Math.round(utc ? date.getUTCMilliseconds() : date.getMilliseconds()) / 10);
-    
+
     //Miliseconds
     format = format.replaceAll(/(%F)/g, zeroFormat(utc ? date.getUTCMilliseconds() : date.getMilliseconds(), 3));
     format = format.replaceAll(/(%f)/g, utc ? date.getUTCMilliseconds() : date.getMilliseconds());
@@ -88,8 +97,8 @@ export default function format(date, format, utc) {
     format = format.replaceAll(/(%p)/g, (utc ? date.getUTCHours() : date.getHours()) > 12 ? "pm" : "am");
 
     //Timezone offset
-    format = format.replaceAll(/(%T)/g, date.getTimezoneOffset() >= 0 ? "+" + zeroFormat(Math.floor(((date.getTimezoneOffset() + 1) / 60) - (1 / 60))) : "-" + zeroFormat(Math.floor(Math.abs(date.getTimezoneOffset()) / 60)));
-    format = format.replaceAll(/(%t)/g, date.getTimezoneOffset() >= 0 ? "+" + Math.floor(((date.getTimezoneOffset() + 1) / 60) - (1 / 60)) : "-" + Math.floor(Math.abs(date.getTimezoneOffset()) / 60));
+    format = format.replaceAll(/(%T)/g, date.getTimezoneOffset() >= 0 ? "+" + zeroFormat(Math.floor((date.getTimezoneOffset() + 1) / 60 - 1 / 60)) : "-" + zeroFormat(Math.floor(Math.abs(date.getTimezoneOffset()) / 60)));
+    format = format.replaceAll(/(%t)/g, date.getTimezoneOffset() >= 0 ? "+" + Math.floor((date.getTimezoneOffset() + 1) / 60 - 1 / 60) : "-" + Math.floor(Math.abs(date.getTimezoneOffset()) / 60));
 
     //Clean
     format = format.replaceAll(/(\\x01%\\x01)/g, "%");
