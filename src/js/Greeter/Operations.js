@@ -1,3 +1,4 @@
+import Environment from "../Core/Environment";
 
 export function getInitialUser() {
     if (window.lightdm.lock_hint) {
@@ -5,10 +6,10 @@ export function getInitialUser() {
         if (user != undefined) {return user;}
     }
 
-    if (this.settings.getSetting("defaultUser")) {
-        let user = window.lightdm.users.find((user) => user.name === this.settings.getSetting("defaultUser"));    
+    /*if (Environment.current.getSettings().getSetting("defaultUser")) {
+        let user = window.lightdm.users.find((user) => user.name === Environment.current.getSettings().getSetting("defaultUser"));    
         if (user != undefined) {return user;}
-    }
+    }*/
 
     if (window.lightdm.select_user_hint !== undefined && window.lightdm.select_user_hint !== null) {
         let user = window.lightdm.users.find((user) => user.name === window.lightdm.select_user_hint);    
@@ -18,10 +19,13 @@ export function getInitialUser() {
     return window.lightdm.users[0];
 }
 
-export function getInitalSession() {
+export function getInitialSession() {
+    //let user = Environment.current.getUser();
+    //user = user ? user : getInitialUser();
+    let user = getInitialUser();
     return (
-        this.findSession(this.user.session) ||
-        this.findSession(window.lightdm.default_session) ||
+        findSession(user.session) ||
+        findSession(window.lightdm.default_session) ||
         window.lightdm.sessions[0]
     );
 }

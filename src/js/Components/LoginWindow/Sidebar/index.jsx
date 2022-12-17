@@ -4,17 +4,17 @@ import Logo from "./Logo"
 import Options from "./Options"
 import Clock from "./Clock"
 
-import Environment from "../../../Core/Environment";
+//import Environment from "../../../Core/Environment";
 
 export default class Sidebar extends React.Component {
     render() {
         return (
-            <div class="sidebar">
+            <div className="sidebar">
                 <Logo src="assets/media/arch-logo.png"/>
                 <Options/>
-                <div class="bottombar">
-                    <div class="hostname">{Environment.current.getHostname}</div>
-                    <div class="expand"/>
+                <div className="bottombar">
+                    <div className="hostname">{"ArchyLuwak"}</div>
+                    <div className="expand"/>
                     <Clock format="%H:%M:%S"/>
                 </div>
             </div>

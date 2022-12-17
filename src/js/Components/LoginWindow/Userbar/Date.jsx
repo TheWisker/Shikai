@@ -19,6 +19,6 @@ export default class _Date extends React.Component {
     update() {this.setState({date: format(new Date(), this.props.format)});}
   
     render() {
-        return (<div class="text">{this.state.date}</div>);
+        return (<div className="text">{this.state.date}</div>);
     }
 }

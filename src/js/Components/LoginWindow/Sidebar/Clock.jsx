@@ -19,6 +19,6 @@ export default class Clock extends React.Component {
     update() {this.setState({time: format(new Date(), this.props.format)});}
   
     render() {
-        return (<div class="text">{this.state.time}</div>);
+        return (<div className="text">{this.state.time}</div>);
     }
 }

@@ -2,17 +2,11 @@ import React from "react";
 
 import {shutdown, restart, sleep, hibernate} from "../../../Greeter/Commands"
 
-import Shutdown from "../../../../assets/media/commands/shutdown.svg";
-import Restart from "../../../../assets/media/commands/reboot.svg";
-import Sleep from "../../../../assets/media/commands/sleep.svg";
-import Hibernate from "../../../../assets/media/commands/hibernate.svg";
+import Shutdown from "../../../../assets/commands/shutdown.svg";
+import Restart from "../../../../assets/commands/reboot.svg";
+import Sleep from "../../../../assets/commands/sleep.svg";
+import Hibernate from "../../../../assets/commands/hibernate.svg";
 
-window.lightdm = { // Debug
-    "can_hibernate": true,
-    "can_restart": true,
-    "can_shutdown": true,
-    "can_suspend": true
-};
 /*
 const options = [
     {text: "shutdown", icon: Shutdown, func: shutdown, bool: window.lightdm.can_shutdown},
@@ -31,9 +25,9 @@ const options = [
 class Option extends React.Component {
     render() {
         return (
-            <div class="command" onClick={this.props.func}>
-                <div class="icon">{this.props.icon}</div>
-                <div class="text">{this.props.text}</div>
+            <div className="command" onClick={this.props.func}>
+                <div className="icon">{this.props.icon}</div>
+                <div className="text">{this.props.text}</div>
             </div>
         );
     }
@@ -42,7 +36,8 @@ class Option extends React.Component {
 export default class Options extends React.Component {
     render() {
         let array = [];
-        options.filter((option) => {return option.bool}).forEach((option, i) => {array[i] = <Option text={option.text} func={option.func} icon={<option.icon/>}/>});
-        return (<div class="commandbar">{array}</div>);
+        options.filter((option) => {return option.bool}).forEach((option, i) => {array[i] = <Option text={option.text} func={option.func} icon={<option.icon/>} key={option.text}/>});
+        
+        return (<div className="commandbar">{array}</div>);
     }
 }

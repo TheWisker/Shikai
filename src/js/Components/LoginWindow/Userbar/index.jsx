@@ -8,20 +8,24 @@ import Date from "./Date"
 //import Arrow from "../../../../assets/media/icons/arrow.svg"
 
 export default class Userbar extends React.Component {
+    componentDidMount() {
+        document.getElementById("password").focus();
+    }
+
     render() {
         return (
-            <div class="userbar">
+            <div className="userbar">
                 <Avatar src="assets/media/profile.jpg" color="black"/>
                 <Username name="luwak"/>
-                <form class="expand">
-                    <div class="mainbar">
+                <form className="expand">
+                    <div className="mainbar">
                         <input id="password"/>
                         <Session name="Cinnamon (Software)"/>
                     </div>
                 </form>
-                <div class="bottombar">
-                    <div class="text">Switch User</div>
-                    <div class="expand"/>
+                <div className="bottombar">
+                    <div className="text">Switch User</div>
+                    <div className="expand"/>
                     <Date format="%B %D, %Y"/>
                 </div>
             </div>

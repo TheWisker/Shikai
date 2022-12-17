@@ -8,7 +8,8 @@
     "webkit2",
     "theme",
     "jigoku",
-    "login"
+    "login",
+    "manager"
   ],
   "homepage": "https://github.com/TheWisker/Jigoku#readme",
   "bugs": "https://github.com/TheWisker/Jigoku/issues",

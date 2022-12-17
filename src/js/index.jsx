@@ -1,24 +1,26 @@
 import "../css/style.scss";
 
 import React from "react";
-import ReactDOM from "react-dom";
+import {createRoot} from 'react-dom/client';
 
 import {Provider} from "react-redux";
 
-import Environment from "./Core/Environment";
+//import Environment from "./Core/Environment";
+import Store from "./Redux/Store";
 
 import LoginWindow from "./Components/LoginWindow";
 
 export default function launch() {
-    Environment.launch(); //Launchs the environment class
+    //Environment.launch(); //Launchs the environment class
+    const root = createRoot(document.getElementById("loginroot"));
 
-    ReactDOM.render((
-        <Provider store={Environment.current.getStore}>
+    root.render((
+        <Provider store={Store()}>
             <LoginWindow/>
         </Provider>
-    ), document.getElementById("loginroot"));
+    ));
 
-    document.getElementById("password").focus();
+    
 };
 
 window.onload = () => {

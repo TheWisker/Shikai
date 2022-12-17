@@ -1,31 +1,26 @@
-import Entry from "./Storage";
+const defaults = {
+    "defaultUser": false
+}
 
+export function getSetting(key) {
+    let item = localStorage.getItem(key);
+    if (item != null) {return JSON.parse(item);}
+    return defaults[key];
+}
 
+export function saveSetting(key, data = undefined) {
+    localStorage.setItem(key, JSON.stringify(data));
+    return true;
+}
 
-export default class Settings {
+export function getTheme() {
 
-    constructor() {
-        
-    }
+}
 
-    
-    getSetting() {
-    
-    }
-    
-    saveSetting() {
-    
-    }
-    
-    getTheme() {
-    }
-    
-    saveTheme() {
-    
-    }
-    
-    removeTheme() {
-    
-    }
+export function saveTheme() {
+
+}
+
+export function removeTheme() {
 
 }
