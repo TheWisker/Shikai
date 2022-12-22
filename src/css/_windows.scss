@@ -1,18 +1,41 @@
+@use "general";
 @use "sass:math";
+
+$settings_width: 500px;
 
 $login_width: 850px;
 $login_height: 500px;
 
+.settingwindow {
+    @include general.flex(column);
+
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    height: 100%;
+    position: absolute;
+    transition: left 400ms;
+    width: $settings_width;
+    left: -#{$settings_width};
+    border-radius: 0 16px 16px 0;
+}
+
+.settingwindow.active {
+    left: 0;
+}
+
 .loginwindow {
+    @include general.flex;
+    
     top: 50%;
     left: 50%;
-    display: flex;
-    position: absolute;
+    z-index: 1;
     overflow: hidden;
+    position: absolute;
     border-radius: 16px;
-    margin: -#{math.div($login_height, 2)} 0 0 -#{math.div($login_width, 2)};
     width: $login_width;
     height: $login_height;
+    margin: -#{math.div($login_height, 2)} 0 0 -#{math.div($login_width, 2)};
 }
 
 /*

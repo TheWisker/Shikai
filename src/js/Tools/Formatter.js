@@ -7,27 +7,69 @@
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
  */
-"use strict";
+ "use strict";
 
-export default function format(date, format, utc) {
-    const months = {
-        long: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Noemvber", "December"],
-        short: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    }
-    const days = {
-        long: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        short: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-    }
+const months = {
+    long: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Noemvber", "December"],
+    short: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+}
+const days = {
+    long: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    short: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+}
 
-    function zeroFormat(n, ln) {
-        n = n + "";
-        while (n.length < (ln || 2)) n = "0" + n;
-        return n;
-    }
-    
-    //Literal
-    format = format.replaceAll(/(%%)/g, "\x01%\x01");
+function preformat(format) {
+    return format.replaceAll(/(%%)/g, "\x01%\x01");
+}
 
+function postformat(format) {
+    return format.replaceAll(/(\\x01%\\x01)/g, "%");
+}
+
+function zeroFormat(n, ln) {
+    n = n + "";
+    while (n.length < (ln || 2)) n = "0" + n;
+    return n;
+}
+
+function _time(format, date, utc) {
+    //Hours
+    format = format.replaceAll(/(%H)/g, zeroFormat(utc ? date.getUTCHours() : date.getHours()));
+    format = format.replaceAll(/(%I)/g, zeroFormat((utc ? date.getUTCHours() : date.getHours()) > 12 ? (utc ? date.getUTCHours() : date.getHours()) - 12 : (utc ? date.getUTCHours() : date.getHours())));
+    format = format.replaceAll(/(%h)/g, utc ? date.getUTCHours() : date.getHours());
+    format = format.replaceAll(/(%i)/g, (utc ? date.getUTCHours() : date.getHours()) > 12 ? (utc ? date.getUTCHours() : date.getHours()) - 12 : (utc ? date.getUTCHours() : date.getHours()));
+
+    //Minutes
+    format = format.replaceAll(/(%K)/g, zeroFormat(utc ? date.getUTCMinutes() : date.getMinutes()));
+    format = format.replaceAll(/(%k)/g, utc ? date.getUTCMinutes() : date.getMinutes());
+
+    //Seconds
+    format = format.replaceAll(/(%S)/g, zeroFormat(utc ? date.getUTCSeconds() : date.getSeconds()));
+    format = format.replaceAll(/(%s)/g, utc ? date.getUTCSeconds() : date.getSeconds());
+
+    //Tenths of a second
+    format = format.replaceAll(/(%L)/g, Math.round(utc ? date.getUTCMilliseconds() : date.getMilliseconds() / 100));
+
+    //Hundredths of a second
+    format = format.replaceAll(/(%Q)/g, zeroFormat(Math.round(utc ? date.getUTCMilliseconds() : date.getMilliseconds() / 10), 2));
+    format = format.replaceAll(/(%q)/g, Math.round(utc ? date.getUTCMilliseconds() : date.getMilliseconds()) / 10);
+
+    //Miliseconds
+    format = format.replaceAll(/(%F)/g, zeroFormat(utc ? date.getUTCMilliseconds() : date.getMilliseconds(), 3));
+    format = format.replaceAll(/(%f)/g, utc ? date.getUTCMilliseconds() : date.getMilliseconds());
+
+    //AM or PM
+    format = format.replaceAll(/(%P)/g, (utc ? date.getUTCHours() : date.getHours()) > 12 ? "PM" : "AM");
+    format = format.replaceAll(/(%p)/g, (utc ? date.getUTCHours() : date.getHours()) > 12 ? "pm" : "am");
+
+    //Timezone offset
+    format = format.replaceAll(/(%T)/g, date.getTimezoneOffset() >= 0 ? "+" + zeroFormat(Math.floor(((date.getTimezoneOffset() + 1) / 60) - (1 / 60))) : "-" + zeroFormat(Math.floor(Math.abs(date.getTimezoneOffset()) / 60)));
+    format = format.replaceAll(/(%t)/g, date.getTimezoneOffset() >= 0 ? "+" + Math.floor(((date.getTimezoneOffset() + 1) / 60) - (1 / 60)) : "-" + Math.floor(Math.abs(date.getTimezoneOffset()) / 60));
+
+    return format;
+}
+
+function _date(format, date, utc) {
     //Year
     format = format.replaceAll(/(%Y)/g, utc ? date.getUTCFullYear() : date.getFullYear());
     format = format.replaceAll(/(%y)/g, date.getYear());
@@ -58,41 +100,17 @@ export default function format(date, format, utc) {
     format = format.replaceAll(/(%a)/g, days.short[utc ? date.getUTCDay() : date.getDay()]);
     format = format.replaceAll(/(%W)/g, (utc ? date.getUTCDay() : date.getDay()) + 1);
 
-    //Hours
-    format = format.replaceAll(/(%H)/g, zeroFormat(utc ? date.getUTCHours() : date.getHours()));
-    format = format.replaceAll(/(%I)/g, zeroFormat((utc ? date.getUTCHours() : date.getHours()) > 12 ? (utc ? date.getUTCHours() : date.getHours()) - 12 : (utc ? date.getUTCHours() : date.getHours())));
-    format = format.replaceAll(/(%h)/g, utc ? date.getUTCHours() : date.getHours());
-    format = format.replaceAll(/(%i)/g, (utc ? date.getUTCHours() : date.getHours()) > 12 ? (utc ? date.getUTCHours() : date.getHours()) - 12 : (utc ? date.getUTCHours() : date.getHours()));
-    
-    //Minutes
-    format = format.replaceAll(/(%K)/g, zeroFormat(utc ? date.getUTCMinutes() : date.getMinutes()));
-    format = format.replaceAll(/(%k)/g, utc ? date.getUTCMinutes() : date.getMinutes());
-
-    //Seconds
-    format = format.replaceAll(/(%S)/g, zeroFormat(utc ? date.getUTCSeconds() : date.getSeconds()));
-    format = format.replaceAll(/(%s)/g, utc ? date.getUTCSeconds() : date.getSeconds());
-
-    //Tenths of a second
-    format = format.replaceAll(/(%L)/g, Math.round(utc ? date.getUTCMilliseconds() : date.getMilliseconds() / 100));
-
-    //Hundredths of a second
-    format = format.replaceAll(/(%Q)/g, zeroFormat(Math.round(utc ? date.getUTCMilliseconds() : date.getMilliseconds() / 10), 2));
-    format = format.replaceAll(/(%q)/g, Math.round(utc ? date.getUTCMilliseconds() : date.getMilliseconds()) / 10);
-    
-    //Miliseconds
-    format = format.replaceAll(/(%F)/g, zeroFormat(utc ? date.getUTCMilliseconds() : date.getMilliseconds(), 3));
-    format = format.replaceAll(/(%f)/g, utc ? date.getUTCMilliseconds() : date.getMilliseconds());
-
-    //AM or PM
-    format = format.replaceAll(/(%P)/g, (utc ? date.getUTCHours() : date.getHours()) > 12 ? "PM" : "AM");
-    format = format.replaceAll(/(%p)/g, (utc ? date.getUTCHours() : date.getHours()) > 12 ? "pm" : "am");
-
-    //Timezone offset
-    format = format.replaceAll(/(%T)/g, date.getTimezoneOffset() >= 0 ? "+" + zeroFormat(Math.floor(((date.getTimezoneOffset() + 1) / 60) - (1 / 60))) : "-" + zeroFormat(Math.floor(Math.abs(date.getTimezoneOffset()) / 60)));
-    format = format.replaceAll(/(%t)/g, date.getTimezoneOffset() >= 0 ? "+" + Math.floor(((date.getTimezoneOffset() + 1) / 60) - (1 / 60)) : "-" + Math.floor(Math.abs(date.getTimezoneOffset()) / 60));
-
-    //Clean
-    format = format.replaceAll(/(\\x01%\\x01)/g, "%");
-
     return format;
-};
+}
+
+export function time(format, date = new Date(), utc) {
+    return postformat(_time(preformat(format), date, utc));
+}
+
+export function date(format, date = new Date(), utc) {
+    return postformat(_date(preformat(format), date, utc));
+}
+
+export function universal(format, date = new Date(), utc) {
+    return postformat(_time(_date(preformat(format), date, utc)));
+}

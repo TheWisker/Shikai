@@ -1,5 +1,4 @@
 const path = require("path");
-//const webpack = require("webpack");
 
 //Plugins
 const CssExtractPlugin = require("mini-css-extract-plugin");
@@ -35,7 +34,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.(sa|sc|c)ss$/i,
                 use: [
                     devMode ? "style-loader" : CssExtractPlugin.loader,
                     {
@@ -61,9 +60,8 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        cacheDirectory: true,
+                        //cacheDirectory: true,
                         envName: devMode ? "development" : "production"
-                        //plugins: ["@babel/plugin-syntax-jsx"]
                     }
                 }
             },

@@ -1,23 +1,32 @@
 import React from "react";
+import {connect} from "react-redux";
+import cxs from "cxs";
 
-import Logo from "./Logo"
-import Options from "./Options"
-import Clock from "./Clock"
+import Logo from "./Logo";
+import Options from "./Options";
+import Hostname from "./Hostname";
+import Clock from "./Clock";
 
 //import Environment from "../../../Core/Environment";
 
-export default class Sidebar extends React.Component {
+class Sidebar extends React.Component {
     render() {
         return (
-            <div className="sidebar">
-                <Logo src="assets/media/arch-logo.png"/>
+            <div className={"sidebar " + cxs({backgroundColor: this.props.color})}>
+                <Logo/>
                 <Options/>
                 <div className="bottombar">
-                    <div className="hostname">{"ArchyLuwak"}</div>
+                    <Hostname/>
                     <div className="expand"/>
-                    <Clock format="%H:%M:%S"/>
+                    <Clock/>
                 </div>
             </div>
         )
     }
 }
+
+export default connect(
+    (state) => {
+        return {color: state.settings.style.sidebar.background};
+    }
+)(Sidebar);

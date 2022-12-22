@@ -1,17 +1,13 @@
-import * as Operations from "../Greeter/Operations";
-
+import Runtime from "./Reducers/Runtime";
 import Settings from "./Reducers/Settings";
+import Themes from "./Reducers/Themes";
 
-const def_state = {
-    user: Operations.getInitialUser(),
-    session: Operations.getInitialSession(),
-    hostname: Operations.getHostname()
-};
-
-export default function Reducer(state = def_state, action) {
-    return {
-        ...state,
-        
-        settings: Settings(state.settings, action),
+export default function Reducer(state = {}, action) {
+    console.log("State", state);
+    switch(action.type) {
+        case "Theme_Activate":
+            return {...state, settings: state.themes[action.key]};  
+        default:
+            return {...state, runtime: Runtime(state.runtime, action), settings: Settings(state.settings, action), themes: Themes(state.themes, action)}
     }
 }

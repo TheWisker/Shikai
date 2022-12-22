@@ -2,25 +2,26 @@ import "../css/style.scss";
 
 import React from "react";
 import {createRoot} from 'react-dom/client';
-
 import {Provider} from "react-redux";
 
-//import Environment from "./Core/Environment";
 import Store from "./Redux/Store";
-
 import LoginWindow from "./Components/LoginWindow";
+import SettingsWindow from "./Components/SettingsWindow";
 
 export default function launch() {
-    //Environment.launch(); //Launchs the environment class
-    const root = createRoot(document.getElementById("loginroot"));
+    const store = Store();
 
-    root.render((
-        <Provider store={Store()}>
+    createRoot(document.getElementById("loginroot")).render((
+        <Provider store={store}>
             <LoginWindow/>
         </Provider>
     ));
 
-    
+    createRoot(document.getElementById("settingroot")).render((
+        <Provider store={store}>
+            <SettingsWindow/>
+        </Provider>
+    ));
 };
 
 window.onload = () => {

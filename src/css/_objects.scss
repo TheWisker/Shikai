@@ -1,5 +1,28 @@
 @use "general";
 
+.evoker {
+    @include general.flex-center;
+    @include general.square(50px);
+
+    top: 10px;
+    left: 10px;
+    opacity: 0;
+    cursor: pointer;
+    position: fixed;
+    border-radius: 50%;
+    background-color: black;
+    transition: opacity 150ms ease;
+
+    svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
 .logo {
     @include general.flex;
     @include general.square;
@@ -20,7 +43,6 @@
 .command {
     @include general.flex;
 
-    cursor: pointer;
     margin: 0 0 25px 0;
     
     .icon {
@@ -33,21 +55,21 @@
         svg {
             width: 30px;
             height: 30px;
+
+            .SVGPath {
+                fill: rgb(107, 187, 225);
+            }
         }
     }
     
     .text {
-        color: #fff;
         font-size: 1.5em;
         font-weight: 1000;
         text-transform: uppercase;
-        font-family: "Aesthetic Iosevka Original", sans;
     }
 }
 
-.SVGPath {
-    fill: rgb(107, 187, 225);
-}
+
 
 .SVGBackground {
     fill: black;
@@ -58,7 +80,6 @@
     font-weight: 1000;
     white-space: nowrap;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.65);
     font-family: "Aesthetic Iosevka Original", sans;
 }
 
@@ -67,7 +88,6 @@
 }
 
 .username {
-    color: white;
     font-size: 2.5em;
     font-weight: 1000;
     text-align: center;
@@ -79,7 +99,6 @@
 
     width: 200px;
     height: 30px;
-    color: white;
     cursor: pointer;
     overflow: hidden;
     font-size: 0.9em;
@@ -89,11 +108,12 @@
     border-radius: 16px;
     text-overflow: ellipsis;
     text-transform: uppercase;
-    background-color: rgb(0, 0, 0);
     font-family: "Aesthetic Iosevka Original", sans;
 }
 
-
+.hidden {
+    visibility: hidden !important;
+}
 
 /*
 .submitswitch {

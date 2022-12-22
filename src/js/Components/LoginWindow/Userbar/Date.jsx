@@ -1,24 +1,38 @@
 import React from "react";
+import {connect} from "react-redux";
+import cxs from "cxs";
 
-import format from "../../../Tools/Formatter";
+import {date} from "../../../Tools/Formatter";
 
-export default class _Date extends React.Component {
+class _Date extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {running: false, date: "__/__/__"};
+        this.state = {date: "__:__:__"};
+        this.update = this.update.bind(this);
     }
   
     componentDidMount() {
         this.update();
-        setInterval(() => {
-            this.update();
-            this.setState({running: true});
-        }, 60000);
+        if (!this.props.hidden) {this.interval = setInterval(() => {this.update();}, 60000);}
     }
+    
+    componentWillUnmount() {if (!this.props.hidden) {clearInterval(this.interval);}}
   
-    update() {this.setState({date: format(new Date(), this.props.format)});}
+    update() {this.setState({date: date(this.props.format)});}
   
     render() {
-        return (<div className="text">{this.state.date}</div>);
+        let classes = this.props.hidden ? ["text hidden"] : ["text"];
+        classes.push(cxs({color: this.props.color}));
+        return (<div className={classes.join(" ")}>{this.state.date}</div>);
     }
 }
+
+export default connect(
+    (state) => {
+        return {
+            hidden: !state.settings.behaviour.date.enabled,
+            format: state.settings.behaviour.date.format,
+            color: state.settings.style.main.textcolor
+        };
+    }
+)(_Date);

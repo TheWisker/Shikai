@@ -1,88 +1,23 @@
-
-
+import {query, update} from "../../Tools/Dictionary";
+import {getItem, saveItem} from "../../Core/Storage";
 
 export default function Settings(state, action) {
-    
-    return state;
+    switch (action.type) {
+        case "Setting_Set":
+            return update(state, action.key, action.value);
+        case "Setting_Toggle":
+            return update(state, action.key, !query(state, action.key));
+        case "Settings_Save":
+            return saveItem(action.key, state);
+        case "Settings_Update":
+            let value = getItem(action.key);
+            return (value === undefined) ? state : value;
+        default:
+            return state;
+    }
 }
 
-
-
-
-
-
-
-
-
-
-
-export function setDefaults(state) {
-
-  //let distroDefault = (window.__debug === true) ? "src/test/logos/archlinux.png" : "/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/archlinux.png";
-
-  let defaults = {
-    "active": false,
-    "minimized": false,
-    "distro": "src/test/logos/archlinux.png",
-    "default_user": "",
-    "page_zoom": 1.0,
-
-    "avatar_enabled": true,
-    "avatar_size": "200px",
-    "avatar_shape": "circle",
-    "avatar_background_enabled": true,
-
-    "font_scale": 1.0,
-
-    "date_enabled": true,
-    "date_format": "<em>%A</em>, the <em>%o</em> of <em>%B</em>",
-
-    "experimental_stars_enabled": false,
-
-    "time_enabled": true,
-    "time_format": "%H:%M",
-
-    "hostname_enabled": true,
-
-    "user_switcher_enabled": true,
-
-    "command_shutdown_enabled": true,
-    "command_reboot_enabled": true,
-    "command_hibernate_enabled": true,
-    "command_sleep_enabled": true,
-
-    "style_command_logo_desaturate": false,
-    "style_command_logo_brightness": 100,
-    "style_command_icons_enabled": true,
-    "style_command_text_align": "left",
-    "style_command_background_color": "hsla(0, 0%, 22%, 1)",
-    "style_command_icon_color": "hsla(349, 98%, 65%, 1)",
-    "style_command_text_color": "hsla(0, 100%, 100%, 1)",
-    "style_login_border_color": "hsla(0, 100%, 100%, 0.1)",
-    "style_login_border_enabled": true,
-    "style_login_button_color": "hsla(0, 100%, 100%, 0.22)",
-    "style_login_button_text_color": "hsla(0, 100%, 100%, 1)",
-    "style_login_gradient_top_color": "hsla(18, 100%, 61%, 0.66)",
-    "style_login_gradient_bottom_color": "hsla(339, 94%, 64%, 1)",
-    "style_login_username_bold": true,
-    "style_login_username_capitalization": "default",
-    "style_login_username_color": "hsla(0, 100%, 100%, 1)",
-    "style_login_username_italic": true,
-
-    "window_border_radius": "4px",
-    "window_font_size": "1em"
-  };
-
-  let settings = {};
-
-  for (let key of Object.keys(defaults)) {
-    settings[key] = Settings.requestSetting(key, defaults[key]);
-  }
-
-  return { ...state, "settings": settings, "cachedSettings": settings };
-}
-
-
+/*
 export const SettingsReducer = (state, action) => {
   switch(action.type) {
     case 'SETTINGS_LOGO_CHANGE':
@@ -177,4 +112,4 @@ export const SettingsReducer = (state, action) => {
     default:
       return state;
   }
-};
+};*/

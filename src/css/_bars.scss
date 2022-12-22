@@ -4,6 +4,136 @@
     padding: 10px 35px 20px 35px;
 }
 
+.sectionbar {
+    @include general.flex-center;
+    @include general.square;
+
+    flex-shrink: 20;
+    min-height: 35px;
+
+    .text {
+        color: #A0A0A0;
+        font-size: 0.95em;
+    }
+
+    .button {
+        @include general.flex-center;
+        @include general.square;
+
+        background-color: rgba(40, 40, 40, 0.8);
+
+        &:hover {
+            background-color: rgba(80, 80, 80, 0.8);
+        }
+
+        &:nth-last-child(1) {
+            width: 35px;
+            min-width: 35px;
+
+            svg {
+                width: 25px;
+                height: 25px;
+
+                .SVGPath {
+                    fill: #A0A0A0;
+                }
+            }
+        }
+    }
+
+    .selected {
+        background-color: rgba(65, 65, 65, 0.8);
+    }
+}
+
+.displaybar {
+    @include general.flex(column);
+    @include general.square;
+    @include general.box;
+
+    padding: 25px;
+    overflow: hidden scroll;
+    background-color:rgba(65, 65, 65, 0.8);
+
+    .section {
+        @include general.flex(column);
+
+        .separator {
+            margin: 0 0 10px 0;
+        }
+
+        .title {
+            color: #A0A0A0;
+            font-size: 1.5em;
+            margin: 0 0 12px 5px;
+        }
+
+        .inputbar {
+            margin: 0 0 12px 18px;
+        }
+    }
+}
+
+.inputbar {
+    @include general.flex;
+    @include general.box;
+
+    width: 100%;
+    margin: 0 0 15px 0;
+
+    .text {
+        color: #A0A0A0;
+        font-size: 0.9em;
+        margin: 0 0 0 10px;
+    }
+
+    input[type="text"] {
+        margin: 0 0 0 15px;
+    }
+}
+.colorsbar {
+    @include general.flex-center;
+    margin: 0 0 15px 0;
+}
+
+.colorbar {
+    @include general.flex-center(column);
+    @include general.box;
+
+    padding: 0 10px;
+    width: fit-content;
+
+    .text {
+        color: #A0A0A0;
+        font-size: 0.9em;
+        margin: 0 0 10px 0;
+        text-align: center;
+    }
+
+    .button {
+        @include general.flex-center;
+        @include general.box;
+        
+        width: 66px;
+        height: 26px;
+        position: relative;
+
+        .color {
+            @include general.square;
+            z-index: 1;
+            border-radius: 6px;
+            border: 4px solid #A0A0A0;
+        }
+
+        .chrome-picker {
+            left: 0;
+            top: 35px;
+            z-index: 2;
+            position: absolute;
+        }
+    }
+}
+
 .sidebar {
     @include general.flex(column);
     @include general.square;
@@ -13,7 +143,6 @@
     opacity: 0.9;
     min-width: 0;
     flex-shrink: 7;
-    background: rgb(20, 44, 57);
 
     .bottombar {
         flex-shrink: 20;
@@ -35,12 +164,11 @@
     width: 100%;
     padding-top: 15px;
 
-    .text {
+    .switch {
+        @include general.flex;
+
         flex-shrink: 0;
-        color: white;
         font-size: 0.9em;
-        font-weight: 1000;
-        font-family: "Aesthetic Iosevka Original", sans;
     }
 
     .expand {
@@ -56,7 +184,6 @@
 
     opacity: 0.8;
     flex-shrink: 3;
-    background: linear-gradient(rgb(240, 197, 147) 0%, rgb(122, 215, 240) 100%);
 }
 
 .avatarbar {
@@ -86,19 +213,12 @@
 
     input {
         @include general.box;
+        @include general.font;
 
         width: 200px;
-        border: none;
         outline: none;
-        color: #fff;
         padding: 0 15px;
         font-size: 1.2em;
-        font-weight: 1000;
         text-align: center;
-        border-radius: 16px;
-        background: rgba(0, 0, 0, 0.2);
-        border-top: 2px solid rgba(0, 0, 0, 0.3);
-        border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-        font-family: "Aesthetic Iosevka Original", sans;
     }
 }
