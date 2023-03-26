@@ -4,7 +4,7 @@ import cxs from "cxs";
 
 class Username extends React.Component {
     render() {
-        let classes = this.props.hidden ? ["username hidden"] : ["username"];
+        let classes = this.props.hidden ? ["username", "hidden"] : ["username"];
         classes.push(cxs({color: this.props.color}));
         return (<div className={classes.join(" ")}>{this.props.name}</div>);
     }
@@ -12,7 +12,7 @@ class Username extends React.Component {
 
 export default connect(
     (state) => {return {
-        name: state.runtime.user.name,
+        name: state.runtime.user.username,
         hidden: !state.settings.behaviour.user,
         color: state.settings.style.main.textcolor
     };}

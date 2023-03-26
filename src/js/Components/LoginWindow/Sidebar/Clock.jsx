@@ -21,7 +21,7 @@ class Clock extends React.Component {
     update() {this.setState({time: time(this.props.format)});}
   
     render() {
-        let classes = this.props.hidden ? ["text hidden"] : ["text"];
+        let classes = this.props.hidden ? ["text", "hidden"] : ["text"];
         classes.push(cxs({color: this.props.color}));
         return (<div className={classes.join(" ")}>{this.state.time}</div>);
     }

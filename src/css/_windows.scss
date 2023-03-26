@@ -6,6 +6,16 @@ $settings_width: 500px;
 $login_width: 850px;
 $login_height: 500px;
 
+#notificationroot {
+    @include general.flex-center(column);
+    position: fixed;
+    pointer-events: none;
+    top: 0; left: 0; right: 0;
+    height: fit-content;
+    max-height: 35%;
+    z-index: 100;
+}
+
 .settingwindow {
     @include general.flex(column);
 

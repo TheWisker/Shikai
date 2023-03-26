@@ -21,8 +21,8 @@ class _Date extends React.Component {
     update() {this.setState({date: date(this.props.format)});}
   
     render() {
-        let classes = this.props.hidden ? ["text hidden"] : ["text"];
-        classes.push(cxs({color: this.props.color}));
+        let classes = this.props.hidden ? ["text", "hidden"] : ["text"];
+        classes.push(cxs({color: this.props.color, textAlign: "right", minWidth: "200px"}));
         return (<div className={classes.join(" ")}>{this.state.date}</div>);
     }
 }

@@ -9,7 +9,7 @@ class Style extends React.Component {
         return (
             <React.Fragment>
                 <div className="section">
-                    <div className="text title">Logo</div>
+                    <div className="text title">Main</div>
                     <Logo/>
                     <Inputs.Dropmenu items={this.props.logos.map(o => {return {label: o[0], value: o[1]}})} action={(s) => this.props.set("sidebar.logo", s)} value={this.props.style.sidebar.logo.split("/").pop().replace(/\.[^/.]+$/, "")}/>
                 </div>
@@ -26,17 +26,22 @@ class Style extends React.Component {
                     <Inputs.Colorpicker name="Session text color" action={(c) => this.props.set("userbar.session.color", c)} color={this.props.style.userbar.session.color}/>
                     <Inputs.Colorpicker name="Session background color" action={(c) => this.props.set("userbar.session.background", c)} color={this.props.style.userbar.session.background}/>
                 </div>
-
                 <div className="colorsbar">
                     <Inputs.Colorpicker name="Password text color" action={(c) => this.props.set("userbar.password.color", c)} color={this.props.style.userbar.password.color}/>
                     <Inputs.Colorpicker name="Password background color" action={(c) => this.props.set("userbar.password.background", c)} color={this.props.style.userbar.password.background}/>
                 </div>
+                <div className="colorsbar">
+                    <Inputs.Colorpicker name="Icon background color" action={(c) => this.props.set("main.icons.background", c)} color={this.props.style.main.icons.background}/>
+                    <Inputs.Colorpicker name="Icon foreground color" action={(c) => this.props.set("main.icons.foreground", c)} color={this.props.style.main.icons.foreground}/>
+                </div>
+
                 <div className="section">
                     <div className="separator"/>
                     <div className="text title">Misc</div>
-                    <Inputs.Textarea name="Password top and bottom border" action={(b) => this.props.set("userbar.password.border.top", b)} value={this.props.style.userbar.password.border.top}/>
-                    <Inputs.Textarea name="Password left and right border" action={(b) => this.props.set("userbar.password.border.left", b)} value={this.props.style.userbar.password.border.left}/>
+                    <Inputs.Textarea name="Password top bottom borders" action={(b) => this.props.set("userbar.password.border.top", b)} value={this.props.style.userbar.password.border.top}/>
+                    <Inputs.Textarea name="Password left right borders" action={(b) => this.props.set("userbar.password.border.left", b)} value={this.props.style.userbar.password.border.left}/>
                     <Inputs.Textarea name="Password border radius" action={(b) => this.props.set("userbar.password.border.radius", b)} value={this.props.style.userbar.password.border.radius}/>
+                    <Inputs.Textarea name="Session border radius" action={(b) => this.props.set("userbar.session.radius", b)} value={this.props.style.userbar.session.radius}/>
                 </div>
             </React.Fragment>
         );

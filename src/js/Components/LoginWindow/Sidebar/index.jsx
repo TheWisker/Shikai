@@ -7,8 +7,6 @@ import Options from "./Options";
 import Hostname from "./Hostname";
 import Clock from "./Clock";
 
-//import Environment from "../../../Core/Environment";
-
 class Sidebar extends React.Component {
     render() {
         return (
@@ -25,8 +23,4 @@ class Sidebar extends React.Component {
     }
 }
 
-export default connect(
-    (state) => {
-        return {color: state.settings.style.sidebar.background};
-    }
-)(Sidebar);
+export default connect((state) => {return {color: state.settings.style.sidebar.background};})(Sidebar);

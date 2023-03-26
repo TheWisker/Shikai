@@ -9,14 +9,6 @@ import Reboot from "../../../../assets/commands/reboot.svg";
 import Sleep from "../../../../assets/commands/sleep.svg";
 import Hibernate from "../../../../assets/commands/hibernate.svg";
 
-/*
-const options = [
-    {text: "shutdown", icon: Shutdown, func: shutdown, bool: window.lightdm.can_shutdown},
-    {text: "restart", icon: Restart, func: restart, bool: window.lightdm.can_restart},
-    {text: "sleep", icon: Sleep, func: sleep, bool: window.lightdm.can_suspend},
-    {text: "hibernate", icon: Hibernate, func: hibernate, bool: window.lightdm.can_hibernate}
-]*/
-
 const options = [
     {text: "sleep", icon: Sleep, func: sleep, bool: window.lightdm.can_suspend},
     {text: "reboot", icon: Reboot, func: restart, bool: window.lightdm.can_restart},

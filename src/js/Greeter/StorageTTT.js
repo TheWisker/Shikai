@@ -1,5 +1,8 @@
 
 
+
+
+
 if (!typeof(Storage) !== "undefined") {
     //window.notifications.generate("localStorage not supported. Theme unable to function!", 'error');
     //throw("localStorage not supported. Theme unable to function!");

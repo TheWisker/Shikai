@@ -1,15 +1,13 @@
 import {legacy_createStore as createStore} from "redux";
 import * as Operations from "../Greeter/Operations";
 import Reducer from "./Reducer";
-//Import initial state // store = createStore(PrimaryReducer, initialState);
 
-const def_state = {
+const default_state = {
     runtime: {
         user: Operations.getInitialUser(),
         session: Operations.getInitialSession(),
         hostname: Operations.getHostname(),
-        wallpapers: Operations.getWallpapers(Operations.getWallpaperDir()),
-        logos: Operations.getLogos()
+        logos: (window.__is_debug) ? Operations.getLogos(Operations.getLogosDir()) : ""
     },
     settings: {
         behaviour: {
@@ -27,7 +25,7 @@ const def_state = {
                 enabled: true,
                 format: "%B %D, %Y"
             },
-            commands: {//Left to
+            commands: {
                 shutdown: true,
                 hibernate: true,
                 reboot: true,
@@ -38,7 +36,10 @@ const def_state = {
             main: {
                 textcolor: "white",
                 background: "wallpaper.jpg",
-                radius: ""
+                icons: {
+                    background: "black",
+                    foreground: "rgb(107, 187, 225)"
+                }
             },
             sidebar: {
                 background: "rgb(20, 44, 57)",
@@ -50,16 +51,13 @@ const def_state = {
                     bottom: "rgb(122, 215, 240)"
                 },
                 avatar: {
-                    color: "black",
-                    source: "assets/media/profile.jpg"
+                    color: "black"
                 },
                 session: {
                     color: "white",
                     background: "black",
-                    radius: "",
-                    click: ""
+                    radius: "16px"
                 },
-
                 password: {
                     border: {
                         top: "2px solid rgba(0, 0, 0, 0.3)",
@@ -68,25 +66,11 @@ const def_state = {
                     },
                     color: "white",
                     background: "rgba(0, 0, 0, 0.2)"
-                },
-
+                }
             }
         }
     },
-    themes: [//Left to
-        {
-            name: "Default",
-            settings: {}
-        }
-    ]
+    themes: []
 };
 
-function default_state() {
-
-    return "def_state";
-}
-
-export default () => {
-    console.log("Store Created");
-    return createStore(Reducer, def_state, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-}
+export default () => {console.log("Store Created"); return createStore(Reducer, default_state);}

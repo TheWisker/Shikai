@@ -1,34 +1,29 @@
 import React from "react";
 import {connect} from "react-redux";
-import cxs from "cxs";
 
 import Sectionbar from "./Sectionbar";
 
 import Behaviour from "./Sections/Behaviour";
 import Style from "./Sections/Style";
+import Themes from "./Sections/Themes";
 
-class Window extends React.Component {
+export default class Window extends React.Component {
     constructor(props) {
         super(props);
         this.state = {display: "behaviour"};
         this.update = this.update.bind(this);
     }
 
-    update(tab) {
-        this.setState({display: tab});
-    }
+    update(tab) {this.setState({display: tab});}
 
     render() {
         let tab;
-        let classes = this.props.hidden ? ["settingwindow hidden"] : ["settingwindow"];
+        let classes = ["settingwindow"];
         if (this.props.active) {classes.push("active");}
         switch(this.state.display) {
-            case "style":
-                tab = <Style/>;
-                break;
-            default:
-                tab = <Behaviour/>;
-                break;
+            case "themes": tab = <Themes/>; break;
+            case "style": tab = <Style/>; break;
+            default: tab = <Behaviour/>; break;
         }
         return (
             <div className={classes.join(" ")}>
@@ -38,9 +33,3 @@ class Window extends React.Component {
         );
     }
 }
-
-export default connect(
-    (state) => {return {
-        hidden: !state.settings.behaviour.evoker,
-    };}
-)(Window);

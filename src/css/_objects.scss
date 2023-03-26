@@ -1,5 +1,23 @@
 @use "general";
 
+.notification {
+    @include general.font;
+    @include general.flex-center;
+    height: 50px; width: 30%;
+    transition: opacity ease-in 500ms;
+    border: 5px solid #e6e6e6;
+    border-radius: 20px;
+    font-size: 20px;
+    color: #e6e6e6;
+    margin-top: 10px;
+    opacity: 0;
+}
+
+.info {background-color: rgba(61, 109, 182, 0.6);}
+.success {background-color: rgba(61, 182, 87, 0.6); }
+.warning {background-color: rgba(180, 182, 61, 0.6);}
+.error {background-color: rgba(182, 61, 61, 0.6);}
+
 .evoker {
     @include general.flex-center;
     @include general.square(50px);
@@ -18,9 +36,7 @@
         height: 40px;
     }
 
-    &:hover {
-        opacity: 0.9;
-    }
+    &:hover {opacity: 0.9;}
 }
 
 .logo {
@@ -55,10 +71,6 @@
         svg {
             width: 30px;
             height: 30px;
-
-            .SVGPath {
-                fill: rgb(107, 187, 225);
-            }
         }
     }
     
@@ -69,29 +81,21 @@
     }
 }
 
-
-
-.SVGBackground {
-    fill: black;
-}
-
 .hostname {
     font-size: 0.9em;
     font-weight: 1000;
     white-space: nowrap;
     text-transform: uppercase;
-    font-family: "Aesthetic Iosevka Original", sans;
+    font-family: "Aesthetic", sans;
 }
 
-.expand {
-    @include general.square;
-}
+.expand {@include general.square;}
 
 .username {
     font-size: 2.5em;
     font-weight: 1000;
     text-align: center;
-    font-family: "Aesthetic Iosevka Original", sans;
+    font-family: "Aesthetic", sans;
 }
 
 .session {
@@ -108,12 +112,14 @@
     border-radius: 16px;
     text-overflow: ellipsis;
     text-transform: uppercase;
-    font-family: "Aesthetic Iosevka Original", sans;
+    font-family: "Aesthetic", sans;
 }
 
-.hidden {
-    visibility: hidden !important;
-}
+.SVGBackground {fill: black;}
+
+.SVGPath {fill: rgb(107, 187, 225);}
+
+.hidden {visibility: hidden !important;}
 
 /*
 .submitswitch {

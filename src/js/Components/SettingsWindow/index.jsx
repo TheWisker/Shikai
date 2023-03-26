@@ -10,9 +10,7 @@ export default class Settings extends React.Component {
         this.toggle = this.toggle.bind(this);
     }
 
-    toggle() {
-        this.setState({active: !this.state.active});
-    }
+    toggle() {this.setState({active: !this.state.active});}
 
     render() {
         return (

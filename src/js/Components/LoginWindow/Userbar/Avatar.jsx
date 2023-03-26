@@ -1,6 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
 
+import {getUserImage} from "../../../Greeter/Operations";
+
 class Avatar extends React.Component {
     render() {
         return (
@@ -15,6 +17,6 @@ export default connect(
     (state) => {return {
         hidden: !state.settings.behaviour.avatar,
         color: state.settings.style.userbar.avatar.color,
-        source: state.settings.style.userbar.avatar.source
+        source: (!window.__is_debug) ? state.runtime.user.image : getUserImage()
     };}
 )(Avatar);

@@ -6,6 +6,7 @@ import Avatar from "./Avatar";
 import Username from "./Username";
 import Password from "./Password"
 import Session from "./Session";
+import Switch from "./Switch";
 import Date from "./Date";
 
 class Userbar extends React.Component {
@@ -25,9 +26,7 @@ class Userbar extends React.Component {
                     </div>
                 </form>
                 <div className="bottombar">
-                    <div className={"switch " + cxs({color: this.props.color})}>
-                        <div className="text button">Prev</div>|<div className="text button">Next</div>
-                    </div>
+                    <Switch/>
                     <div className="expand"/>
                     <Date/>
                 </div>

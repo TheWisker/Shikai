@@ -8,8 +8,35 @@ import Store from "./Redux/Store";
 import LoginWindow from "./Components/LoginWindow";
 import SettingsWindow from "./Components/SettingsWindow";
 
-export default function launch() {
+import * as Operations from "./Greeter/Operations";
+
+function launch() {
+    if (!window.__is_debug) {window.lightdm = lightdm;}
+
     const store = Store();
+
+    let wall_callback = (wallpapers) => {
+        document.body.onclick = (e) => {
+            if (e.target == e.currentTarget) {
+                document.body.style.backgroundImage = "url('" + wallpapers[Math.floor(Math.random() * wallpapers.length)] + "')";
+            }
+        }; document.body.click();
+    }
+    if (window.__is_debug) {wall_callback(Operations.getWallpapers(Operations.getWallpaperDir()))} else {
+        Operations.getWallpapers(Operations.getWallpaperDir(), wall_callback);
+    }; Operations.getLogos(Operations.getLogosDir(), (dt) => store.dispatch({type: "Set_Logos", payload: dt}));
+
+    store.subscribe(() => {
+        let icons = store.getState().settings.style.main.icons;
+        const stylesheet = document.styleSheets[0];
+        const changeClassProperty = (selector, property, value) => {
+            for(let i = 0; i < stylesheet.cssRules.length; i++) {
+                if(stylesheet.cssRules[i].selectorText === selector) {stylesheet.cssRules[i].style.setProperty(property, value); break;}
+            }
+        }
+        changeClassProperty(".SVGBackground", "fill", icons.background);
+        changeClassProperty(".SVGPath", "fill", icons.foreground);
+    });
 
     createRoot(document.getElementById("loginroot")).render((
         <Provider store={store}>
@@ -25,7 +52,9 @@ export default function launch() {
 };
 
 window.onload = () => {
-    if (window.lightdm === undefined) {
-        document.addEventListener("GreeterReady", () => {launch();});
+    if (!window.__is_debug) {
+        if (lightdm === undefined) {
+            document.addEventListener("GreeterReady", () => {launch();});
+        } else {launch();}
     } else {launch();}
 }

@@ -13,7 +13,7 @@ module.exports = {
     entry: path.resolve("./src/js/index.jsx"),
     output: {
         filename: "index.js",
-        path: path.resolve("./out")
+        path: path.resolve("./dist")
     },
     mode: devMode ? "development" : "production",
     plugins: [
@@ -67,11 +67,10 @@ module.exports = {
             },
             {
                 test: /\.svg$/,
-                use: [{
-                    loader: "svg-react-loader"
-                }]
+                use: [{loader: "svg-react-loader"}]
             }
-        ]
+        ],
+        noParse: /\.(woff|woff2|eot|ttf|otf)$/
     },
     resolve: {
         extensions: [".js", ".min.js", ".jsx"],

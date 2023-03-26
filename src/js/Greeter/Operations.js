@@ -1,22 +1,12 @@
-//import Environment from "../Core/Environment";
-
 export function getInitialUser() {
     if (window.lightdm.lock_hint) {
         let user = window.lightdm.users.find((user) => user.logged_in);
         if (user != undefined) {return user;}
     }
-
-    /*if (Environment.current.getSettings().getSetting("defaultUser")) {
-        let user = window.lightdm.users.find((user) => user.name === Environment.current.getSettings().getSetting("defaultUser"));    
-        if (user != undefined) {return user;}
-    }*/
-
     if (window.lightdm.select_user_hint !== undefined && window.lightdm.select_user_hint !== null) {
         let user = window.lightdm.users.find((user) => user.name === window.lightdm.select_user_hint);    
         if (user != undefined) {return user;}
-    }
-
-    return window.lightdm.users[0];
+    } return window.lightdm.users[0];
 }
 
 export function getInitialSession() {
@@ -32,31 +22,35 @@ export function findSession(name) {
     return window.lightdm.sessions.find((session) => (session.name.toLowerCase() === name.toLowerCase()) || (session.key.toLowerCase() === name.toLowerCase()));
 }
 
-export function getHostname() {
-    return window.lightdm.hostname;
-}
+export function getHostname() {return window.lightdm.hostname;}
 
 export function getWallpaperDir() {
-    if (window.__debug === true) {return "assets/media/wallpapers/";}
-
-    let dir = window.greeter_config.branding.background_images;
-    if (dir == "/usr/share/backgrounds" || dir == "/usr/share/backgrounds/") {dir = "/usr/share/lightdm-webkit/themes/jigoku/src/media/wallpapers/";}
-    return dir;
+    if (window.__is_debug === true) {return "./assets/media/wallpapers/";}
+    return greeter_config.branding.background_images_dir;
 }
 
-export function getWallpapers(dir) {
-    if (window.__debug === true) {return ["wallpaper.jpg"];}
-
-    return window.theme_utils.dirlist(dir).map((e) => e.split("/").pop());
+export function getWallpapers(dir, callback) {
+    if (window.__is_debug === true) {
+        let defs = ["Wallpaper21.png"]; for (let i = 1; i < 21; i++) {defs.push("Wallpaper" + ((i > 9) ? i : ("0" + i)) + ".jpg");}
+        return defs.map((e) => dir + e);
+    } theme_utils.dirlist(dir, true, (r) => {callback(r)});
 }
 
-export function getLogos() {
-    if (window.__debug === true) {
+export function getLogosDir() {
+    if (window.__is_debug === true) {return "./assets/media/logos/";}
+    return greeter_config.branding.logo_image;
+}
+
+export function getLogos(dir, callback) {
+    if (window.__is_debug === true) {
         return [
-            ["archlinux", "assets/media/logos/archlinux.png"],
-            ["ubuntu", "assets/media/logos/ubuntu.png"]
+            ["archlinux", "./assets/media/logos/archlinux.png"],
+            ["ubuntu", "./assets/media/logos/ubuntu.png"]
         ];
-    }
+    } theme_utils.dirlist(dir, true, (r) => {callback(r.map((o) => [o.split("/").pop().replace(/\.[^/.]+$/, ""), o]))});
+}
 
-    return [window.greeter_config.branding.logo, ...window.theme_utils.dirlist("/usr/share/lightdm-webkit/themes/jigoku/src/media/logos/")].map((o) => [o.split("/").pop().replace(/\.[^/.]+$/, ""), o]);
+export function getUserImage() {
+    if (window.__is_debug === true) {return "./assets/media/profile.jpg"}
+    return greeter_config.branding.user_image;
 }

@@ -3,14 +3,18 @@ import React from "react";
 import {ChromePicker} from "react-color";
 
 export default class Colorpicker extends React.Component {
+    static instances = [];
+
     constructor(props) {
         super(props);
         this.state = {color: props.color};
         this.update = this.update.bind(this);
         this.toggle = this.toggle.bind(this);
+        Colorpicker.instances.push(this);
     }
 
     toggle() {
+        Colorpicker.instances.forEach((instance) => {if (instance != this) {instance.setState({active: false});}});
         this.setState({active: !this.state.active});
     }
 

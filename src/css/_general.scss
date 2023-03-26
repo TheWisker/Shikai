@@ -9,18 +9,26 @@
     justify-content: center;
 }
 
-@mixin square($x: 100%) {
-    height: $x;
-    width: $x;
-}
+@mixin square($x: 100%) {height: $x; width: $x;}
 
-@mixin box() {
-    box-sizing: border-box;
-}
+@mixin box() {box-sizing: border-box;}
 
 @mixin font() {
     font-weight: 1000;
-    font-family: "Aesthetic Iosevka Original", sans;
+    font-family: "Aesthetic", sans;
+}
+
+* {@include font; user-select: none;}
+
+body {
+    margin: 0;
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    background-size: cover;
+    background-color: black;
+    background-repeat: no-repeat;
+    transition: background-image 0.2s ease-in-out;
 }
 
 input[type="checkbox"] {
@@ -44,9 +52,7 @@ input[type="checkbox"] {
         transition: 120ms transform ease-in-out;
     }
 
-    &:checked::before {
-        transform: scale(1);
-    }
+    &:checked::before {transform: scale(1);}
 }
 
 input[type="text"] {
@@ -58,13 +64,9 @@ input[type="text"] {
     background: none;
 }
 
-.text {
-    @include font;
-}
+.text {@include font;}
 
-.button {
-    cursor: pointer;
-}
+.button {cursor: pointer;}
 
 .separator {
     width: 100%;
@@ -143,23 +145,15 @@ input[type="text"] {
             padding: 8px 10px;
             box-sizing: border-box;
             text-transform: capitalize;
+            background-color: rgb(80, 80, 80);
 
             &:last-child {
                 border-bottom-right-radius: 2px;
                 border-bottom-left-radius: 2px;
             }
             
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-            
-            &.is-selected {
-                background-color: rgba(255, 255, 255, 0.1);
-
-                &:hover {
-                    background-color: rgba(255, 255, 255, 0.2);
-                }
-            }
+            &:hover {background-color: rgb(90, 90, 90);}
+            &.is-selected {background-color: rgb(100, 100, 100);}
         }
     }
 

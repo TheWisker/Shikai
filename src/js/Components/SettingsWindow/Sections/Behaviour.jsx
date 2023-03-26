@@ -15,7 +15,6 @@ class Behaviour extends React.Component {
                     <Inputs.Checkbox name="Username enabled" action={() => this.props.toggle("user")} value={this.props.behaviour.user}/>
                     <Inputs.Checkbox name="Session enabled" action={() => this.props.toggle("session")} value={this.props.behaviour.session}/>
                 </div>
-
                 <div className="section">
                     <div className="separator"/>
                     <div className="text title">Commands</div>
@@ -24,7 +23,6 @@ class Behaviour extends React.Component {
                     <Inputs.Checkbox name="Sleep enabled" action={() => this.props.toggle("commands.sleep")} value={this.props.behaviour.commands.sleep}/>
                     <Inputs.Checkbox name="Hibernate enabled" action={() => this.props.toggle("commands.hibernate")} value={this.props.behaviour.commands.hibernate}/>
                 </div>
-
                 <div className="section">
                     <div className="separator"/>
                     <div className="text title">Clock and Date</div>
@@ -33,11 +31,10 @@ class Behaviour extends React.Component {
                     <Inputs.Checkbox name="Date enabled" action={() => this.props.toggle("date.enabled")} value={this.props.behaviour.date.enabled}/>
                     <Inputs.Textarea name="Date format:" action={(v) => this.props.set("date.format", v)} value={this.props.behaviour.date.format}/>
                 </div>
-
                 <div className="section">
                     <div className="separator"/>
                     <div className="text title">Misc</div>
-                    <Inputs.Checkbox name="Settings button visible" action={() => this.props.toggle("evoker")} value={this.props.behaviour.evoker}/>
+                    <Inputs.Checkbox name="Settings button invisible" action={() => this.props.toggle("evoker")} value={this.props.behaviour.evoker}/>
                 </div>
             </React.Fragment>
         );
@@ -45,9 +42,7 @@ class Behaviour extends React.Component {
 }
 
 export default connect(
-    (state) => {
-        return {behaviour: state.settings.behaviour};
-    },
+    (state) => {return {behaviour: state.settings.behaviour};},
     (dispatch) => {
         return {
             set: (key, value) => {dispatch({type: "Setting_Set", key: "behaviour." + key, value: value})},

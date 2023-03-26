@@ -1,8 +1,6 @@
 @use "general";
 
-%main-padding {
-    padding: 10px 35px 20px 35px;
-}
+%main-padding {padding: 10px 35px 20px 35px;}
 
 .sectionbar {
     @include general.flex-center;
@@ -22,9 +20,7 @@
 
         background-color: rgba(40, 40, 40, 0.8);
 
-        &:hover {
-            background-color: rgba(80, 80, 80, 0.8);
-        }
+        &:hover {background-color: rgba(80, 80, 80, 0.8);}
 
         &:nth-last-child(1) {
             width: 35px;
@@ -34,16 +30,12 @@
                 width: 25px;
                 height: 25px;
 
-                .SVGPath {
-                    fill: #A0A0A0;
-                }
+                .SVGPath {fill: #A0A0A0;}
             }
         }
     }
 
-    .selected {
-        background-color: rgba(65, 65, 65, 0.8);
-    }
+    .selected {background-color: rgba(65, 65, 65, 0.8);}
 }
 
 .displaybar {
@@ -52,15 +44,13 @@
     @include general.box;
 
     padding: 25px;
-    overflow: hidden scroll;
+    overflow: visible;
     background-color:rgba(65, 65, 65, 0.8);
 
     .section {
         @include general.flex(column);
 
-        .separator {
-            margin: 0 0 10px 0;
-        }
+        .separator {margin: 0 0 10px 0;}
 
         .title {
             color: #A0A0A0;
@@ -68,8 +58,29 @@
             margin: 0 0 12px 5px;
         }
 
-        .inputbar {
-            margin: 0 0 12px 18px;
+        .inputbar {margin: 0 0 12px 18px;}
+
+        .button {
+            color: #A0A0A0;
+            border: 2px solid #A0A0A0;
+            margin: 0 0 12px 20px;
+            border-radius: 10px;
+            width: fit-content;
+            padding: 6px;
+
+            &:hover {background-color: rgba(255, 255, 255, 0.2);}
+            &:active {background-color: rgba(255, 255, 255, 0.3);}
+        }
+
+        .theme {
+            color: #A0A0A0;
+            font-size: 1.35em;
+            margin: 0 0 12px 25px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+            .button {margin: 0 0 0 20px;}
         }
     }
 }
@@ -87,9 +98,7 @@
         margin: 0 0 0 10px;
     }
 
-    input[type="text"] {
-        margin: 0 0 0 15px;
-    }
+    input[type="text"] {margin: 0 0 0 15px;}
 }
 .colorsbar {
     @include general.flex-center;
@@ -144,9 +153,7 @@
     min-width: 0;
     flex-shrink: 7;
 
-    .bottombar {
-        flex-shrink: 20;
-    }
+    .bottombar {flex-shrink: 20;}
 }
 
 .commandbar {
@@ -171,9 +178,7 @@
         font-size: 0.9em;
     }
 
-    .expand {
-        @include general.box;
-    }
+    .expand {@include general.box;}
 }
 
 .userbar {

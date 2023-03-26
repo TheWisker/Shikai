@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Yuan Theme</title>
+        <link rel="icon" type="image/x-icon" href="./assets/media/icon.png">
+        <meta name="viewport" content="width=device-width, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
         <script>
-            if (true) {
-                window.__debug = true;
+            window.__is_debug = true;
+            if (window.__is_debug) {
                 window.lightdm = {
                     can_hibernate: true,
                     can_restart: true,
                     can_shutdown: true,
                     can_suspend: true,
                     select_user_hint: undefined,
-                    users: [{name: "kopi", session: "awesome"}, {name: "luwak", session: "xephyr"}],
-                    sessions: [{name: "awesome"}, {name: "xephyr"}],
+                    users: [{username: "Username1", session: "awesome"}, {username: "Username2", session: "openbox"}],
+                    sessions: [{name: "awesome"}, {name: "i3"}, {name: "openbox"}],
                     default_session: "awesome",
-                    hostname: "ArchyLuwak",
-                    lock_hint: false,
+                    hostname: "hostname",
+                    lock_hint: false
                 };
             }
         </script>
-        <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>Jigoku Theme</title>
     </head>
-    <body style="background-image: url('https://noisek.github.io/Aether/src/test/wallpapers/space-1.jpg');">
+    <body>
+        <div id="notificationroot"></div>
         <div id="settingroot"></div>
         <div id="loginroot" class="loginwindow"></div>
     </body>
