@@ -3,8 +3,8 @@ import {types, notify} from "./Notifications"
 function execute(bool, message, callback) {
     if (bool) {
         notify(message, types.Info);
-        setTimeout(() => {callback();}, 1000);
-    }
+        if (window.__is_debug != true) {setTimeout(() => {callback();}, 1000);}
+    } else {notify("Action not available!", types.Warning);}
 }
 
 export function sleep() {return execute(window.lightdm.can_suspend, "Taking a nap...", window.lightdm.sleep)}

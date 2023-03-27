@@ -10,10 +10,10 @@ import Sleep from "../../../../assets/commands/sleep.svg";
 import Hibernate from "../../../../assets/commands/hibernate.svg";
 
 const options = [
-    {text: "sleep", icon: Sleep, func: sleep, bool: window.lightdm.can_suspend},
-    {text: "reboot", icon: Reboot, func: restart, bool: window.lightdm.can_restart},
-    {text: "shutdown", icon: Shutdown, func: shutdown, bool: window.lightdm.can_shutdown},
-    {text: "hibernate", icon: Hibernate, func: hibernate, bool: window.lightdm.can_hibernate}
+    {text: "sleep", icon: Sleep, func: sleep},
+    {text: "reboot", icon: Reboot, func: restart},
+    {text: "shutdown", icon: Shutdown, func: shutdown},
+    {text: "hibernate", icon: Hibernate, func: hibernate}
 ]
 
 class Option extends React.Component {
@@ -30,7 +30,7 @@ class Option extends React.Component {
 class Options extends React.Component {
     render() {
         let array = [];
-        options.filter((option) => {return option.bool && this.props.commands[option.text]}).forEach((option, i) => {array[i] = <Option text={option.text} func={option.func} icon={<option.icon/>} color={this.props.color} key={option.text}/>});
+        options.filter((option) => {return this.props.commands[option.text]}).forEach((option, i) => {array[i] = <Option text={option.text} func={option.func} icon={<option.icon/>} color={this.props.color} key={option.text}/>});
         return (<div className="commandbar">{array}</div>);
     }
 }

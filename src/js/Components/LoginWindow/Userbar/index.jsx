@@ -19,7 +19,7 @@ class Userbar extends React.Component {
             <div className={"userbar " + cxs({background: `linear-gradient(${this.props.background.top} 0%, ${this.props.background.bottom} 100%)`})}>
                 <Avatar/>
                 <Username/>
-                <form className="expand">
+                <form className="expand" onSubmit={(e) => {e.preventDefault()}}>
                     <div className="mainbar">
                         <Password/>
                         <Session/>

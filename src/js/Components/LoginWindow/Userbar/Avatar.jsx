@@ -17,6 +17,6 @@ export default connect(
     (state) => {return {
         hidden: !state.settings.behaviour.avatar,
         color: state.settings.style.userbar.avatar.color,
-        source: (!window.__is_debug) ? state.runtime.user.image : getUserImage()
+        source: getUserImage(state.runtime.user)
     };}
 )(Avatar);

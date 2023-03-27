@@ -33,7 +33,7 @@ export function getWallpapers(dir, callback) {
     if (window.__is_debug === true) {
         let defs = ["Wallpaper21.png"]; for (let i = 1; i < 21; i++) {defs.push("Wallpaper" + ((i > 9) ? i : ("0" + i)) + ".jpg");}
         return defs.map((e) => dir + e);
-    } theme_utils.dirlist(dir, true, (r) => {callback(r)});
+    } theme_utils.dirlist(dir, true, callback);
 }
 
 export function getLogosDir() {
@@ -50,7 +50,8 @@ export function getLogos(dir, callback) {
     } theme_utils.dirlist(dir, true, (r) => {callback(r.map((o) => [o.split("/").pop().replace(/\.[^/.]+$/, ""), o]))});
 }
 
-export function getUserImage() {
+export function getUserImage(user) {
     if (window.__is_debug === true) {return "./assets/media/profile.jpg"}
+    //return greeter_config.branding.user_image || user.image;
     return greeter_config.branding.user_image;
 }

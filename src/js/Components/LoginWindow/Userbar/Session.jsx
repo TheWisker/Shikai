@@ -3,6 +3,15 @@ import {connect} from "react-redux";
 import cxs from "cxs";
 
 class Session extends React.Component {
+    constructor(props) {
+        super(props);
+        if (window.__is_debug != true) {this.auth_event = () => {window.lightdm.start_session(this.props.session.name);};}
+    }
+
+    componentDidMount() {if (window.__is_debug != true) {window.lightdm.authentication_complete.connect(this.auth_event);}}
+    
+    componentWillUnmount() {if (window.__is_debug != true) {window.lightdm.authentication_complete.disconnect(this.auth_event);}}
+
     render() {
         let classes = this.props.hidden ? ["session", "hidden"] : ["session"];
         classes.push(cxs({color: this.props.color, borderRadius: this.props.radius, backgroundColor: this.props.background}));
@@ -16,7 +25,8 @@ export default connect(
         hidden: !state.settings.behaviour.session,
         color: state.settings.style.userbar.session.color,
         radius: state.settings.style.userbar.session.radius,
-        background: state.settings.style.userbar.session.background
+        background: state.settings.style.userbar.session.background,
+        session: state.runtime.session
     };},
     (dispatch) => {return {switch: () => {dispatch({type: "Switch_Session"})}}}
 )(Session);

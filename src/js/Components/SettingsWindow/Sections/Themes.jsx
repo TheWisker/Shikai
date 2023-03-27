@@ -21,6 +21,7 @@ class Themes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {new_name: "Theme_" + (props.themes.length + 1)};
+        props.update();
     }
 
     render() {
@@ -45,5 +46,9 @@ class Themes extends React.Component {
 
 export default connect(
     (state) => {return {themes: state.themes};},
-    (dispatch) => {return {add: (name) => {dispatch({type: "Theme_Add", value: name})}, theme_action: (index, action) => {dispatch({type: action, key: index})}}}
+    (dispatch) => {return {
+        add: (name) => {dispatch({type: "Theme_Add", value: name}); dispatch({type: "Themes_Save"});}, 
+        theme_action: (index, action) => {dispatch({type: action, key: index});  dispatch({type: "Themes_Save"});},
+        update: () => {dispatch({type: "Themes_Update"});}
+    }}
 )(Themes);
