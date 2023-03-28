@@ -36,6 +36,7 @@ input[type="checkbox"] {
     @include square(20px);
 
     margin: 0;
+    cursor: pointer;
     appearance: none;
     border-radius: 50%;
     translate: 0 -0.11em;
