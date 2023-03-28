@@ -14,7 +14,7 @@ function launch() {
     if (!window.__is_debug) {window.lightdm = lightdm;}
 
     const store = Store();
-
+    
     let wall_callback = (wallpapers) => {
         document.body.onclick = (e) => {
             if (e.target == e.currentTarget) {

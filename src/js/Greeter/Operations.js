@@ -52,6 +52,5 @@ export function getLogos(dir, callback) {
 
 export function getUserImage(user) {
     if (window.__is_debug === true) {return "./assets/media/profile.jpg"}
-    //return greeter_config.branding.user_image || user.image;
-    return greeter_config.branding.user_image;
+    return user.image || greeter_config.branding.user_image;
 }

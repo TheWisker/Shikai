@@ -1,5 +1,5 @@
 {
-  "name": "yuan",
+  "name": "shikai",
   "version": "1.0.0",
   "description": "Modern lightdm webkit2 theme",
   "keywords": [
@@ -10,14 +10,14 @@
     "webkit",
     "login"
   ],
-  "homepage": "https://github.com/TheWisker/Yuan",
-  "bugs": "https://github.com/TheWisker/Yuan/issues",
+  "homepage": "https://github.com/TheWisker/Shikai",
+  "bugs": "https://github.com/TheWisker/Shikai/issues",
   "license": "GPL-3.0",
   "author": "TheWisker (https://github.com/TheWisker)",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TheWisker/Yuan.git"
+    "url": "git+https://github.com/TheWisker/Shikai.git"
   },
   "scripts": {
     "build": "./scripts/production.sh",

@@ -1,11 +1,8 @@
-function saveItem(key, data) {
-    localStorage.setItem(key, JSON.stringify(data));
-    return data;
-}
+function saveItem(key, data) {localStorage.setItem(key, JSON.stringify(data)); return data;}
 
 function getItem(key) {
     let item = localStorage.getItem(key);
-    if (item != null && item != undefined && item != "null" && item != "undefined") {return JSON.parse(item);}
+    if (item != null && item != undefined && item != "null" && item != "undefined" && item != "") {return JSON.parse(item);}
     return null;
 }
 

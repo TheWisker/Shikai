@@ -14,8 +14,8 @@ export default function Themes(state, action) {
         case "Themes_Save":
             return saveThemes(state.themes);
         case "Themes_Update":
-                let value = getThemes();
-                return (value == null) ? state.themes : value;
+            let value = getThemes();
+            return (value == null) ? state.themes : value;
         default:
             return state.themes;
     }

@@ -1,9 +1,20 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import {connect} from "react-redux";
 
 import {getUserImage} from "../../../Greeter/Operations";
 
 class Avatar extends React.Component {
+    componentDidMount() {
+        let image = ReactDOM.findDOMNode(this).querySelector("div");
+        image.style.width = image.offsetHeight + "px";
+    }
+
+    componentDidUpdate() {
+        let image = ReactDOM.findDOMNode(this).querySelector("div");
+        image.style.width = image.offsetHeight + "px";
+    }
+    
     render() {
         return (
             <div className={`avatarbar${this.props.hidden ? " hidden" : ""}`}>

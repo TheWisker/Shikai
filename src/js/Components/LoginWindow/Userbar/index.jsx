@@ -10,9 +10,7 @@ import Switch from "./Switch";
 import Date from "./Date";
 
 class Userbar extends React.Component {
-    componentDidMount() {
-        document.getElementById("password").focus();
-    }
+    componentDidMount() {document.getElementById("password").focus();}
 
     render() {
         return (
