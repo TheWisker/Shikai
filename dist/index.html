@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Yuan Theme</title>
+        <title>Shikai Theme</title>
         <link rel="icon" type="image/x-icon" href="./assets/media/icon.png">
         <meta name="viewport" content="width=device-width, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta charset="utf-8">
@@ -9,18 +9,18 @@
             window.__is_debug = true;
             if (window.__is_debug) {
                 window.lightdm = {
-                    can_hibernate: true,
-                    can_restart: true,
+                    lock_hint: false,
                     can_shutdown: true,
+                    can_restart: true,
                     can_suspend: true,
+                    can_hibernate: true,
                     select_user_hint: undefined,
                     users: [{username: "Username1", session: "awesome"}, {username: "Username2", session: "openbox"}],
                     sessions: [{name: "awesome"}, {name: "i3"}, {name: "openbox"}],
                     default_session: "awesome",
-                    hostname: "hostname",
-                    lock_hint: false
+                    hostname: "hostname"
                 };
-            }
+            } //Make so that when it is idle the window gets hidden
         </script>
     </head>
     <body>

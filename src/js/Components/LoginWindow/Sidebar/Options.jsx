@@ -18,12 +18,10 @@ const options = [
 
 class Option extends React.Component {
     render() {
-        return (
-            <div className="command button" onClick={this.props.func}>
-                <div className="icon">{this.props.icon}</div>
-                <div className={"text " + cxs({color: this.props.color})}>{this.props.text}</div>
-            </div>
-        );
+        return (<div className="command button" onClick={this.props.func}>
+            <div className="icon">{this.props.icon}</div>
+            <div className={"text " + cxs({color: this.props.color})}>{this.props.text}</div>
+        </div>);
     }
 }
 

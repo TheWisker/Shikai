@@ -3,11 +3,9 @@ import {connect} from "react-redux";
 
 class Logo extends React.Component {
     render() {
-        return (
-            <div className={`logo${this.props.hidden ? " hidden" : ""}`}>
-                <img src={this.props.source}/>
-            </div>
-        );
+        return (<div className={`logo${this.props.hidden ? " hidden" : ""}`}>
+            <img src={this.props.source}/>
+        </div>);
     }
 }
 

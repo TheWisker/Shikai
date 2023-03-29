@@ -14,11 +14,9 @@ export default class Textarea extends React.Component {
     }
 
     render() {
-        return (
-            <div className="inputbar">
-                <div className="text">{this.props.name}</div>
-                <input type="text" value={this.state.value} onChange={this.update} disabled={this.props.disabled}/>
-            </div>
-        );
+        return (<div className="inputbar">
+            <div className="text">{this.props.name}</div>
+            <input type="text" value={this.state.value} onChange={this.update} disabled={this.props.disabled}/>
+        </div>);
     }
 }

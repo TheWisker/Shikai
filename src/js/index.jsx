@@ -9,6 +9,7 @@ import LoginWindow from "./Components/LoginWindow";
 import SettingsWindow from "./Components/SettingsWindow";
 
 import * as Operations from "./Greeter/Operations";
+import Idle from "./Greeter/Idle";
 
 function launch() {
     if (!window.__is_debug) {window.lightdm = lightdm;}
@@ -37,6 +38,8 @@ function launch() {
         changeClassProperty(".SVGBackground", "fill", icons.background);
         changeClassProperty(".SVGPath", "fill", icons.foreground);
     });
+
+    const idle = new Idle((t) => {store.dispatch(t)}, 6 * 1000); //Listens for idle event
 
     createRoot(document.getElementById("loginroot")).render((
         <Provider store={store}>

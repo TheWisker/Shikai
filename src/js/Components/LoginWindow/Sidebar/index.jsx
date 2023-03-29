@@ -9,17 +9,15 @@ import Clock from "./Clock";
 
 class Sidebar extends React.Component {
     render() {
-        return (
-            <div className={"sidebar " + cxs({backgroundColor: this.props.color})}>
-                <Logo/>
-                <Options/>
-                <div className="bottombar">
-                    <Hostname/>
-                    <div className="expand"/>
-                    <Clock/>
-                </div>
+        return (<div className={"sidebar " + cxs({backgroundColor: this.props.color})}>
+            <Logo/>
+            <Options/>
+            <div className="bottombar">
+                <Hostname/>
+                <div className="expand"/>
+                <Clock/>
             </div>
-        )
+        </div>)
     }
 }
 

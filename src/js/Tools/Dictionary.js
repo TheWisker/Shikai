@@ -7,8 +7,7 @@ export function update(object, key, value) {
         if (i == keys.length - 1){iter[k] = value;} else {
             if(k in iter){iter = iter[k];}
         }
-    }
-    return copy;
+    } return copy;
 }
 
 export function query(object, key) {

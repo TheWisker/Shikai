@@ -28,11 +28,9 @@ class _Date extends React.Component {
 }
 
 export default connect(
-    (state) => {
-        return {
-            hidden: !state.settings.behaviour.date.enabled,
-            format: state.settings.behaviour.date.format,
-            color: state.settings.style.main.textcolor
-        };
-    }
+    (state) => {return {
+        hidden: !state.settings.behaviour.date.enabled,
+        format: state.settings.behaviour.date.format,
+        color: state.settings.style.main.textcolor
+    };}
 )(_Date);

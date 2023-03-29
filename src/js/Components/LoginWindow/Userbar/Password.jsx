@@ -17,10 +17,7 @@ class Password extends React.Component {
     
     componentWillUnmount() {if (window.__is_debug != true) {window.lightdm.show_prompt.disconnect(this.auth_event);}}
 
-    update(e) {
-        this.setState({value: e.target.value});
-        e.preventDefault();
-    }
+    update(e) {this.setState({value: e.target.value}); e.preventDefault();}
 
     submit(e) {
         if (e.which == 13) {

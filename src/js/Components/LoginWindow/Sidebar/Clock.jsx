@@ -28,11 +28,9 @@ class Clock extends React.Component {
 }
 
 export default connect(
-    (state) => {
-        return {
-            hidden: !state.settings.behaviour.clock.enabled,
-            format: state.settings.behaviour.clock.format,
-            color: state.settings.style.main.textcolor
-        };
-    }
+    (state) => {return {
+        hidden: !state.settings.behaviour.clock.enabled,
+        format: state.settings.behaviour.clock.format,
+        color: state.settings.style.main.textcolor
+    };}
 )(Clock);

@@ -15,12 +15,10 @@ class Settings extends React.Component {
     toggle() {this.setState({active: !this.state.active}); this.props.save();}
 
     render() {
-        return (
-            <React.Fragment>
-                <Evoker callback={this.toggle}/>
-                <Window callback={this.toggle} active={this.state.active}/>
-            </React.Fragment>
-        );
+        return (<React.Fragment>
+            <Evoker callback={this.toggle}/>
+            <Window callback={this.toggle} active={this.state.active}/>
+        </React.Fragment>);
     }
 }
 

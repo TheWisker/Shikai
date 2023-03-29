@@ -8,6 +8,14 @@ export default function Runtime(state, action) {
             if (window.lightdm.sessions.indexOf(state.session) == window.lightdm.sessions.length - 1 || window.lightdm.sessions.indexOf(state.session) == -1) {
                 return {...state, session: window.lightdm.sessions[0]};
             } return {...state, session: window.lightdm.sessions[window.lightdm.sessions.indexOf(state.session) + 1]};
+        case "Start_Event":
+            var events = {...state.events};
+            events[action.key] = true;
+            return {...state, events: events}
+        case "Stop_Event":
+            var events = {...state.events};
+            events[action.key] = false;
+            return {...state, events: events}
         default:
             return state;
     };

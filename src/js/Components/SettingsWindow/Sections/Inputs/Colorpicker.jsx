@@ -27,14 +27,12 @@ export default class Colorpicker extends React.Component {
     render() {
         let picker = false;
         if (this.state.active) {picker = <ChromePicker color={this.state.color} onChange={(c) => this.update(c)}/>;}
-        return (
-            <div className="colorbar">
-                <div className="text">{this.props.name}</div>
-                <div className="button">
-                    <div className="color" onClick={this.toggle} style={{backgroundColor: this.state.color}}/>
-                    {picker}
-                </div>
+        return (<div className="colorbar">
+            <div className="text">{this.props.name}</div>
+            <div className="button">
+                <div className="color" onClick={this.toggle} style={{backgroundColor: this.state.color}}/>
+                {picker}
             </div>
-        );
+        </div>);
     }
 }

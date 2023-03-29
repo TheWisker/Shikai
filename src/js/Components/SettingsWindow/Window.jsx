@@ -24,11 +24,9 @@ export default class Window extends React.Component {
             case "style": tab = <Style/>; break;
             default: tab = <Behaviour/>; break;
         }
-        return (
-            <div className={classes.join(" ")}>
-                <Sectionbar action={(a) => this.update(a)} callback={this.props.callback}/>
-                <div className="displaybar">{tab}</div>
-            </div>
-        );
+        return (<div className={classes.join(" ")}>
+            <Sectionbar action={(a) => this.update(a)} callback={this.props.callback}/>
+            <div className="displaybar">{tab}</div>
+        </div>);
     }
 }

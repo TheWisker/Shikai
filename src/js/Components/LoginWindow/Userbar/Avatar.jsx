@@ -16,11 +16,9 @@ class Avatar extends React.Component {
     }
     
     render() {
-        return (
-            <div className={`avatarbar${this.props.hidden ? " hidden" : ""}`}>
-                <div style={{backgroundImage: `url(${this.props.source})`, backgroundColor: this.props.color, borderColor: this.props.color}}/>
-            </div>
-        );
+        return (<div className={`avatarbar${this.props.hidden ? " hidden" : ""}`}>
+            <div style={{backgroundImage: `url(${this.props.source})`, backgroundColor: this.props.color, borderColor: this.props.color}}/>
+        </div>);
     }
 }
 
