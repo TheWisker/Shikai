@@ -36,6 +36,8 @@ The theme features:
 
 ![Themes settings screenshot](./assets/Screenshot_Four.png)
 
+![Second main screenshot](./assets/Screenshot_Five.png)
+
 <h2 align="center">Dependencies</h2>
 
 The theme depends on [web-greeter](https://github.com/JezerM/web-greeter) or [nody-greeter](https://github.com/JezerM/nody-greeter) and their respective dependencies, plus lightdm.

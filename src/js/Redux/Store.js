@@ -1,4 +1,4 @@
-import { legacy_createStore as createStore } from "redux";
+import {legacy_createStore as createStore} from "redux";
 import * as Operations from "../Greeter/Operations";
 import Reducer from "./Reducer";
 
@@ -97,6 +97,10 @@ const default_state = {
                         "enabled": true,
                         "format": "%B %D, %Y"
                     },
+                    "idle": {
+                        "enabled": true,
+                        "timeout": 60
+                    },
                     "commands": {
                         "shutdown": true,
                         "hibernate": true,
@@ -159,6 +163,10 @@ const default_state = {
                     "date": {
                         "enabled": true,
                         "format": "%B %D, %Y"
+                    },
+                    "idle": {
+                        "enabled": true,
+                        "timeout": 60
                     },
                     "commands": {
                         "shutdown": true,
@@ -223,6 +231,10 @@ const default_state = {
                         "enabled": true,
                         "format": "%B %D, %Y"
                     },
+                    "idle": {
+                        "enabled": true,
+                        "timeout": 60
+                    },
                     "commands": {
                         "shutdown": true,
                         "hibernate": true,
@@ -285,6 +297,10 @@ const default_state = {
                     "date": {
                         "enabled": true,
                         "format": "%B %D, %Y"
+                    },
+                    "idle": {
+                        "enabled": true,
+                        "timeout": 60
                     },
                     "commands": {
                         "shutdown": true,
@@ -349,6 +365,10 @@ const default_state = {
                         "enabled": true,
                         "format": "%B %D, %Y"
                     },
+                    "idle": {
+                        "enabled": true,
+                        "timeout": 60
+                    },
                     "commands": {
                         "shutdown": true,
                         "hibernate": true,
@@ -389,6 +409,73 @@ const default_state = {
                             },
                             "color": "rgba(81,0,248,1)",
                             "background": "rgba(145,0,255,0.2)"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "NotPurple",
+            "settings": {
+                "behaviour": {
+                    "user": true,
+                    "logo": true,
+                    "avatar": true,
+                    "evoker": true,
+                    "session": true,
+                    "hostname": true,
+                    "clock": {
+                        "enabled": true,
+                        "format": "%H:%K:%S"
+                    },
+                    "date": {
+                        "enabled": true,
+                        "format": "%B %D, %Y"
+                    },
+                    "idle": {
+                        "enabled": true,
+                        "timeout": 60
+                    },
+                    "commands": {
+                        "shutdown": true,
+                        "hibernate": true,
+                        "reboot": true,
+                        "sleep": true
+                    }
+                },
+                "style": {
+                    "main": {
+                        "textcolor": "rgba(178,253,255,0.85)",
+                        "icons": {
+                            "background": "rgba(145,0,255,0.6)",
+                            "foreground": "rgba(255,255,255,0.75)"
+                        }
+                    },
+                    "sidebar": {
+                        "background": "rgba(0,0,0,0.6)",
+                        "logo": "assets/media/logos/archlinux.png"
+                    },
+                    "userbar": {
+                        "background": {
+                            "top": "rgba(0,0,255,0.75)",
+                            "bottom": "rgba(158,0,255,0.75)"
+                        },
+                        "avatar": {
+                            "color": "rgba(0,18,110,0.8)"
+                        },
+                        "session": {
+                            "color": "rgba(195,78,254,1)",
+                            "background": "rgba(0,0,0,0.75)",
+                            "radius": "18px"
+                        },
+                        "password": {
+                            "border": {
+                                "top": "5px solid rgba(0, 0, 0, 0.3)",
+                                "left": "5px solid rgba(0, 0, 0, 0.3)",
+                                "radius": "18px"
+                            },
+                            "color": "rgba(195,78,254,1)",
+                            "background": "rgba(0,5,159,0.2)"
                         }
                     }
                 }
