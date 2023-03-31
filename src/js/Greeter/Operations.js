@@ -45,7 +45,10 @@ export function getLogos(dir, callback) {
     if (window.__is_debug === true) {
         return [
             ["archlinux", "./assets/media/logos/archlinux.png"],
-            ["ubuntu", "./assets/media/logos/ubuntu.png"]
+            ["ubuntu", "./assets/media/logos/ubuntu.png"],
+            ["antergos", "./assets/media/logos/antergos.png"],
+            ["debian", "./assets/media/logos/debian.png"],
+            ["tux", "./assets/media/logos/tux.png"]
         ];
     } theme_utils.dirlist(dir, true, (r) => {callback(r.map((o) => [o.split("/").pop().replace(/\.[^/.]+$/, ""), o]))});
 }

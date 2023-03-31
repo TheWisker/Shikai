@@ -1,3 +1,3 @@
-rm -fr ./out/*
+rm -fr ./dist/*
 npx webpack build --node-env production --progress --color
 echo Finished PROD!

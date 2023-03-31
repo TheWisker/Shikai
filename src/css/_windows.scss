@@ -6,7 +6,7 @@ $settings_width: 500px;
 $login_width: 850px;
 $login_height: 500px;
 
-#notificationroot {
+.notificationwindow {
     @include general.flex-center(column);
     position: fixed;
     pointer-events: none;
@@ -45,6 +45,7 @@ $login_height: 500px;
     border-radius: 16px;
     width: $login_width;
     height: $login_height;
+    transition: transform cubic-bezier(.47,1.64,.41,.8) 700ms, translate cubic-bezier(.47,1.64,.41,.8) 700ms, scale cubic-bezier(.47,1.64,.41,.8) 1000ms, opacity cubic-bezier(.47,1.64,.41,.8) 1500ms;
     margin: -#{math.div($login_height, 2)} 0 0 -#{math.div($login_width, 2)};
 }
 

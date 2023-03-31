@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import cxs from "cxs";
 
-import {types, notify} from "../../../Greeter/Notifications"
+import {types, notify} from "../../../Greeter/Notifications";
 
 class Password extends React.Component {
     constructor(props) {
@@ -22,15 +22,17 @@ class Password extends React.Component {
     submit(e) {
         if (e.which == 13) {
             if (window.__is_debug === true) {
-                if (this.state.value == "password") {notify("Logged in as " + this.props.user.username + "!", types.Success);} else {
-                    notify("Wrong password!", types.Error);
+                if (this.state.value == "password") {
+                    notify("Logged in as " + this.props.user.username + "!", types.Success); this.props.success();
+                } else {
+                    notify("Wrong password!", types.Error); this.props.failure();
                 }
             } else {window.lightdm.authenticate(this.props.user.username);}
         }; e.preventDefault();
     }
     
     render() {
-        return (<input id="password" value={this.state.value} onChange={this.update} onKeyUp={this.submit} className={
+        return (<input id="password" disabled={this.props.inactive} value={this.state.value} onChange={this.update} onKeyUp={this.submit} className={
             cxs({
                 color: this.props.color,
                 borderTop: this.props.border.top,
@@ -45,16 +47,19 @@ class Password extends React.Component {
 }
 
 export default connect(
-    (state) => {
-        return {
-            color: state.settings.style.userbar.password.color,
-            border: {
-                top: state.settings.style.userbar.password.border.top,
-                left: state.settings.style.userbar.password.border.left,
-                radius: state.settings.style.userbar.password.border.radius
-            },
-            background: state.settings.style.userbar.password.background,
-            user: state.runtime.user
-        };
-    }
+    (state) => {return {
+        color: state.settings.style.userbar.password.color,
+        border: {
+            top: state.settings.style.userbar.password.border.top,
+            left: state.settings.style.userbar.password.border.left,
+            radius: state.settings.style.userbar.password.border.radius
+        },
+        background: state.settings.style.userbar.password.background,
+        inactive: state.runtime.events.inactivity,
+        user: state.runtime.user
+    };},
+    (dispatch) => {return {
+        success: () => {dispatch({type: "Start_Event", key: "loginSuccess"});},
+        failure: () => {dispatch({type: "Start_Event", key: "loginFailure"});}
+    };}
 )(Password);

@@ -51,6 +51,14 @@ module.exports = {
                                 outputStyle: devMode ? "expanded" : "compressed"
                             }
                         }
+                    }, 
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: ["autoprefixer"]
+                            }
+                        }
                     }
                 ]
             },
@@ -68,9 +76,13 @@ module.exports = {
             {
                 test: /\.svg$/,
                 use: [{loader: "svg-react-loader"}]
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: "asset/resource",
+                generator: {filename: "assets/fonts/[name].[ext]"}
             }
-        ],
-        noParse: /\.(woff|woff2|eot|ttf|otf)$/
+        ]//noParse: /\.(woff|woff2|eot|ttf|otf)$/
     },
     resolve: {
         extensions: [".js", ".min.js", ".jsx"],

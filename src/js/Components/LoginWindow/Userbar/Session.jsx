@@ -10,7 +10,8 @@ class Session extends React.Component {
         if (window.__is_debug != true) {this.auth_event = () => {
             if (window.lightdm.is_authenticated) {
                 window.lightdm.start_session(this.props.session.name);
-            } else {notify("Wrong password!", types.Error);}
+                this.props.success();
+            } else {notify("Wrong password!", types.Error); this.props.failure();}
         };}
     }
 
@@ -34,5 +35,9 @@ export default connect(
         background: state.settings.style.userbar.session.background,
         session: state.runtime.session
     };},
-    (dispatch) => {return {switch: () => {dispatch({type: "Switch_Session"})}}}
+    (dispatch) => {return {
+        switch: () => {dispatch({type: "Switch_Session"})},
+        success: () => {dispatch({type: "Start_Event", key: "loginSuccess"});},
+        failure: () => {dispatch({type: "Start_Event", key: "loginFailure"});}
+    }}
 )(Session);

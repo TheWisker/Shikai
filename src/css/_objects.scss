@@ -52,6 +52,7 @@
         @include general.box;
 
         height: 70%;
+        max-height: 180px;
         object-fit: scale-down;
         margin: 0 auto auto auto;
     }
