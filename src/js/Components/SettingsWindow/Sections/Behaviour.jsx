@@ -33,6 +33,8 @@ class Behaviour extends React.Component {
             <div className="section">
                 <div className="separator"/>
                 <div className="text title">Misc</div>
+                <Inputs.Checkbox name="Hide on idle" action={() => this.props.toggle("idle.enabled")} value={this.props.behaviour.idle.enabled}/>
+                <Inputs.Textarea name="Idle timeout value:" action={(v) => this.props.set("idle.timeout", v)} value={this.props.behaviour.idle.timeout}/>
                 <Inputs.Checkbox name="Settings button invisible" action={() => this.props.toggle("evoker")} value={this.props.behaviour.evoker}/>
             </div>
         </React.Fragment>);

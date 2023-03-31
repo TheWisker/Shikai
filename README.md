@@ -1,15 +1,68 @@
-# 🚀 Welcome to your new awesome project!
+<h1 align="center">Shikai</h1>
+<div align="center">
+    <img width="400" src="./assets/logo.png">
+</div>
+<p align="center">Modern lightdm webkit2 theme</p>
 
-This project has been created using **webpack-cli**, you can now run
+<h2 align="center">Introdution</h2>
 
-```
-npm run build
-```
+This is a sleek lightdm webkit2 theme that focuses on it's looks with performance in mind.
 
-or
+<h2 align="center">Details</h2>
 
-```
-yarn build
-```
+The theme features:
 
-to bundle your application
+- Custom time and date formats!
+- Graphical on-theme behaviour configuration!
+- Graphical on-theme styles configuration!
+- Saving configurations as sub-themes!
+- Sleek animations and on-hover effects!
+- Background shuffle on background click!
+- Idle login window auto-hiding at 60s of inactivity!
+- Custom backgrounds configured via web-greeter.yml!
+- Custom user images configured via a .face image on user home folders!
+
+<h2 align="center">Live Demo</h2>
+
+<p align="center">https://thewisker.github.io/Shikai</p>
+
+<h2 align="center">Screenshots</h2>
+
+![Main theme screenshot](./assets/Screenshot_One.png)
+
+![Behaviour settings screenshot](./assets/Screenshot_Two.png)
+
+![Style settings screenshot](./assets/Screenshot_Three.png)
+
+![Themes settings screenshot](./assets/Screenshot_Four.png)
+
+<h2 align="center">Dependencies</h2>
+
+The theme depends on [web-greeter](https://github.com/JezerM/web-greeter) or [nody-greeter](https://github.com/JezerM/nody-greeter) and their respective dependencies plus lightdm.
+
+<h2 align="center">Installation</h2>
+
+Once all dependencies are installed you just need to download the [this](https://github.com/TheWisker/Shikai) github repo
+and copy the `dist` folder to `/usr/share/web-greeter/themes/` renaming it from `dist` to `shikai`. Then you need to
+change the line starting with `greeter-session=` in `/etc/lightdm/lightdm.conf` to `greeter-session=web-greeter` or 
+`greeter-session=nody-greeter` depending on which you have installed. You should edit `/etc/lightdm/web-greeter.yml` 
+to your liking focusing on the following lines:
+
+- `theme: shikai`
+- `background_images_dir: /usr/share/web-greeter/themes/shikai/assets/media/wallpapers/`
+- `logo_image: /usr/share/web-greeter/themes/shikai/assets/media/logos/`
+
+Then, to set up a user profile image, copy the desired image to the user's home directory
+renaming it to `.face`.
+
+<h2 align="center">Configuration</h2>
+
+The configuration becomes avaiable by hovering over the top-left corner of the window.
+The behaviour and style settings are saved locally **only** when the configuration panel gets closed.
+The themes configuration gets saved on theme creation, deletion and activation.
+
+<h2 align="center">Author</h2>
+<div align="center">
+    <img width="200" height="200" src="./assets/profile.png"></img>
+</div>
+<h4 align="center">TheWisker</h4>

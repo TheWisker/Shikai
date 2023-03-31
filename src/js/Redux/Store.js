@@ -30,6 +30,10 @@ const default_state = {
                 enabled: true,
                 format: "%B %D, %Y"
             },
+            idle: {
+                enabled: true,
+                timeout: 60
+            },
             commands: {
                 shutdown: true,
                 hibernate: true,

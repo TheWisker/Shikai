@@ -41,6 +41,13 @@ function launch() {
         Operations.getWallpapers(Operations.getWallpaperDir(), wall_callback);
     }; Operations.getLogos(Operations.getLogosDir(), (dt) => store.dispatch({type: "Set_Logos", payload: dt}));
 
+    const idle = new Idle((t) => {store.dispatch(t)}); //Listens for idle event
+
+    idle.changeTimeout(store.getState().settings.behaviour.idle.timeout);
+    if (store.getState().settings.behaviour.idle.enabled) {idle.start();}
+
+    let idle_enabled = store.getState().settings.behaviour.idle.enabled;
+    let idle_timeout;
     let last_event = true;
     let failure_timeout;
     store.subscribe(() => {
@@ -82,9 +89,17 @@ function launch() {
                 }, 500);
             }
         }
-    });
 
-    new Idle((t) => {store.dispatch(t)}, 60 * 1000); //Listens for idle event
+        if (idle_enabled != store.getState().settings.behaviour.idle.enabled) {
+            idle_enabled = store.getState().settings.behaviour.idle.enabled;
+            if (idle_enabled) {idle.start();} else {idle.stop();}
+        }
+
+        if (idle_timeout != store.getState().settings.behaviour.idle.timeout) {
+            idle_timeout = store.getState().settings.behaviour.idle.timeout;
+            idle.changeTimeout(idle_timeout);
+        }
+    });
 
     createRoot(document.getElementById("loginroot")).render((
         <Provider store={store}>
