@@ -44,8 +44,9 @@ The theme depends on [web-greeter](https://github.com/JezerM/web-greeter) or [no
 
 <h2 align="center">Installation</h2>
 
-Once all dependencies are installed, you just need to download the [this](https://github.com/TheWisker/Shikai) github repo
-and copy the `dist` folder to `/usr/share/web-greeter/themes/`, renaming it from `dist` to `shikai`. Then you need to
+Once all dependencies are installed, you just need to download the [this](https://github.com/TheWisker/Shikai) github repo.
+Go to the `dist` folder and open the `index.html` file. Then find `window.__is_debug = true;`and change it to `window.__is_debug = false;`
+Then copy the `dist` folder to `/usr/share/web-greeter/themes/`, renaming it from `dist` to `shikai`. Then you need to
 change the line starting with `greeter-session=` in `/etc/lightdm/lightdm.conf` to `greeter-session=web-greeter` or 
 `greeter-session=nody-greeter`, depending on which you have installed. You should edit `/etc/lightdm/web-greeter.yml` 
 to your liking focusing on the following lines:
