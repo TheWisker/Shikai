@@ -4,9 +4,9 @@
 </div>
 <p align="center">Modern lightdm webkit2 theme</p>
 
-<h2 align="center">Introdution</h2>
+<h2 align="center">Description</h2>
 
-This is a sleek lightdm webkit2 theme that focuses on it's looks with performance in mind.
+<p align="center">This is a sleek lightdm webkit2 theme that focuses on it's looks with performance in mind.</p>
 
 <h2 align="center">Details</h2>
 
@@ -38,14 +38,14 @@ The theme features:
 
 <h2 align="center">Dependencies</h2>
 
-The theme depends on [web-greeter](https://github.com/JezerM/web-greeter) or [nody-greeter](https://github.com/JezerM/nody-greeter) and their respective dependencies plus lightdm.
+The theme depends on [web-greeter](https://github.com/JezerM/web-greeter) or [nody-greeter](https://github.com/JezerM/nody-greeter) and their respective dependencies, plus lightdm.
 
 <h2 align="center">Installation</h2>
 
-Once all dependencies are installed you just need to download the [this](https://github.com/TheWisker/Shikai) github repo
-and copy the `dist` folder to `/usr/share/web-greeter/themes/` renaming it from `dist` to `shikai`. Then you need to
+Once all dependencies are installed, you just need to download the [this](https://github.com/TheWisker/Shikai) github repo
+and copy the `dist` folder to `/usr/share/web-greeter/themes/`, renaming it from `dist` to `shikai`. Then you need to
 change the line starting with `greeter-session=` in `/etc/lightdm/lightdm.conf` to `greeter-session=web-greeter` or 
-`greeter-session=nody-greeter` depending on which you have installed. You should edit `/etc/lightdm/web-greeter.yml` 
+`greeter-session=nody-greeter`, depending on which you have installed. You should edit `/etc/lightdm/web-greeter.yml` 
 to your liking focusing on the following lines:
 
 - `theme: shikai`
