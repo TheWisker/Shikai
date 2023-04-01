@@ -10,19 +10,30 @@ const CopyPlugin = require("copy-webpack-plugin");
 const devMode = process.env.NODE_ENV != "production";
 
 module.exports = {
-    entry: path.resolve("./src/js/index.jsx"),
+    entry: {
+        index: path.resolve("./src/js/index.jsx"),
+        monitor: path.resolve("./src/js/monitor.jsx")
+    },
     output: {
-        filename: "index.js",
+        filename: "[name].js",
         path: path.resolve("./dist")
     },
     mode: devMode ? "development" : "production",
     plugins: [
         new HtmlPlugin({
+            filename: "index.html",
             template: "src/index.html",
+            chunks: ["index"],
+            inject: "body"
+        }),
+        new HtmlPlugin({
+            filename: "monitor.html",
+            template: "src/index.html",
+            chunks: ["monitor"],
             inject: "body"
         }),
         new CssExtractPlugin({
-            filename: "index.css"
+            filename: "[name].css"
         }),
         new CopyPlugin({
             patterns: [{
@@ -81,6 +92,11 @@ module.exports = {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: "asset/resource",
                 generator: {filename: "assets/fonts/[name].[ext]"}
+            },
+            {
+                test: /\.(yml)$/i,
+                type: "asset/resource",
+                generator: {filename: "[name][ext]"}
             }
         ]//noParse: /\.(woff|woff2|eot|ttf|otf)$/
     },

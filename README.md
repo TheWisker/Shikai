@@ -12,6 +12,7 @@
 
 The theme features:
 
+- Multi-monitor support!
 - Custom time and date formats!
 - Graphical on-theme behaviour configuration!
 - Graphical on-theme styles configuration!

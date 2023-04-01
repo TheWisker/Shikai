@@ -1,3 +1,4 @@
+import "../assets/index.yml";
 import "../css/style.scss";
 
 import React from "react";
