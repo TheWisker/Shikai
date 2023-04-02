@@ -1,13 +1,13 @@
 export default function Runtime(state, action) {
     switch (action.type) {
         case "Switch_User":
-            if (window.lightdm.users.indexOf(state.user) == window.lightdm.users.length - 1 || window.lightdm.users.indexOf(state.user) == -1) {
-                return {...state, user: window.lightdm.users[0]};
-            } return {...state, user: window.lightdm.users[window.lightdm.users.indexOf(state.user) + 1]};
+            if (lightdm.users.indexOf(state.user) == lightdm.users.length - 1 || lightdm.users.indexOf(state.user) == -1) {
+                return {...state, user: lightdm.users[0]};
+            } return {...state, user: lightdm.users[lightdm.users.indexOf(state.user) + 1]};
         case "Switch_Session":
-            if (window.lightdm.sessions.indexOf(state.session) == window.lightdm.sessions.length - 1 || window.lightdm.sessions.indexOf(state.session) == -1) {
-                return {...state, session: window.lightdm.sessions[0]};
-            } return {...state, session: window.lightdm.sessions[window.lightdm.sessions.indexOf(state.session) + 1]};
+            if (lightdm.sessions.indexOf(state.session) == lightdm.sessions.length - 1 || lightdm.sessions.indexOf(state.session) == -1) {
+                return {...state, session: lightdm.sessions[0]};
+            } return {...state, session: lightdm.sessions[lightdm.sessions.indexOf(state.session) + 1]};
         case "Start_Event":
             var events = {...state.events};
             events[action.key] = true;

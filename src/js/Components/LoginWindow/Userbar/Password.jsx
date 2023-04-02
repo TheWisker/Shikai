@@ -10,12 +10,12 @@ class Password extends React.Component {
         this.state = {value: ""};
         this.update = this.update.bind(this);
         this.submit = this.submit.bind(this);
-        if (window.__is_debug != true) {this.auth_event = () => {window.lightdm.respond(this.state.value);};}
+        if (window.__is_debug != true) {this.auth_event = () => {lightdm.respond(this.state.value);};}
     }
 
-    componentDidMount() {if (window.__is_debug != true) {window.lightdm.show_prompt.connect(this.auth_event);}}
+    componentDidMount() {if (window.__is_debug != true) {lightdm.show_prompt.connect(this.auth_event);}}
     
-    componentWillUnmount() {if (window.__is_debug != true) {window.lightdm.show_prompt.disconnect(this.auth_event);}}
+    componentWillUnmount() {if (window.__is_debug != true) {lightdm.show_prompt.disconnect(this.auth_event);}}
 
     update(e) {this.setState({value: e.target.value}); e.preventDefault();}
 
@@ -27,12 +27,12 @@ class Password extends React.Component {
                 } else {
                     notify("Wrong password!", types.Error); this.props.failure();
                 }
-            } else {window.lightdm.authenticate(this.props.user.username);}
+            } else {lightdm.authenticate(this.props.user.username);}
         }; e.preventDefault();
     }
     
     render() {
-        return (<input id="password" disabled={this.props.inactive} value={this.state.value} onChange={this.update} onKeyUp={this.submit} className={
+        return (<input id="password" disabled={this.props.inactive} value={this.state.value} type="password" onChange={this.update} onKeyUp={this.submit} className={
             cxs({
                 color: this.props.color,
                 borderTop: this.props.border.top,

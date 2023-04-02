@@ -484,4 +484,4 @@ const default_state = {
     ]
 };
 
-export default () => { return createStore(Reducer, default_state); }
+export default () => {return createStore(Reducer(default_state), default_state);}

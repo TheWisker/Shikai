@@ -3,8 +3,6 @@ import "../css/monitor.scss";
 import * as Operations from "./Greeter/Operations";
 
 function launch() {
-    if (!window.__is_debug) {window.lightdm = lightdm;}
-
     let wall_callback = (wallpapers) => {
         document.body.onclick = (e) => {
             if (e.target == e.currentTarget) {

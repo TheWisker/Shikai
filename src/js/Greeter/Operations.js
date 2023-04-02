@@ -1,28 +1,28 @@
 export function getInitialUser() {
-    if (window.lightdm.lock_hint) {
-        let user = window.lightdm.users.find((user) => user.logged_in);
+    if (lightdm.lock_hint) {
+        let user = lightdm.users.find((user) => user.logged_in);
         if (user != undefined) {return user;}
     }
-    if (window.lightdm.select_user_hint !== undefined && window.lightdm.select_user_hint !== null) {
-        let user = window.lightdm.users.find((user) => user.name === window.lightdm.select_user_hint);    
+    if (lightdm.select_user_hint != undefined && lightdm.select_user_hint != null) {
+        let user = lightdm.users.find((user) => user.name == lightdm.select_user_hint);    
         if (user != undefined) {return user;}
-    } return window.lightdm.users[0];
+    } return lightdm.users[0];
 }
 
 export function getInitialSession() {
     return (
         findSession(getInitialUser().session) ||
-        findSession(window.lightdm.default_session) ||
-        window.lightdm.sessions[0]
+        findSession(lightdm.default_session) ||
+        lightdm.sessions[0]
     );
 }
 
 export function findSession(name) {
-    if (name === undefined || name === null) {return false;}
-    return window.lightdm.sessions.find((session) => (session.name.toLowerCase() === name.toLowerCase()) || (session.key.toLowerCase() === name.toLowerCase()));
+    if (name == undefined || name == null) {return false;}
+    return lightdm.sessions.find((session) => (session.name.toLowerCase() == name.toLowerCase()) || (session.key.toLowerCase() === name.toLowerCase()));
 }
 
-export function getHostname() {return window.lightdm.hostname;}
+export function getHostname() {return lightdm.hostname;}
 
 export function getWallpaperDir() {
     if (window.__is_debug === true) {return "./assets/media/wallpapers/";}
