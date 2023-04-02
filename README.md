@@ -50,8 +50,9 @@ Once all dependencies are installed, you just need to download the [this](https:
 <h3>Installer</h2>
 
 To install using the installer just execute the following bashs file under ./scripts from the repo's root directory.
-`./scripts/w_install.sh` To install using web-greeter
-`./scripts/n_install.sh` To install using nody-greeter
+
+- `./scripts/w_install.sh` To install using web-greeter
+- `./scripts/n_install.sh` To install using nody-greeter
 
 Then, to set up a user profile image, copy the desired image to the user's home directory
 renaming it to `.face`.
