@@ -11,7 +11,7 @@ class Session extends React.Component {
             this.auth_event = () => {
                 if (lightdm.is_authenticated) {
                     this.props.success();
-                    lightdm.start_session(this.props.session.name);
+                    lightdm.start_session(this.props.session.key);
                 } else {notify("Wrong password!", types.Error); this.props.failure();}
             };
         }
