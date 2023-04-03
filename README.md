@@ -47,12 +47,28 @@ The theme depends on [web-greeter](https://github.com/JezerM/web-greeter) or [no
 
 Once all dependencies are installed, you just need to download the [this](https://github.com/TheWisker/Shikai) github repo.
 
-<h3>Installer</h2>
+<h3>Script</h2>
 
-To install using the installer just execute the following bashs file under ./scripts from the repo's root directory.
+To install using the script just execute the following bash files under ./scripts from the repo's root directory.
 
 - `./scripts/w_install.sh` To install using web-greeter
 - `./scripts/n_install.sh` To install using nody-greeter
+
+Then, to set up a user profile image, copy the desired image to the user's home directory
+renaming it to `.face`.
+
+<h3>Arch Linux</h2>
+
+To install using the aur with a custom aur helper run:
+
+- `yay -S web-greeter-theme-shikai` Using `yay` aur helper for example
+
+Then you should edit `/etc/lightdm/web-greeter.yml` 
+to your liking focusing on the following lines:
+
+- `theme: shikai`
+- `background_images_dir: /usr/share/web-greeter/themes/shikai/assets/media/wallpapers/`
+- `logo_image: /usr/share/web-greeter/themes/shikai/assets/media/logos/`
 
 Then, to set up a user profile image, copy the desired image to the user's home directory
 renaming it to `.face`.
