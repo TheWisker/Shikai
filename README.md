@@ -25,6 +25,7 @@ The theme features:
 
 <h2 align="center">Live Demo</h2>
 
+- Demo password: `password`
 <p align="center">https://thewisker.github.io/Shikai</p>
 
 <h2 align="center">Screenshots</h2>
@@ -93,6 +94,20 @@ renaming it to `.face`.
 The configuration becomes avaiable by hovering over the top-left corner of the window.
 The behaviour and style settings are saved locally **only** when the configuration panel gets closed.
 The themes configuration gets saved on theme creation, deletion and activation.
+
+<h2 align="center">Discussions</h2>
+
+Feel free to give any ideas for future improvements [here](https://github.com/TheWisker/Shikai/discussions/categories/ideas),
+ask any questions you have [here](https://github.com/TheWisker/Shikai/discussions/categories/q-a) and
+post screenshots of your theme designs [here](https://github.com/TheWisker/Shikai/discussions/2#discussion-5044383).
+
+<h2 align="center">Notes</h2>
+
+- Change wallpapers by adding or removing from `/usr/share/web-greeter/themes/shikai/assets/media/wallpapers/` path!
+- Undefined behaviour for adding non-browser-compliant images and non-image files to the wallpapers directory!
+- Missing linux distro logo? Submit a [pull request](https://github.com/TheWisker/Shikai/pulls)!
+- Missing language? Submit a [pull request](https://github.com/TheWisker/Shikai/pulls)!
+- Have a really cool wallpaper to add to the live demo? Submit a [pull request](https://github.com/TheWisker/Shikai/pulls)!
 
 <h2 align="center">Author</h2>
 <div align="center">

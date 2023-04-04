@@ -84,6 +84,25 @@
 
             .button {margin: 0 0 0 20px;}
         }
+
+        .scroll {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            padding-right: 15px;
+        }
+    }
+
+    .bottom-button {
+        color: #A0A0A0;
+        border: 2px solid #A0A0A0;
+        margin: 0 0 12px 20px;
+        border-radius: 10px;
+        text-align: center;
+        padding: 6px;
+        cursor: pointer;
+
+        &:hover {background-color: rgba(255, 255, 255, 0.2);}
+        &:active {background-color: rgba(255, 255, 255, 0.3);}
     }
 }
 

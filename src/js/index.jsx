@@ -81,9 +81,7 @@ function launch() {
                 loginroot.style.transform = "scale(0.4)";
                 loginroot.style.opacity = "0";
                 if (window.__is_debug) {setTimeout(() => {location.reload();}, 1500);}
-            }
-    
-            if (store.getState().runtime.events.loginFailure) {
+            } else if (store.getState().runtime.events.loginFailure) {
                 loginroot.style.transform = "scale(0.8)";
                 clearInterval(failure_timeout);
                 failure_timeout = setTimeout(() => {

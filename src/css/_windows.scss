@@ -23,6 +23,7 @@ $login_height: 500px;
     bottom: 0;
     z-index: 2;
     height: 100%;
+    min-height: 0;
     position: absolute;
     transition: left 400ms;
     width: $settings_width;

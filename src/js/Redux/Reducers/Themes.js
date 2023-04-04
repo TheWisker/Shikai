@@ -3,6 +3,7 @@ import {saveThemes, getThemes} from "../../Greeter/Storage";
 
 export default function Themes(state, action) {
     switch (action.type) {
+        case "Theme_Purge": return [];
         case "Theme_Add":
             var themes = Copy(state.themes);
             themes.push({name: action.value, settings: Copy(state.settings)});

@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 
-import {types, notify} from "../../../Greeter/Notifications"
+import {types, notify} from "../../../Greeter/Notifications";
 import * as Inputs from "./Inputs";
 
 class Theme extends React.Component {
@@ -31,11 +31,13 @@ class Themes extends React.Component {
                 <Inputs.Textarea name="Name:" value={this.state.new_name} action={(name) => {this.setState({new_name: name});}}/>
                 <div className="text button" onClick={() => {notify("Theme " + this.state.new_name + " added!", types.Success); this.props.add(this.state.new_name)}}>Save</div>
             </div>
-            <div className="section">
+            <div className="section" style={{minHeight: "0"}}>
                 <div className="separator"/>
                 <div className="text title">Saved</div>
-                {array}
+                <div className="scroll">{array}</div>
             </div>
+            <div style={{minHeight: "20px", flexGrow: 1, flexShrink: 1}}></div>
+            <Inputs.DoubleButton text="Delete Themes" pressed_text="This cannot be undone!" action={() => {localStorage.removeItem("Themes"); this.props.purge(); notify("Themes deleted!", types.Success);}} delay={2000}/>
         </React.Fragment>);
     }
 }
@@ -45,6 +47,7 @@ export default connect(
     (dispatch) => {return {
         add: (name) => {dispatch({type: "Theme_Add", value: name}); dispatch({type: "Themes_Save"});}, 
         theme_action: (index, action) => {dispatch({type: action, key: index});  dispatch({type: "Themes_Save"});},
+        purge: () => {dispatch({type: "Theme_Purge"});},
         update: () => {dispatch({type: "Themes_Update"});}
     }}
 )(Themes);

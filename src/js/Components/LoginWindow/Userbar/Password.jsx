@@ -10,7 +10,7 @@ class Password extends React.Component {
         this.state = {value: ""};
         this.update = this.update.bind(this);
         this.submit = this.submit.bind(this);
-        if (window.__is_debug != true) {this.auth_event = () => {lightdm.respond(this.state.value);};}
+        if (window.__is_debug != true) {this.auth_event = () => {lightdm.respond(this.state.value); setTimeout(() => {if (!lightdm.is_authenticated) {this.props.failure();}}, 250)};}
     }
 
     componentDidMount() {if (window.__is_debug != true) {lightdm.show_prompt.connect(this.auth_event);}}
@@ -20,14 +20,12 @@ class Password extends React.Component {
     update(e) {this.setState({value: e.target.value}); e.preventDefault();}
 
     submit(e) {
-        if (e.which == 13) {
+        if (e.which == 13) { //Enter key
             if (window.__is_debug === true) {
                 if (this.state.value == "password") {
                     notify("Logged in as " + this.props.user.username + "!", types.Success); this.props.success();
-                } else {
-                    notify("Wrong password!", types.Error); this.props.failure();
-                }
-            } else {lightdm.authenticate(this.props.user.username);}
+                } else {notify("Wrong password!", types.Error); this.props.failure();}
+            } else {lightdm.cancel_authentication(); lightdm.authenticate(this.props.user.username);}
         }; e.preventDefault();
     }
     

@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import cxs from "cxs";
 
-import {types, notify} from "../../../Greeter/Notifications"
+import {types, notify} from "../../../Greeter/Notifications";
 
 class Session extends React.Component {
     constructor(props) {
@@ -11,8 +11,9 @@ class Session extends React.Component {
             this.auth_event = () => {
                 if (lightdm.is_authenticated) {
                     this.props.success();
-                    lightdm.start_session(this.props.session.key);
-                } else {notify("Wrong password!", types.Error); this.props.failure();}
+                    notify("Logged in as " + this.props.user.username + "!", types.Success);
+                    setTimeout(() => {lightdm.start_session(this.props.session.key);}, 1000);
+                } else {notify("Wrong password!", types.Error);}
             };
         }
     }
@@ -30,6 +31,7 @@ class Session extends React.Component {
 
 export default connect(
     (state) => {return {
+        user: state.runtime.user,
         name: state.runtime.session.name,
         hidden: !state.settings.behaviour.session,
         color: state.settings.style.userbar.session.color,

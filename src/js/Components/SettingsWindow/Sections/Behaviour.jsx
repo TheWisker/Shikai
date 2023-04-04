@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 
+import {types, notify} from "../../../Greeter/Notifications";
 import * as Inputs from "./Inputs";
 
 class Behaviour extends React.Component {
@@ -35,8 +36,10 @@ class Behaviour extends React.Component {
                 <div className="text title">Misc</div>
                 <Inputs.Checkbox name="Hide on idle" action={() => this.props.toggle("idle.enabled")} value={this.props.behaviour.idle.enabled}/>
                 <Inputs.Textarea name="Idle timeout value:" action={(v) => this.props.set("idle.timeout", v)} value={this.props.behaviour.idle.timeout}/>
-                <Inputs.Checkbox name="Settings button invisible" action={() => this.props.toggle("evoker")} value={this.props.behaviour.evoker}/>
+                <Inputs.Checkbox name="Settings button invisible" action={() => this.props.toggle("evoker")} value={this.props.behaviour.evoker}/>            
             </div>
+            <div className="expand"></div>
+            <Inputs.DoubleButton text="Delete LocalStorage" pressed_text="This cannot be undone!" action={() => {localStorage.clear(); notify("LocalStorage deleted!", types.Success);}} delay={2000}/>
         </React.Fragment>);
     }
 }
