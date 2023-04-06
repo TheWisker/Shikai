@@ -15,7 +15,7 @@
 
 @mixin font() {
     font-weight: 1000;
-    font-family: "Aesthetic", sans;
+    font-family: "Aesthetic", "Genjyuu", sans;
 }
 
 * {@include font; user-select: none;}

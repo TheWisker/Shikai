@@ -2,7 +2,7 @@ import "../assets/index.yml";
 import "../css/style.scss";
 
 import React from "react";
-import {createRoot} from 'react-dom/client';
+import {createRoot} from "react-dom/client";
 import {Provider} from "react-redux";
 
 import Store from "./Redux/Store";
@@ -15,6 +15,8 @@ import Idle from "./Greeter/Idle";
 import {set_lang, data, get_lang} from "../lang";
 
 function launch() {
+    if ((!window.__is_debug) && lightdm === undefined) {lightdm = window.lightdm;}
+
     const store = Store();
 
     createRoot(document.getElementById("loginroot")).render((
