@@ -11,8 +11,8 @@ class Theme extends React.Component {
         return (<div className="theme">
             {this.props.name}
             <div className="expand"/>
-            <div className="button" style={{textAlign: "center"}} onClick={() => {notify(data.get(this.props.lang, "misc.theme") + " " + this.props.name + " " + data.get(this.props.lang, "notifications.theme_activated"), types.Success); this.props.func(this.props.index, "Theme_Activate")}}>{data.get(this.props.lang, "buttons.use")}</div>
-            <div className="button" style={{textAlign: "center"}} onClick={() => {notify(data.get(this.props.lang, "misc.theme") + " " + this.props.name + " " + data.get(this.props.lang, "notifications.theme_removed"), types.Success); this.props.func(this.props.index, "Theme_Remove")}}>{data.get(this.props.lang, "buttons.remove")}</div>
+            <div className="button" style={{textAlign: "center", minWidth: "50px"}} onClick={() => {notify(data.get(this.props.lang, "misc.theme") + " " + this.props.name + " " + data.get(this.props.lang, "notifications.theme_activated"), types.Success); this.props.func(this.props.index, "Theme_Activate")}}>{data.get(this.props.lang, "buttons.use")}</div>
+            <div className="button" style={{textAlign: "center", minWidth: "50px"}} onClick={() => {notify(data.get(this.props.lang, "misc.theme") + " " + this.props.name + " " + data.get(this.props.lang, "notifications.theme_removed"), types.Success); this.props.func(this.props.index, "Theme_Remove")}}>{data.get(this.props.lang, "buttons.remove")}</div>
         </div>);
     }
 }
