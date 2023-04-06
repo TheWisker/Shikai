@@ -8,15 +8,15 @@ export default class Textarea extends React.Component {
     }
 
     update(event) {
-        this.setState({value: event.target.value});
-        this.props.action(event.target.value);
+        this.setState({value: event.target.value.slice(0, -1)});
+        this.props.action(event.target.value.slice(0, -1));
         event.preventDefault();
     }
 
     render() {
         return (<div className="inputbar">
-            <div className="text">{this.props.name}</div>
-            <input type="text" value={this.state.value} onChange={this.update} disabled={this.props.disabled}/>
+            <div className="text">{this.props.name + ":"}</div>
+            <input type="text" value={this.state.value + ";"} onChange={this.update} disabled={this.props.disabled}/>
         </div>);
     }
 }

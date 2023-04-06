@@ -1,16 +1,21 @@
 import React from "react";
+import {connect} from "react-redux";
 
 import Image from "../../../../assets/close.svg";
 
-export default class Sectionbar extends React.Component {
+import {data} from "../../../../lang";
+
+class Sectionbar extends React.Component {
     render() {
         return (<div className="sectionbar">
-            <div className="text button" onClick={this.props.action}>Behaviour</div>
-            <div className="text button" onClick={() => this.props.action("style")}>Style</div>
-            <div className="text button" onClick={() => this.props.action("themes")}>Themes</div>
+            <div className="text button" onClick={this.props.action}>{data.get(this.props.lang, "settings.behaviour.name")}</div>
+            <div className="text button" onClick={() => this.props.action("style")}>{data.get(this.props.lang, "settings.style.name")}</div>
+            <div className="text button" onClick={() => this.props.action("themes")}>{data.get(this.props.lang, "settings.themes.name")}</div>
             <div className="button" onClick={this.props.callback}>
                 <Image/>
             </div>
         </div>);
     }
 }
+
+export default connect((state) => {return {lang: state.settings.behaviour.language};})(Sectionbar);

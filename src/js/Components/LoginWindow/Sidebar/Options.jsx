@@ -2,6 +2,8 @@ import React from "react";
 import {connect} from "react-redux";
 import cxs from "cxs";
 
+import {data} from "../../../../lang";
+
 import {shutdown, restart, sleep, hibernate} from "../../../Greeter/Commands";
 
 import Shutdown from "../../../../assets/commands/shutdown.svg";
@@ -28,7 +30,8 @@ class Option extends React.Component {
 class Options extends React.Component {
     render() {
         let array = [];
-        options.filter((option) => {return this.props.commands[option.text]}).forEach((option, i) => {array[i] = <Option text={option.text} func={option.func} icon={<option.icon/>} color={this.props.color} key={option.text}/>});
+        console.log(this.props.lang)
+        options.filter((option) => {return this.props.commands[option.text]}).forEach((option, i) => {array[i] = <Option text={data.get(this.props.lang, "commands.names." + option.text)} func={option.func} icon={<option.icon/>} color={this.props.color} key={option.text}/>});
         return (<div className="commandbar">{array}</div>);
     }
 }
@@ -41,6 +44,7 @@ export default connect(
             reboot: state.settings.behaviour.commands.reboot,
             sleep: state.settings.behaviour.commands.sleep
         },
-        color: state.settings.style.main.textcolor
+        color: state.settings.style.main.textcolor,
+        lang: state.settings.behaviour.language
     };}
 )(Options);

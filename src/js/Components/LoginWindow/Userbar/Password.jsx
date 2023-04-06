@@ -4,6 +4,8 @@ import cxs from "cxs";
 
 import {types, notify} from "../../../Greeter/Notifications";
 
+import {data} from "../../../../lang";
+
 class Password extends React.Component {
     constructor(props) {
         super(props);
@@ -23,8 +25,8 @@ class Password extends React.Component {
         if (e.which == 13) { //Enter key
             if (window.__is_debug === true) {
                 if (this.state.value == "password") {
-                    notify("Logged in as " + this.props.user.username + "!", types.Success); this.props.success();
-                } else {notify("Wrong password!", types.Error); this.props.failure();}
+                    notify(data.get(this.props.lang, "notifications.logged_in") + " " + this.props.user.username + "!", types.Success); this.props.success();
+                } else {notify(data.get(this.props.lang, "notifications.wrong_password"), types.Error); this.props.failure();}
             } else {lightdm.cancel_authentication(); lightdm.authenticate(this.props.user.username);}
         }; e.preventDefault();
     }
@@ -54,6 +56,7 @@ export default connect(
         },
         background: state.settings.style.userbar.password.background,
         inactive: state.runtime.events.inactivity,
+        lang: state.settings.behaviour.language,
         user: state.runtime.user
     };},
     (dispatch) => {return {

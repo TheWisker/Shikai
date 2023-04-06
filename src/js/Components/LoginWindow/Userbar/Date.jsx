@@ -13,7 +13,7 @@ class _Date extends React.Component {
   
     componentDidMount() {
         this.update();
-        if (!this.props.hidden) {this.interval = setInterval(() => {this.update();}, 60000);}
+        if (!this.props.hidden) {this.interval = setInterval(() => {this.update();}, 1000);}
     }
     
     componentWillUnmount() {if (!this.props.hidden) {clearInterval(this.interval);}}

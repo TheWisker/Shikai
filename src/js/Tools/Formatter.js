@@ -9,14 +9,7 @@
  */
  "use strict";
 
-const months = {
-    long: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Noemvber", "December"],
-    short: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-}
-const days = {
-    long: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    short: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-}
+import {data, get_lang} from "../../lang";
 
 function preformat(format) {
     return format.replaceAll(/(%%)/g, "\x01%\x01");
@@ -70,6 +63,9 @@ function _time(format, date, utc) {
 }
 
 function _date(format, date, utc) {
+    const months = data.get(get_lang() || "english", "time.months");
+    const days = data.get(get_lang() || "english", "time.days");
+
     //Year
     format = format.replaceAll(/(%Y)/g, utc ? date.getUTCFullYear() : date.getFullYear());
     format = format.replaceAll(/(%y)/g, date.getYear());

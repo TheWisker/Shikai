@@ -22,6 +22,7 @@ const default_state = {
             evoker: true,
             session: true,
             hostname: true,
+            language: "english",
             clock: {
                 enabled: true,
                 format: "%H:%K:%S"
@@ -89,6 +90,7 @@ const default_state = {
                     "evoker": true,
                     "session": true,
                     "hostname": true,
+                    "language": "english",
                     "clock": {
                         "enabled": true,
                         "format": "%H:%K:%S"
@@ -156,6 +158,7 @@ const default_state = {
                     "evoker": true,
                     "session": true,
                     "hostname": true,
+                    "language": "english",
                     "clock": {
                         "enabled": true,
                         "format": "%H:%K:%S"
@@ -223,6 +226,7 @@ const default_state = {
                     "evoker": true,
                     "session": true,
                     "hostname": true,
+                    "language": "english",
                     "clock": {
                         "enabled": true,
                         "format": "%H:%K:%S"
@@ -290,6 +294,7 @@ const default_state = {
                     "evoker": true,
                     "session": true,
                     "hostname": true,
+                    "language": "english",
                     "clock": {
                         "enabled": true,
                         "format": "%H:%K:%S"
@@ -357,6 +362,7 @@ const default_state = {
                     "evoker": true,
                     "session": true,
                     "hostname": true,
+                    "language": "english",
                     "clock": {
                         "enabled": true,
                         "format": "%H:%K:%S"
@@ -424,6 +430,7 @@ const default_state = {
                     "evoker": true,
                     "session": true,
                     "hostname": true,
+                    "language": "english",
                     "clock": {
                         "enabled": true,
                         "format": "%H:%K:%S"

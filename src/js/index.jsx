@@ -12,9 +12,9 @@ import SettingsWindow from "./Components/SettingsWindow";
 import * as Operations from "./Greeter/Operations";
 import {types, notify} from "./Greeter/Notifications";
 import Idle from "./Greeter/Idle";
+import {set_lang, data, get_lang} from "../lang";
 
 function launch() {
-
     const store = Store();
 
     createRoot(document.getElementById("loginroot")).render((
@@ -47,6 +47,7 @@ function launch() {
     idle.changeTimeout(store.getState().settings.behaviour.idle.timeout);
     if (store.getState().settings.behaviour.idle.enabled) {idle.start();}
 
+    let last_lang;
     let idle_enabled = store.getState().settings.behaviour.idle.enabled;
     let idle_timeout;
     let last_event = true;
@@ -100,19 +101,30 @@ function launch() {
             idle_timeout = store.getState().settings.behaviour.idle.timeout;
             idle.changeTimeout(idle_timeout);
         }
+
+        if (last_lang != store.getState().settings.behaviour.language) {
+            last_lang = store.getState().settings.behaviour.language;
+            set_lang(last_lang);
+        }
     });
 
-    if (window.__is_debug) {
+    if (window.__is_debug === true) {
         setInterval(() => {
-            const tips = [
-                "Click on the background to change it!",
-                "The password is 'password'!",
-                "Hover over the upper-left corner!",
-                "Close the settings menu to save the changes!",
-                "After 60 seconds of inactivity the theme goes idle!"
-            ];
-            notify("Hint: " + tips[Math.floor(Math.random() * tips.length)], types.Info);
+            const hints = data.get(get_lang(), "demo.hints");
+            notify(data.get(get_lang(), "demo.hint") + " " + hints[Math.floor(Math.random() * hints.length)], types.Info);
         }, 10 * 1000);
+        setTimeout(() => {
+            notify(data.get(get_lang(), "demo.notifications.info"), types.Info);
+            setTimeout(() => {
+                notify(data.get(get_lang(), "demo.notifications.success"), types.Success);
+                setTimeout(() => {
+                    notify(data.get(get_lang(), "demo.notifications.warning"), types.Warning);
+                    setTimeout(() => {
+                        notify(data.get(get_lang(), "demo.notifications.error"), types.Error);
+                    }, 500);
+                }, 500);
+            }, 500);
+        }, 1500);
     }
 };
 

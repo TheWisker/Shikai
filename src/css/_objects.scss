@@ -3,7 +3,7 @@
 .notification {
     @include general.font;
     @include general.flex-center;
-    height: 50px; width: 30%;
+    height: 50px; width: 40%;
     transition: opacity ease-in 500ms;
     border: 5px solid #e6e6e6;
     border-radius: 20px;

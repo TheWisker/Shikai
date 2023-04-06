@@ -55,19 +55,23 @@ module.exports = {
                         }
                     },
                     {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        "autoprefixer"
+                                    ]
+                                ]
+                            }
+                        }
+                    },
+                    {
                         loader: "sass-loader",
                         options: {
                             sourceMap: devMode,
                             sassOptions: {
                                 outputStyle: devMode ? "expanded" : "compressed"
-                            }
-                        }
-                    }, 
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                            postcssOptions: {
-                                plugins: ["autoprefixer"]
                             }
                         }
                     }

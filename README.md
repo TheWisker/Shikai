@@ -13,6 +13,7 @@
 The theme features:
 
 - Multi-monitor support!
+- Multi-language support!
 - Custom time and date formats!
 - Graphical on-theme behaviour configuration!
 - Graphical on-theme styles configuration!
@@ -106,7 +107,7 @@ post screenshots of your theme designs [here](https://github.com/TheWisker/Shika
 - Change wallpapers by adding or removing from `/usr/share/web-greeter/themes/shikai/assets/media/wallpapers/` path!
 - Undefined behaviour for adding non-browser-compliant images and non-image files to the wallpapers directory!
 - Missing linux distro logo? Submit a [pull request](https://github.com/TheWisker/Shikai/pulls)!
-- Missing language? Submit a [pull request](https://github.com/TheWisker/Shikai/pulls)!
+- Missing language? Submit a [pull request](https://github.com/TheWisker/Shikai/pulls) including it in ./src/lang!
 - Have a really cool wallpaper to add to the live demo? Submit a [pull request](https://github.com/TheWisker/Shikai/pulls)!
 
 <h2 align="center">Author</h2>

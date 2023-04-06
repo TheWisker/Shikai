@@ -4,6 +4,8 @@ import cxs from "cxs";
 
 import {types, notify} from "../../../Greeter/Notifications";
 
+import {data} from "../../../../lang";
+
 class Session extends React.Component {
     constructor(props) {
         super(props);
@@ -11,9 +13,9 @@ class Session extends React.Component {
             this.auth_event = () => {
                 if (lightdm.is_authenticated) {
                     this.props.success();
-                    notify("Logged in as " + this.props.user.username + "!", types.Success);
+                    notify(data.get(this.props.lang, "notifications.logged_in") + " " + this.props.user.username + "!", types.Success);
                     setTimeout(() => {lightdm.start_session(this.props.session.key);}, 1000);
-                } else {notify("Wrong password!", types.Error);}
+                } else {notify(data.get(this.props.lang, "notifications.wrong_password"), types.Error);}
             };
         }
     }
