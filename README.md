@@ -115,7 +115,7 @@ post screenshots of your theme designs [here](https://github.com/TheWisker/Shika
 
 On the odd case that the demo or the theme itself only loads the backgrounds or does not load the settings, it is most probably due
 to a recent update that contains changes to the settings JSON structure. This can be fixed manually, looking at the errors in the developer console,
-and manually adding the missing keys and values, or easier by deleting the page localStorage.
+and manually adding the missing keys and values, or easier by [deleting the page's localStorage](https://intercom.help/scoutpad/en/articles/3478364-how-to-clear-local-storage-of-web-browser).
 
 <h2 align="center">Author</h2>
 <div align="center">
