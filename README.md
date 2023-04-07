@@ -111,6 +111,12 @@ post screenshots of your theme designs [here](https://github.com/TheWisker/Shika
 - Missing language? Submit a [pull request](https://github.com/TheWisker/Shikai/pulls) including it in ./src/lang!
 - Have a really cool wallpaper to add to the live demo? Submit a [pull request](https://github.com/TheWisker/Shikai/pulls)!
 
+<h2 align="center">Troubleshooting</h2>
+
+On the odd case that the demo or the theme itself only loads the backgrounds or does not load the settings, it is most probably due
+to a recent update that contains changes to the settings JSON structure. This can be fixed manually, looking at the errors in the developer console,
+and manually adding the missing keys and values, or easier by deleting the page localStorage.
+
 <h2 align="center">Author</h2>
 <div align="center">
     <img width="200" height="200" src="./assets/profile.png"></img>
