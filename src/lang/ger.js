@@ -18,7 +18,8 @@ export default {
                 "Bewegen Sie den Mauszeiger über die obere linke Ecke!",
                 "Klicken Sie auf den Hintergrund, um ihn zu ändern!",
                 "Schließen Sie das Einstellungsmenü, um die Änderungen zu speichern!",
-                "Nach 60 Sekunden Inaktivität geht das Theme in den Leerlauf!"
+                "Nach 60 Sekunden Inaktivität geht das Theme in den Leerlauf!",
+                "Doppelklicken Sie auf die Ziehgriffe, um zur Standardposition zurückzukehren!"
             ]
         },
         commands: {

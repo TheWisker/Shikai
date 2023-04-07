@@ -17,12 +17,15 @@ class Settings extends React.Component {
     render() {
         return (<React.Fragment>
             <Evoker callback={this.toggle}/>
-            <Window callback={this.toggle} active={this.state.active}/>
+            <Window callback={this.toggle} active={this.state.active && (!this.props.inactive)}/>
         </React.Fragment>);
     }
 }
 
-export default connect(null, (dispatch) => {return {
-    save: () => {dispatch({type: "Settings_Save"})},
-    update: () => {dispatch({type: "Settings_Update"})}
-}})(Settings);
+export default connect(
+    (state) => {return {inactive: state.runtime.events.inactivity}},
+    (dispatch) => {return {
+        save: () => {dispatch({type: "Settings_Save"})},
+        update: () => {dispatch({type: "Settings_Update"})}
+    }}
+)(Settings);

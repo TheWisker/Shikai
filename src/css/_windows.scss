@@ -16,6 +16,14 @@ $login_height: 500px;
     z-index: 100;
 }
 
+#settingroot .react-draggable {
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    height: 100%;
+    position: absolute;
+}
+
 .settingwindow {
     @include general.flex(column);
 
@@ -24,16 +32,15 @@ $login_height: 500px;
     z-index: 2;
     height: 100%;
     min-height: 0;
+    overflow: hidden;
     position: absolute;
-    transition: left 400ms;
-    width: $settings_width;
-    left: -#{$settings_width};
-    border-radius: 0 16px 16px 0;
+    border-radius: 25px;
+    transition: transform 400ms, border-radius 500ms;
+    width: $settings_width; left: 0;
 }
 
-.settingwindow.active {
-    left: 0;
-}
+.settingwindow.origin_left {border-radius: 0 25px 25px 0 !important;}
+.settingwindow.origin_right {border-radius: 25px 0 0 25px !important;}
 
 .loginwindow {
     @include general.flex;
@@ -41,19 +48,22 @@ $login_height: 500px;
     top: 50%;
     left: 50%;
     z-index: 1;
-    overflow: hidden;
     position: absolute;
-    border-radius: 16px;
     width: $login_width;
     height: $login_height;
-    transition: transform cubic-bezier(.47,1.64,.41,.8) 700ms, translate cubic-bezier(.47,1.64,.41,.8) 700ms, scale cubic-bezier(.47,1.64,.41,.8) 1000ms, opacity cubic-bezier(.47,1.64,.41,.8) 1500ms;
+    transition: transform cubic-bezier(0.65, 1.75, 0.62, 0.68) 1200ms, translate cubic-bezier(0.65, 1.75, 0.62, 0.68) 1200ms, scale cubic-bezier(0.65, 1.75, 0.62, 0.68) 1000ms, opacity cubic-bezier(.47,1.64,.41,.8) 1500ms;
     margin: -#{math.div($login_height, 2)} 0 0 -#{math.div($login_width, 2)};
-}
 
-/*
-margin: -22.5vh 0 0 -22.5vw;
-width: 45%;
-height: 45%;
-min-width: 850px;
-min-height: 500px;
-*/
+    & > div {
+        @include general.flex;
+        width: 100%; height: 100%;
+        
+        & > div {
+            @include general.flex;
+            width: 100%; height: 100%;
+            transition: border-radius 500ms;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+    }
+}

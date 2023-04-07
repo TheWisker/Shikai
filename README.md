@@ -12,6 +12,7 @@
 
 The theme features:
 
+- Draggable windows!
 - Multi-monitor support!
 - Multi-language support!
 - Custom time and date formats!

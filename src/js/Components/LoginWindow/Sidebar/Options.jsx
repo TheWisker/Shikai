@@ -30,7 +30,6 @@ class Option extends React.Component {
 class Options extends React.Component {
     render() {
         let array = [];
-        console.log(this.props.lang)
         options.filter((option) => {return this.props.commands[option.text]}).forEach((option, i) => {array[i] = <Option text={data.get(this.props.lang, "commands.names." + option.text)} func={option.func} icon={<option.icon/>} color={this.props.color} key={option.text}/>});
         return (<div className="commandbar">{array}</div>);
     }

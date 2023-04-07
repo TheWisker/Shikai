@@ -15,7 +15,7 @@ import Idle from "./Greeter/Idle";
 import {set_lang, data, get_lang} from "../lang";
 
 function launch() {
-    if ((!window.__is_debug) && lightdm === undefined) {lightdm = window.lightdm;}
+    if ((!window.__is_debug)) {lightdm = window.lightdm;}
 
     const store = Store();
 
@@ -50,10 +50,10 @@ function launch() {
     if (store.getState().settings.behaviour.idle.enabled) {idle.start();}
 
     let last_lang;
-    let idle_enabled = store.getState().settings.behaviour.idle.enabled;
     let idle_timeout;
-    let last_event = true;
     let failure_timeout;
+    let last_event = true;
+    let idle_enabled = store.getState().settings.behaviour.idle.enabled;
     store.subscribe((e) => {
         //console.log(e, store.getState(), "Subscription");
         let icons = store.getState().settings.style.main.icons;
@@ -69,7 +69,7 @@ function launch() {
         const loginroot = document.getElementById("loginroot");
         if (last_event != store.getState().runtime.events.inactivity) {
             if (store.getState().runtime.events.inactivity) {
-                loginroot.style.transform = "translate(" + window.innerWidth + "px, 0)";
+                loginroot.style.transform = "translate(" + (window.innerWidth + loginroot.offsetWidth) + "px, 0)";
             } else {
                 loginroot.classList.add("notransition");
                 loginroot.style.transform = "translate(" + (-window.innerWidth - loginroot.offsetWidth) + "px, 0)";
@@ -133,7 +133,7 @@ function launch() {
 window.onload = () => {
     //window.localStorage.clear();
     if (!window.__is_debug) {
-        if (lightdm === undefined) {
+        if (window.lightdm === undefined) {
             document.addEventListener("GreeterReady", () => {launch();});
         } else {launch();}
     } else {launch();}

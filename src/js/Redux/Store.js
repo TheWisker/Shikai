@@ -22,6 +22,7 @@ const default_state = {
             evoker: true,
             session: true,
             hostname: true,
+            draggable: true,
             language: "english",
             clock: {
                 enabled: true,
@@ -90,6 +91,7 @@ const default_state = {
                     "evoker": true,
                     "session": true,
                     "hostname": true,
+                    "draggable": true,
                     "language": "english",
                     "clock": {
                         "enabled": true,
@@ -158,6 +160,7 @@ const default_state = {
                     "evoker": true,
                     "session": true,
                     "hostname": true,
+                    "draggable": true,
                     "language": "english",
                     "clock": {
                         "enabled": true,
@@ -226,6 +229,7 @@ const default_state = {
                     "evoker": true,
                     "session": true,
                     "hostname": true,
+                    "draggable": true,
                     "language": "english",
                     "clock": {
                         "enabled": true,
@@ -294,6 +298,7 @@ const default_state = {
                     "evoker": true,
                     "session": true,
                     "hostname": true,
+                    "draggable": true,
                     "language": "english",
                     "clock": {
                         "enabled": true,
@@ -362,6 +367,7 @@ const default_state = {
                     "evoker": true,
                     "session": true,
                     "hostname": true,
+                    "draggable": true,
                     "language": "english",
                     "clock": {
                         "enabled": true,
@@ -430,6 +436,7 @@ const default_state = {
                     "evoker": true,
                     "session": true,
                     "hostname": true,
+                    "draggable": true,
                     "language": "english",
                     "clock": {
                         "enabled": true,

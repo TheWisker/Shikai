@@ -3,6 +3,7 @@
 .notification {
     @include general.font;
     @include general.flex-center;
+
     height: 50px; width: 40%;
     transition: opacity ease-in 500ms;
     border: 5px solid #e6e6e6;
@@ -38,6 +39,34 @@
 
     &:hover {opacity: 0.9;}
     &:active {opacity: 0.55;}
+}
+
+#settings_handle, #login_handle {
+    display: flex;
+    padding: 0 8px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        opacity: 0.4;
+        height: 25px;
+        width: 25px;
+    
+        &:hover {opacity: 0.6}
+        &:active {opacity: 1}
+    }
+}
+
+
+#settings_handle {
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.8);
+}
+
+#login_handle {
+    position: absolute;
+    right: 1px; top: 10px;
 }
 
 .logo {

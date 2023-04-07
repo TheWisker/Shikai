@@ -17,7 +17,7 @@ function launch() {
 
 window.onload = () => {
     if (!window.__is_debug) {
-        if (lightdm === undefined) {
+        if (window.lightdm === undefined) {
             document.addEventListener("GreeterReady", () => {launch();});
         } else {launch();}
     } else {launch();}

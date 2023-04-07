@@ -18,7 +18,8 @@ export default {
                 "Survolez le coin supérieur gauche !",
                 "Cliquez sur le fond pour le changer !",
                 "Fermez le menu des paramètres pour enregistrer les modifications !",
-                "Après 60 secondes d'inactivité, le thème devient inactif !"
+                "Après 60 secondes d'inactivité, le thème devient inactif !",
+                "Double-cliquez sur les poignées de glissement pour revenir à la position par défaut !"
             ]
         },
         commands: {

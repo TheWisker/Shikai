@@ -9,7 +9,7 @@ import {data} from "../../../../lang";
 class Style extends React.Component {
     render() {
         return (<React.Fragment>
-            <div className="scroll" style={{paddingBottom: "25px"}}>
+            <div style={{paddingBottom: "25px"}}>
                 <div className="section">
                     <div className="text title">{data.get(this.props.lang, "settings.style.sections.main.name")}</div>
                     <Logo/>

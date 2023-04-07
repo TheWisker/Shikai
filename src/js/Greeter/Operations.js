@@ -1,6 +1,6 @@
 export function getInitialUser() {
     if (lightdm.lock_hint) {
-        let user = lightdm.users.find((user) => user.logged_in);
+        let user = lightdm.users.find((user) => {console.log("User", user); return user.logged_in});
         if (user != undefined) {return user;}
     }
     if (lightdm.select_user_hint != undefined && lightdm.select_user_hint != null) {
@@ -56,4 +56,5 @@ export function getLogos(dir, callback) {
 export function getUserImage(user) {
     if (window.__is_debug === true) {return "./assets/media/profile.jpg"}
     return user.image || greeter_config.branding.user_image;
+    //return "./assets/media/profile.jpg" || user.image || greeter_config.branding.user_image;
 }

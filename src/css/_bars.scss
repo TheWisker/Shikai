@@ -26,6 +26,7 @@
 
         &:nth-last-child(1) {
             width: 35px;
+            padding: 0 8px;
             min-width: 35px;
 
             svg {
@@ -117,6 +118,7 @@
 
     input[type="text"] {margin: 0 0 0 15px;}
 }
+
 .colorsbar {
     @include general.flex-center;
     margin: 0 0 15px 0;
@@ -131,7 +133,7 @@
 
     .text {
         color: #A0A0A0;
-        font-size: 0.9em;
+        font-size: 0.8em;
         margin: 0 0 10px 0;
         text-align: center;
     }

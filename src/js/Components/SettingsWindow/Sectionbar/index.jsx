@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 
+import Drag from "../../../../assets/drag.svg";
 import Image from "../../../../assets/close.svg";
 
 import {data} from "../../../../lang";
@@ -8,6 +9,9 @@ import {data} from "../../../../lang";
 class Sectionbar extends React.Component {
     render() {
         return (<div className="sectionbar">
+            <div id="settings_handle" onDoubleClick={() => {this.props.reset()}}>
+                <Drag/>
+            </div>
             <div className="text button" onClick={this.props.action}>{data.get(this.props.lang, "settings.behaviour.name")}</div>
             <div className="text button" onClick={() => this.props.action("style")}>{data.get(this.props.lang, "settings.style.name")}</div>
             <div className="text button" onClick={() => this.props.action("themes")}>{data.get(this.props.lang, "settings.themes.name")}</div>

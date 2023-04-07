@@ -18,7 +18,8 @@ export default {
                 "¡Pasa el cursor sobre la esquina superior izquierda!",
                 "¡Haz clic en el fondo para cambiarlo!",
                 "¡Cierre el menú de configuración para guardar los cambios!",
-                "¡Después de 60 segundos de inactividad, el tema queda en reposo!"
+                "¡Después de 60 segundos de inactividad, el tema queda en reposo!",
+                "¡Haz doble clic en los controles de arrastre para volver a la posición predeterminada!"
             ]
         },
         commands: {

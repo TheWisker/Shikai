@@ -18,7 +18,8 @@ export default {
                 "Hover over the upper-left corner!",
                 "Click on the background to change it!",
                 "Close the settings menu to save the changes!",
-                "After 60 seconds of inactivity the theme goes idle!"
+                "After 60 seconds of inactivity the theme goes idle!",
+                "Double click the drag-handles to return to the default position!"
             ]
         },
         commands: {

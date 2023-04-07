@@ -8,8 +8,9 @@ export default class Textarea extends React.Component {
     }
 
     update(event) {
-        this.setState({value: event.target.value.slice(0, -1)});
-        this.props.action(event.target.value.slice(0, -1));
+        let inx = (event.target.value.slice(-1) == ";") ? -1 : -2;
+        this.setState({value: event.target.value.slice(0, inx)});
+        this.props.action(event.target.value.slice(0, inx));
         event.preventDefault();
     }
 
