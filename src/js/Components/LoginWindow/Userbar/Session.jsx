@@ -35,6 +35,7 @@ export default connect(
     (state) => {return {
         user: state.runtime.user,
         name: state.runtime.session.name,
+        lang: state.settings.behaviour.language,
         hidden: !state.settings.behaviour.session,
         color: state.settings.style.userbar.session.color,
         radius: state.settings.style.userbar.session.radius,
