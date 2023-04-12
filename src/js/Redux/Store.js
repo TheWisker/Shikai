@@ -19,7 +19,7 @@ const default_state = {
             user: true,
             logo: true,
             avatar: true,
-            evoker: true,
+            evoker: false,
             session: true,
             hostname: true,
             draggable: true,

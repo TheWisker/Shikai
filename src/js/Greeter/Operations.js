@@ -31,7 +31,7 @@ export function getWallpaperDir() {
 
 export function getWallpapers(dir, callback) {
     if (window.__is_debug === true) {
-        let defs = ["Wallpaper21.png"]; for (let i = 1; i < 21; i++) {defs.push("Wallpaper" + ((i > 9) ? i : ("0" + i)) + ".jpg");}
+        let defs = ["Wallpaper18.png"]; for (let i = 1; i < 18; i++) {defs.push("Wallpaper" + ((i > 9) ? i : ("0" + i)) + ".jpg");}
         return defs.map((e) => dir + e);
     } theme_utils.dirlist(dir, true, callback);
 }
