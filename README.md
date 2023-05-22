@@ -28,7 +28,10 @@ The theme features:
 <h2 align="center">Live Demo</h2>
 
 - Demo password: `password`
+
 <p align="center">https://thewisker.github.io/Shikai</p>
+
+- The demo wallpapers do not fit on some aspect ratios, thus look out of place, but that can be fixed when the theme is installed by changing the wallpapers for ones with the correct aspect ratios.
 
 <h2 align="center">Screenshots</h2>
 
