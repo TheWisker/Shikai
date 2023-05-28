@@ -121,7 +121,7 @@
     font-weight: 1000;
     white-space: nowrap;
     text-transform: uppercase;
-    font-family: "Aesthetic", sans;
+    font-family: "Aesthetic", "Genjyuu", "Arabic", sans;
 }
 
 .expand {@include general.square;}
@@ -130,7 +130,7 @@
     font-size: 2.5em;
     font-weight: 1000;
     text-align: center;
-    font-family: "Aesthetic", sans;
+    font-family: "Aesthetic", "Genjyuu", "Arabic", sans;
     transition: opacity ease 200ms;
 }
 
@@ -148,7 +148,7 @@
     border-radius: 16px;
     text-overflow: ellipsis;
     text-transform: uppercase;
-    font-family: "Aesthetic", sans;
+    font-family: "Aesthetic", "Genjyuu", "Arabic", sans;
 }
 
 .SVGBackground {fill: black;}

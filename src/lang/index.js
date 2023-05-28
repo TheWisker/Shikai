@@ -3,10 +3,11 @@ import {query} from "../js/Tools/Dictionary";
 import english from "./eng";
 import spanish from "./spa";
 import japanesse from "./jap";
+import arab from "./arb";
 import german from "./ger";
 import french from "./fre";
 
-export const langs = [english, spanish, japanesse, german, french];
+export const langs = [english, spanish, japanesse, arab, german, french];
 export const names = langs.map(lang => lang.names.long);
 export const data = function() {
     let _data = {get(lang, path) {return query(this[lang], path);}};
