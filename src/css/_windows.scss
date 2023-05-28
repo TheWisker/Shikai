@@ -32,7 +32,7 @@ $login_height: 500px;
     z-index: 2;
     height: 100%;
     min-height: 0;
-    overflow: visible;
+    overflow: hidden;
     position: absolute;
     border-radius: 25px;
     transition: transform 400ms, border-radius 500ms;
