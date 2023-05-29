@@ -1,6 +1,6 @@
 pkgbase = web-greeter-theme-shikai
 	pkgdesc = Modern lightdm webkit2 theme
-	pkgver = 1.4.1
+	pkgver = 1.4.2
 	pkgrel = 5
 	url = https://github.com/TheWisker/Shikai
 	arch = any
