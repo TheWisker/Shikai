@@ -51,7 +51,7 @@ The theme depends on [web-greeter](https://github.com/JezerM/web-greeter) or [no
 
 <h2 align="center">Installation</h2>
 
-Once all dependencies are installed, you just need to download the [this](https://github.com/TheWisker/Shikai) github repo.
+Once all dependencies are installed, you just need to download [this](https://github.com/TheWisker/Shikai) github repo.
 
 <h3>Script</h2>
 
