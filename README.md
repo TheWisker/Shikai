@@ -118,7 +118,7 @@ post screenshots of your theme designs [here](https://github.com/TheWisker/Shika
 
 - Profile image not loading:
 
-If you have added a .face image to you home folder and it does not load on theme it is because of the access permisions of the .face file. To fix this issue, copy the .face image to */var/lib/AccountsService/icons/* renaming it to your user's name. Once done, change its permisions with `chmod 644 /var/lib/AccountsService/icons` and `chmod 644 /var/lib/AccountsService/icons/username`. Lastly, create/modify the following configuration file */var/lib/AccountsService/users/username* including the following line: *Icon=/var/lib/AccountsService/icons/username*
+If you have added a .face image to you home folder and it does not load on theme it is because of the access permisions of the .face file. To fix this issue, copy the .face image to `/var/lib/AccountsService/icons/` renaming it to your user's name. Once done, change its permisions with `chmod 644 /var/lib/AccountsService/icons` and `chmod 644 /var/lib/AccountsService/icons/username`. Lastly, create/modify the following configuration file `/var/lib/AccountsService/users/username` including the following line: `Icon=/var/lib/AccountsService/icons/username`
 
 - Incomplete loading:
 
