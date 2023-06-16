@@ -53,7 +53,7 @@ The theme depends on [web-greeter](https://github.com/JezerM/web-greeter) or [no
 
 Once all dependencies are installed, you just need to download [this](https://github.com/TheWisker/Shikai) github repo.
 
-<h3>Script</h2>
+<h3>Script</h3>
 
 To install using the script just execute the following bash files under ./scripts from the repo's root directory.
 
@@ -63,7 +63,7 @@ To install using the script just execute the following bash files under ./script
 Then, to set up a user profile image, copy the desired image to the user's home directory
 renaming it to `.face`.
 
-<h3>Arch Linux</h2>
+<h3>Arch Linux</h3>
 
 To install using the aur with a custom aur helper run:
 
@@ -79,7 +79,7 @@ to your liking focusing on the following lines:
 Then, to set up a user profile image, copy the desired image to the user's home directory
 renaming it to `.face`.
 
-<h3>Manually</h2>
+<h3>Manually</h3>
 
 Go to the `dist` folder and open the `index.html` and `monitor.html`files. Then find in both `window.__is_debug = true;`and change it to `window.__is_debug = false;`
 Then copy the `dist` folder to `/usr/share/web-greeter/themes/`, renaming it from `dist` to `shikai`. Then you need to
