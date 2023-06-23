@@ -59,7 +59,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: main
+          ref: master
         
       - name: Update local from AUR
         shell: bash
