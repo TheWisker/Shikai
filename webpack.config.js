@@ -6,8 +6,22 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const webpack = require('webpack');
+const pkg = require('./package.json');
 
 const devMode = process.env.NODE_ENV != "production";
+
+const license_banner = `
+${pkg.name} ${pkg.version} distribution
+            
+Copyright (c) 2023, ${pkg.author}
+All rights reserved.
+                            
+This source code is licensed under the GNU license found in the
+LICENSE file in the root directory of this source tree.
+
+License information can be found in the LICENSE.shikai file.
+`
 
 module.exports = {
     entry: {
@@ -40,7 +54,8 @@ module.exports = {
                 from: "./src/assets/runtime",
                 to: "./assets"
             }]
-        })
+        }),
+        new webpack.BannerPlugin({banner: license_banner})
     ],
     module: {
         rules: [
@@ -119,7 +134,11 @@ module.exports = {
                         comments: false
                     }
                 },
-                extractComments: false
+                extractComments: {
+                    filename: "LICENSE.shikai",
+                    condition: /^\**!|@preserve|@license|@cc_on/i,
+                    banner: license_banner
+                }
             })
         ],
         splitChunks: {
@@ -132,7 +151,6 @@ module.exports = {
                 }
             }
         }
-
     },
     devtool: devMode ?  "eval" : false
 };

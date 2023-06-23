@@ -1,3 +1,13 @@
+/**
+ * @license Shikai
+ * Runtime.js
+ *
+ * Copyright (c) 2023, TheWisker.
+ *
+ * This source code is licensed under the GNU license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 export default function Runtime(state, action) {
     switch (action.type) {
         case "Switch_User":

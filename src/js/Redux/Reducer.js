@@ -1,3 +1,13 @@
+/**
+ * @license Shikai
+ * Reducer.js
+ *
+ * Copyright (c) 2023, TheWisker.
+ *
+ * This source code is licensed under the GNU license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 import Runtime from "./Reducers/Runtime";
 import Settings from "./Reducers/Settings";
 import Themes from "./Reducers/Themes";

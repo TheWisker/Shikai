@@ -1,3 +1,12 @@
+/**
+ * @license Shikai
+ * Commands.js
+ *
+ * Copyright (c) 2023, TheWisker.
+ *
+ * This source code is licensed under the GNU license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 import {types, notify} from "./Notifications";
 import {get_lang, data} from "../../lang";
 

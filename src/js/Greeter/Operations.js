@@ -1,3 +1,12 @@
+/**
+ * @license Shikai
+ * Operations.js
+ *
+ * Copyright (c) 2023, TheWisker.
+ *
+ * This source code is licensed under the GNU license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 export function getInitialUser() {
     if (lightdm.lock_hint) {
         let user = lightdm.users.find((user) => {console.log("User", user); return user.logged_in});
