@@ -33,13 +33,15 @@ Here are the **steps** involved when making a contribution:
 - Add the following **header** to newly added code files:
 
 ```
-# filename.ext
-#
-# Copyright (c) 2023, TheWisker
-# All rights reserved.
-#
-# This source code is licensed under the BSD-style license found in the
-# LICENSE file in the root directory of this source tree.
+/**
+ * @license Shikai
+ * filename.ext
+ *
+ * Copyright (c) 2023, TheWisker.
+ *
+ * This source code is licensed under the GNU license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 ```
 
 - **Add** yourself or your organization to the [CONTRIBUTORS.md][contributors] file, following its structure.
