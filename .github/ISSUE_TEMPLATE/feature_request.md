@@ -7,14 +7,24 @@ assignees: TheWisker
 
 ---
 
-**Is your feature request related to a problem?**
-Clear and concise description of what the problem is.
+# Shikai Feature Request
 
-**Describe the solution you would like**
-Clear and concise description of what you want to happen.
+## Explanation
 
-**Describe alternatives you have considered**
+Clear and concise description of the feature request.
+
+### Expected Behavior
+
+Clear and concise description of what you expected to happen.
+
+### Alternative Solutions
+
 Clear and concise description of any alternative solutions or features you've considered.
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+## Screenshots
+
+If applicable, add screenshots to help explain the new feature.
+
+### Additional Context
+
+Add any other context about the feature request here.

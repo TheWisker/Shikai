@@ -7,27 +7,38 @@ assignees: TheWisker
 
 ---
 
-**Describe the bug**
+# Shikai Bug Report
+
+## Explanation
+
 Clear and concise description of what the bug is.
 
-**To Reproduce**
-Steps to reproduce the behavior:
+### Steps to Reproduce
+
+Steps to reproduce the issue:
+
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
-**Expected behavior**
+### Expected Behavior
+
 Clear and concise description of what you expected to happen.
 
-**Screenshots**
+## Screenshots
+
 If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. Linux]
- - Distro: [e.g. Arch]
- - WebGreeter Version
- - LightDM Version
+## Context
 
-**Additional context**
+Provide the following information to help diagnose the issue.
+
+- OS: [e.g. Linux]
+- Distro: [e.g. Arch]
+- WebGreeter Version
+- LightDM Version
+
+### Additional Context
+
 Add any other context about the problem here.
