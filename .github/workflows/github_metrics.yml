@@ -13,7 +13,7 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     environment:
-      name: profile-metrics
+      name: repo-metrics
     steps:
       - name: Configure Git Credentials
         shell: bash
