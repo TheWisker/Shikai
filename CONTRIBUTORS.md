@@ -16,6 +16,14 @@ These are the **Shikai** project **contributors**, ordered from most recent to l
 - [cidne](https://github.com/cidne) => Opened an [issue](https://github.com/TheWisker/Shikai/issues/3) which resulted in a bug fix.
 - [Tyler Schneider](https://github.com/teschnei) => Made this [pull request](https://github.com/TheWisker/Shikai/pull/1) fixing a bug related to the login process.
 
+In another format:
+
+<div align="center">
+  <picture>
+    <img src="./assets/metrics/contributors.svg"/>
+  </picture>
+</div>
+
 <h2 align="center">Author</h2>
 <div align="center">
     <a href="https://github.com/TheWisker">

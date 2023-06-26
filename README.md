@@ -32,7 +32,11 @@
 
   [Translations][translations]
 
+  [Metrics][metrics]
+
   [Notes][notes]
+
+  [License][license]
   
   [Code of Conduct][coc]
   
@@ -170,6 +174,20 @@ We look forward to your translations!
 
 - The **credits** of the translators are located [here][translator-credits].
 
+<h2 align="center">Metrics [<a href="https://github.com/TheWisker/Shikai#index">↑</a>]</h2>
+
+<div align="center">
+  <picture>
+    <img src="./assets/metrics/base.svg"/>
+  </picture>
+</div>
+
+<div align="center">
+  <picture>
+    <img src="./assets/metrics/languages.svg"/>
+  </picture>
+</div>
+
 <h2 align="center">Notes [<a href="https://github.com/TheWisker/Shikai#index">↑</a>]</h2>
 
 - **Change** wallpapers by **adding** or **removing** from `/usr/share/web-greeter/themes/shikai/assets/media/wallpapers/` path!
@@ -177,6 +195,14 @@ We look forward to your translations!
 - Missing linux **distro** logo? **Submit** a [pull request][pull-request]!
 - Missing **language**? **Submit** a [pull request][pull-request] including it in `./src/lang`! Further details [here][translations].
 - Have a really cool wallpaper to **add** to the **live demo**? **Submit** a [pull request][pull-request]!
+
+<h2 align="center">License [<a href="https://github.com/TheWisker/Shikai#index">↑</a>]</h2>
+
+<div align="center">
+  <picture>
+    <img src="./assets/metrics/licenses.svg"/>
+  </picture>
+</div>
 
 <h2 align="center">Code of Conduct [<a href="https://github.com/TheWisker/Shikai#index">↑</a>]</h2>
 
@@ -201,7 +227,9 @@ We look forward to your translations!
 [troubleshooting]: https://github.com/TheWisker/Shikai#troubleshooting-
 [contributions]: https://github.com/TheWisker/Shikai#contributions-
 [translations]: https://github.com/TheWisker/Shikai#translations-
+[metrics]: https://github.com/TheWisker/Shikai#metrics-
 [notes]: https://github.com/TheWisker/Shikai#notes-
+[license]: https://github.com/TheWisker/Shikai#license-
 [coc]: https://github.com/TheWisker/Shikai#code-of-conduct-
 [author]: https://github.com/TheWisker/Shikai#author-
 [aur]: https://aur.archlinux.org/
