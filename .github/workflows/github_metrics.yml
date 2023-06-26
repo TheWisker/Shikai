@@ -46,7 +46,7 @@ jobs:
           output_condition: data-changed
           optimize: css, xml, svg
           #setup_community_templates:
-          #template:
+          template: repository
           #query:
           #extras_css:
           #extras_js:
@@ -95,6 +95,10 @@ jobs:
           #commits_authoring:
           plugin_traffic: yes
           #plugin_traffic_skipped:
+          plugin_lines: yes
+          #plugin_lines_sections:
+          #plugin_lines_repositories_limit:
+          plugin_lines_history_limit: 1
           
       - name: Languages Metrics
         uses: TheWisker/GitHubMetrics@master
@@ -113,7 +117,7 @@ jobs:
           output_condition: data-changed
           optimize: css, xml, svg
           #setup_community_templates:
-          #template:
+          template: repository
           #query:
           #extras_css:
           #extras_js:
@@ -186,7 +190,7 @@ jobs:
           output_condition: data-changed
           optimize: css, xml, svg
           #setup_community_templates:
-          #template:
+          template: repository
           #query:
           #extras_css:
           #extras_js:
@@ -248,7 +252,7 @@ jobs:
           output_condition: data-changed
           optimize: css, xml, svg
           #setup_community_templates:
-          #template:
+          template: repository
           #query:
           #extras_css:
           #extras_js:
