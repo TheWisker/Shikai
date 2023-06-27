@@ -29,7 +29,7 @@ class Password extends React.Component {
     componentWillUnmount() {if (window.__is_debug != true) {lightdm.show_prompt.disconnect(this.auth_event);}}
 
     update(e) {
-        if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Tab', 'Alt', 'Meta', 'Control', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', 'OS'].includes(e.key)) {
+        if (!['CapsLock', 'Shift', 'ArrowUp', 'Escape', 'ContextMenu', 'AltGraph', 'Home', 'End', 'Insert', 'PageUp', 'PageDown', 'PrintScreen', 'ScrollLock', 'Pause', 'NumLock', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Tab', 'Alt', 'Meta', 'Control', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', 'OS'].includes(e.key)) {
             if (e.which == 13) { //Enter key
                 if (window.__is_debug === true) {
                     if (this.state.value == "password") {
@@ -39,7 +39,7 @@ class Password extends React.Component {
             } else if (e.which == 8 || e.which == 46) { //Backspace key or Supr key
                 this.setState({value: this.state.value.slice(0, -1)});
             } else {
-                console.log(e.key);
+                console.log(e.key, e.keyCode);
                 this.setState({value: this.state.value + e.key});
             }; e.preventDefault();
         }
