@@ -54,6 +54,8 @@ class Style extends React.Component {
                     <Inputs.Textarea name={data.get(this.props.lang, "settings.style.sections.misc.options.horizontal")} action={(b) => this.props.set("userbar.password.border.left", b)} value={this.props.style.userbar.password.border.left}/>
                     <Inputs.Textarea name={data.get(this.props.lang, "settings.style.sections.misc.options.password")} action={(b) => this.props.set("userbar.password.border.radius", b)} value={this.props.style.userbar.password.border.radius}/>
                     <Inputs.Textarea name={data.get(this.props.lang, "settings.style.sections.misc.options.session")} action={(b) => this.props.set("userbar.session.radius", b)} value={this.props.style.userbar.session.radius}/>
+                    <Inputs.Textarea name={data.get(this.props.lang, "settings.style.sections.misc.options.caret.left")} action={(b) => this.props.set("userbar.password.caret.left", b)} value={this.props.style.userbar.password.caret.left}/>
+                    <Inputs.Textarea name={data.get(this.props.lang, "settings.style.sections.misc.options.caret.right")} action={(b) => this.props.set("userbar.password.caret.right", b)} value={this.props.style.userbar.password.caret.right}/>
                 </div>
             </div>
         </React.Fragment>);

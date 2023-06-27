@@ -85,7 +85,11 @@ const default_state = {
                         radius: "18px"
                     },
                     color: "rgba(0,255,245,1)",
-                    background: "rgba(0,0,0,0.4)"
+                    background: "rgba(0,0,0,0.4)",
+                    caret: {
+                        left: "<",
+                        right: ">"
+                    }
                 }
             }
         }
@@ -154,7 +158,11 @@ const default_state = {
                                 "radius": "18px"
                             },
                             "color": "rgba(0,255,245,1)",
-                            "background": "rgba(0,0,0,0.4)"
+                            "background": "rgba(0,0,0,0.4)",
+                            "caret": {
+                                "left": "<",
+                                "right": ">"
+                            }
                         }
                     }
                 }
@@ -223,7 +231,11 @@ const default_state = {
                                 "radius": "18px"
                             },
                             "color": "rgba(255,0,0,1)",
-                            "background": "rgba(0,0,0,0.4)"
+                            "background": "rgba(0,0,0,0.4)",
+                            "caret": {
+                                "left": "<",
+                                "right": ">"
+                            }
                         }
                     }
                 }
@@ -292,7 +304,11 @@ const default_state = {
                                 "radius": "18px"
                             },
                             "color": "rgba(255,255,255,1)",
-                            "background": "rgba(255,255,255,0.4)"
+                            "background": "rgba(255,255,255,0.4)",
+                            "caret": {
+                                "left": "<",
+                                "right": ">"
+                            }
                         }
                     }
                 }
@@ -361,7 +377,11 @@ const default_state = {
                                 "radius": "18px"
                             },
                             "color": "rgba(0,255,245,1)",
-                            "background": "rgba(0,237,255,0.4)"
+                            "background": "rgba(0,237,255,0.4)",
+                            "caret": {
+                                "left": "<",
+                                "right": ">"
+                            }
                         }
                     }
                 }
@@ -430,7 +450,11 @@ const default_state = {
                                 "radius": "18px"
                             },
                             "color": "rgba(81,0,248,1)",
-                            "background": "rgba(145,0,255,0.2)"
+                            "background": "rgba(145,0,255,0.2)",
+                            "caret": {
+                                "left": "<",
+                                "right": ">"
+                            }
                         }
                     }
                 }
@@ -499,7 +523,11 @@ const default_state = {
                                 "radius": "18px"
                             },
                             "color": "rgba(195,78,254,1)",
-                            "background": "rgba(0,5,159,0.2)"
+                            "background": "rgba(0,5,159,0.2)",
+                            "caret": {
+                                "left": "<",
+                                "right": ">"
+                            }
                         }
                     }
                 }

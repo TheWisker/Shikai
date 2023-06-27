@@ -123,7 +123,11 @@ export default {
                             vertical: "Passwörter oben unten Grenzen",
                             horizontal: "Passwort linke rechte Grenzen",
                             password: "Radius der Passwortgrenze",
-                            session: "Radius der Sitzungsgrenze"
+                            session: "Radius der Sitzungsgrenze",
+                            caret: {
+                                left: "Passwort hinterließ dekoratives Symbol",
+                                right: "Passwort rechts dekoratives Symbol"
+                            }
                         }
                     }
                 }

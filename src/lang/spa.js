@@ -123,7 +123,11 @@ export default {
                             vertical: "Bordes superiores e inferiores de la contraseña",
                             horizontal: "Bordes laterales de la contraseña",
                             password: "Radio del borde de la contraseña",
-                            session: "Radio del borde de la sesión"
+                            session: "Radio del borde de la sesión",
+                            caret: {
+                                left: "Símbolo decorativo izquierdo de contraseña",
+                                right: "Símbolo decorativo derecho de contraseña"
+                            }
                         }
                     }
                 }

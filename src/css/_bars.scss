@@ -126,7 +126,7 @@
         margin: 0 0 0 10px;
     }
 
-    input[type="text"] {margin: 0 0 0 15px;}
+    input[type="text"] {margin: 0 0 0 15px;}    
 }
 
 .colorsbar {
@@ -252,7 +252,7 @@
 
     margin: 15px auto;
 
-    input {
+    #password {
         @include general.box;
         @include general.font;
 
@@ -261,5 +261,6 @@
         padding: 0 15px;
         font-size: 1.2em;
         text-align: center;
+        caret-color: transparent;
     }
 }

@@ -123,7 +123,11 @@ export default {
                             vertical: "Password top bottom borders",
                             horizontal: "Password left right borders",
                             password: "Password border radius",
-                            session: "Session border radius"
+                            session: "Session border radius",
+                            caret: {
+                                left: "Password left decorative symbol",
+                                right: "Password right decorative symbol"
+                            }
                         }
                     }
                 }

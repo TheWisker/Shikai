@@ -123,7 +123,11 @@ export default {
                             vertical: "パスワードの上下の境界線",
                             horizontal: "パスワードの左右の境界線",
                             password: "パスワード境界半径",
-                            session: "セッション境界半径"
+                            session: "セッション境界半径",
+                            caret: {
+                                left: "パスワード左装飾記号",
+                                right: "パスワード右の装飾記号"
+                            }
                         }
                     }
                 }

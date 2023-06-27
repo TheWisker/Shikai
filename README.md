@@ -19,6 +19,8 @@
   [Screenshots][screenshots]
   
   [Installation][installation]
+
+  [Updating][updating]
   
   [Dependencies][dependencies]
 
@@ -127,6 +129,10 @@ First, go to the `dist` **directory** located on the release folder and **open**
 
 Also, to set up a user **profile** image, copy the desired image to the user's **home** directory renaming it to `.face`.
 
+<h2 align="center">Updating [<a href="https://github.com/TheWisker/Shikai#index">↑</a>]</h2>
+
+When updating **Shikai** just keep in mind that if the **new** version contains **breaking changes** you must **delete localStorage** with the button in the settings panel **before** making the **update**. Apart from that, just update it as if you were [installing][installation] it *overwriting* in the case of a **manual** install.
+
 <h2 align="center">Dependencies [<a href="https://github.com/TheWisker/Shikai#index">↑</a>]</h2>
 
 <h3 align="left">Buildtime</h3>
@@ -221,6 +227,7 @@ We look forward to your translations!
 [livedemo]: https://github.com/TheWisker/Shikai#live-demo-
 [screenshots]: https://github.com/TheWisker/Shikai#screenshots-
 [installation]: https://github.com/TheWisker/Shikai#installation-
+[updating]: https://github.com/TheWisker/Shikai#updating-
 [dependencies]: https://github.com/TheWisker/Shikai#dependencies-
 [configuration]: https://github.com/TheWisker/Shikai#configuration-
 [discussions]: https://github.com/TheWisker/Shikai#discussions-

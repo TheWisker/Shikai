@@ -123,7 +123,11 @@ export default {
                             vertical: "Bordure supérieure inférieure du mot de passe",
                             horizontal: "Mot de passe bordures gauche droite",
                             password: "Rayon de la bordure du mot de passe",
-                            session: "Rayon de la bordure de la session"
+                            session: "Rayon de la bordure de la session",
+                            caret: {
+                                left: "Symbole décoratif gauche du mot de passe",
+                                right: "Mot de passe bon symbole décoratif"
+                            }
                         }
                     }
                 }
