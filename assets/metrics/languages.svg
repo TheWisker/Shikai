@@ -21,11 +21,11 @@
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="457.51073728181103" height="8" fill="#f1e05a"/>
-                    <rect mask="url(#languages-bar)" x="457.51073728181103" y="0" width="1.2922507881473715" height="8" fill="#c6538c"/>
-                    <rect mask="url(#languages-bar)" x="458.8029880699584" y="0" width="0.5956644122051821" height="8" fill="#e34c26"/>
-                    <rect mask="url(#languages-bar)" x="459.3986524821636" y="0" width="0.3696516728708821" height="8" fill="#89e051"/>
-                    <rect mask="url(#languages-bar)" x="459.76830415503446" y="0" width="0.23169584496553003" height="8" fill="#563d7c"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="457.49364638181305" height="8" fill="#f1e05a"/>
+                    <rect mask="url(#languages-bar)" x="457.49364638181305" y="0" width="1.296589977261449" height="8" fill="#c6538c"/>
+                    <rect mask="url(#languages-bar)" x="458.7902363590745" y="0" width="0.5953627577084393" height="8" fill="#e34c26"/>
+                    <rect mask="url(#languages-bar)" x="459.38559911678294" y="0" width="0.38282237293204635" height="8" fill="#89e051"/>
+                    <rect mask="url(#languages-bar)" x="459.768421489715" y="0" width="0.2315785102849979" height="8" fill="#563d7c"/>
                 </svg>
                 <div class="row fill-width">
                     <section>
@@ -37,7 +37,7 @@
                                 JavaScript
                             </div>
                             <small>
-                                <div>14.2k lines</div>
+                                <div>14.3k lines</div>
                                 <div>7.33 MB</div>
                                 <div>99.46%</div>
                             </small>
@@ -78,8 +78,8 @@
                                 SCSS
                             </div>
                             <small>
-                                <div>1.13k lines</div>
-                                <div>20.6 kB</div>
+                                <div>1.14k lines</div>
+                                <div>20.7 kB</div>
                                 <div>0.28%</div>
                             </small>
                         </div>
@@ -91,8 +91,8 @@
                                 Shell
                             </div>
                             <small>
-                                <div>180 lines</div>
-                                <div>5.92 kB</div>
+                                <div>191 lines</div>
+                                <div>6.13 kB</div>
                                 <div>0.08%</div>
                             </small>
                         </div>
