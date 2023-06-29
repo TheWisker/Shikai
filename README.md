@@ -77,15 +77,15 @@ The theme features:
 
 <h2 align="center">Screenshots [<a href="https://github.com/TheWisker/Shikai#index">↑</a>]</h2>
 
-![Main theme screenshot](./assets/Screenshot_One.png)
+![Main theme screenshot](./assets/screenshots/Screenshot_One.png)
 
-![Behaviour settings screenshot](./assets/Screenshot_Two.png)
+![Behaviour settings screenshot](./assets/screenshots/Screenshot_Two.png)
 
-![Style settings screenshot](./assets/Screenshot_Three.png)
+![Style settings screenshot](./assets/screenshots/Screenshot_Three.png)
 
-![Themes settings screenshot](./assets/Screenshot_Four.png)
+![Themes settings screenshot](./assets/screenshots/Screenshot_Four.png)
 
-![Second main screenshot](./assets/Screenshot_Five.png)
+![Second main screenshot](./assets/screenshots/Screenshot_Five.png)
 
 <h2 align="center">Installation [<a href="https://github.com/TheWisker/Shikai#index">↑</a>]</h2>
 
