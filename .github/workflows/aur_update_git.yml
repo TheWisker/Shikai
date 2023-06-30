@@ -19,7 +19,7 @@ jobs:
       options: --privileged
     steps:
       - name: AUR Update Git
-        uses: TheWisker/aur-update-git@latest
+        uses: TheWisker/aur-update-git
         with:
           username: TheWisker
           email: TheWisker@protonmail.com
