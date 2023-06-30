@@ -5,7 +5,7 @@ on:
     branches:
       - 'master'
 permissions:
-  contents: write
+  contents: write 
 concurrency:
   group: "aur"
   cancel-in-progress: false
