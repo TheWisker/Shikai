@@ -13,7 +13,7 @@ jobs:
   aur-update-git:
     environment:
       name: aur-packages
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     container:
       image: archlinux
       options: --privileged
