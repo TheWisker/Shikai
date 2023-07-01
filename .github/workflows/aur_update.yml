@@ -20,5 +20,6 @@ jobs:
       - name: AUR Update
         uses: TheWisker/aur-update@master
         with:
+          aur_key: ${{ secrets.AUR_KEY }}
           username: TheWisker
           email: TheWisker@protonmail.com
