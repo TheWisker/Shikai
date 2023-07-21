@@ -1,1 +1,1 @@
-gpgsign = true
+commits.gpgsign = true
