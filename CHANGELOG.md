@@ -13,6 +13,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.2] - 2023-07-21
+ 
+Added scroll to the style page and improved and fixed the colorpickers
+
+### Added
+- Scroll to the style configuration page
+
+### Changed
+- Changed the colorpicker's styles to a darker scheme
+- Centered the colorpicker evokers
+
+### Fixed
+- The issue were the colorpickers would clip when enabling scroll on the style configuration page
+- Some minor style issues
+
 ## [1.5.1] - 2023-06-27
  
 Patched the bug where certain keys did not work well in the password input

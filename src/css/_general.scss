@@ -214,22 +214,35 @@ input[type="text"] {
 ::-webkit-scrollbar-track {
     background: none;
     border-radius: 16px;
-}
 
-::-webkit-scrollbar-track:hover {
-    background: #2C2C2C;
+    &:hover {background: #2C2C2C;}
 }
 
 ::-webkit-scrollbar-thumb {
     background: #9B9FA1;
     border-radius: 16px;
+
+    &:hover {background: #BFBFBF;}
+
+    &:active {background: #FFFFFF;}
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #BFBFBF;
-}
+.chrome-picker {
+    cursor: default;
+    border-radius: 10px !important;
+    color: rgb(35, 35, 35) !important;
+    border: 5px solid rgb(160, 160, 160) !important;
 
-::-webkit-scrollbar-thumb:active {
-    background: #FFFFFF;
-}
+    > div:nth-child(2) {background-color: rgb(200, 200, 200);}
 
+    input {
+        outline: none;
+        background-color: rgb(220, 220, 220);
+    }
+
+    .flexbox-fix > div > div > div > div > div > div {
+        cursor: pointer;
+        border: 1px solid rgb(220, 220, 220);
+        background-color: rgb(160, 160, 160) !important;
+    }
+}

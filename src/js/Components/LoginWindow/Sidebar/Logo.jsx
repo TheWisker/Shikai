@@ -13,8 +13,8 @@ import {connect} from "react-redux";
 
 class Logo extends React.Component {
     render() {
-        return (<div className={`logo${this.props.hidden ? " hidden" : ""}`}>
-            <img src={this.props.source}/>
+        return (<div className={`logo${this.props.hidden ? " hidden" : ""}`} style={this.props.divStyle}>
+            <img src={this.props.source} style={{minHeight: "120px"}}/>
         </div>);
     }
 }

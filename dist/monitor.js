@@ -1,5 +1,5 @@
 /*! 
-shikai 1.5.0 distribution
+shikai 1.5.2 distribution
             
 Copyright (c) 2023, TheWisker (https://github.com/TheWisker)
 All rights reserved.

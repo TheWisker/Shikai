@@ -19,10 +19,10 @@ import {data} from "../../../../lang";
 class Style extends React.Component {
     render() {
         return (<React.Fragment>
-            <div style={{paddingBottom: "25px"}}>
+            <div style={{paddingBottom: "25px"}} className="scroll">
                 <div className="section">
                     <div className="text title">{data.get(this.props.lang, "settings.style.sections.main.name")}</div>
-                    <Logo/>
+                    <Logo divStyle={{paddingTop: "0"}}/>
                     <Inputs.Dropmenu items={this.props.logos.map(o => {return {label: o[0], value: o[1]}})} action={(s) => this.props.set("sidebar.logo", s)} value={this.props.style.sidebar.logo.split("/").pop().replace(/\.[^/.]+$/, "")}/>
                 </div>
                 <div className="colorsbar">
