@@ -127,9 +127,12 @@
 }
 
 .hostname {
+    overflow: clip;
     font-size: 0.9em;
     font-weight: 1000;
+    max-width: 100px;
     white-space: nowrap;
+    text-overflow: ellipsis;
     text-transform: uppercase;
     font-family: "Aesthetic", "Genjyuu", "Arabic", sans;
 }

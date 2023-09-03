@@ -13,6 +13,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.3] - 2023-09-03
+ 
+Fixed the issue were when the hostname was too long it would push the clock out of bounds
+
+### Added
+- Nothing added 
+
+### Changed
+- Some CSS realated to the hostname
+
+### Fixed
+- The [issue](https://github.com/TheWisker/Shikai/issues/11) were when the hostname was too long it would push the clock out of bounds
+
 ## [1.5.2] - 2023-07-21
  
 Added scroll to the style page and improved and fixed the colorpickers

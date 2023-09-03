@@ -3,6 +3,6 @@ message: "If you use this software in your work, or make a fork of it, please ci
 authors:
 - given-names: "TheWisker"
 title: "Shikai Project"
-version: 1.5.2
+version: 1.5.3
 date-released: 2023-03-31
 url: "https://github.com/TheWisker/Shikai"
