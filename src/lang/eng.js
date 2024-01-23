@@ -161,7 +161,7 @@ export default {
         },
         time: {
             months: {
-                long: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Noemvber", "December"],
+                long: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                 short: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
             },
             days: {
