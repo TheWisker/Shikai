@@ -17,9 +17,11 @@ import japanesse from "./jap";
 import arab from "./arb";
 import german from "./ger";
 import french from "./fre";
-// New languages here
 
-export const langs = [english, spanish, japanesse, arab, german, french /*New languages here*/];
+// New languages here
+import portuguese from "./por"
+
+export const langs = [english, spanish, japanesse, arab, german, french, portuguese /*New languages here*/];
 export const names = langs.map(lang => lang.names.long);
 export const data = function() {
     let _data = {get(lang, path) {return query(this[lang], path);}};
