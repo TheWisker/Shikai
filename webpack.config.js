@@ -14,7 +14,7 @@ const devMode = process.env.NODE_ENV != "production";
 const license_banner = `
 ${pkg.name} ${pkg.version} distribution
             
-Copyright (c) 2023, ${pkg.author}
+Copyright (c) 2024, ${pkg.author}
 All rights reserved.
                             
 This source code is licensed under the GNU license found in the

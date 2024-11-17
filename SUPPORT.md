@@ -19,7 +19,7 @@ Please **read** through the following **guidelines**.
 
 ## Issues [[↑][index]]
 
-If you are facing a **issue** or bug with the **Shikai** application, you can **report it** through the [issues page][issues].
+If you are facing a **issue** or bug with the **Shikai** theme, you can **report it** through the [issues page][issues].
 In said page you can report from **bugs** to possible **enhacements**, so feel free to do so!
 
 ## Discussions [[↑][index]]
@@ -28,7 +28,7 @@ If you want to share a **new idea** for the **Shikai** project, have some **ques
 
 ## Contact [[↑][index]]
 
-If you have been treated in a way that violates our [Code of Conduct][coc] you can contact me with this email:
+If you have been treated in a way that violates our [Code of Conduct][coc] you can contact me trough email:
 
 - TheWisker@protonmail.com
 

@@ -2,25 +2,37 @@
  * @license Shikai
  * Operations.js
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
  */
 export function getInitialUser() {
+    // If greeter was started as lock screen initial user must be already logged in
     if (lightdm.lock_hint) {
-        let user = lightdm.users.find((user) => {console.log("User", user); return user.logged_in});
+        let user = lightdm.users.find((user) => {return user.logged_in;});
         if (user != undefined) {return user;}
     }
+    // If greeter has default user use it
+    if (greeter_config) {
+        if (greeter_config.greeter.default_user != undefined && greeter_config.greeter.default_user != null) {
+            let user = lightdm.users.find((user) => user.username == greeter_config.greeter.default_user);    
+            if (user != undefined) {return user;}
+        } 
+    }
+    // If greeter has selected user hint use it
     if (lightdm.select_user_hint != undefined && lightdm.select_user_hint != null) {
-        let user = lightdm.users.find((user) => user.name == lightdm.select_user_hint);    
+        let user = lightdm.users.find((user) => user.username == lightdm.select_user_hint);    
         if (user != undefined) {return user;}
-    } return lightdm.users[0];
+    }
+    // As fallback use first user
+    return lightdm.users[0];
 }
 
 export function getInitialSession() {
     return (
         findSession(getInitialUser().session) ||
+        findSession(greeter_config ? greeter_config.greeter.default_session : null) ||
         findSession(lightdm.default_session) ||
         lightdm.sessions[0]
     );
@@ -40,7 +52,8 @@ export function getWallpaperDir() {
 
 export function getWallpapers(dir, callback) {
     if (window.__is_debug === true) {
-        let defs = ["Wallpaper18.png"]; for (let i = 1; i < 18; i++) {defs.push("Wallpaper" + ((i > 9) ? i : ("0" + i)) + ".jpg");}
+        let defs = [];
+        for (let i = 1; i < 12; i++) {defs.push("Wallpaper" + ((i > 9) ? i : ("0" + i)) + "." + ((i > 10) ? "png" : "jpg"));}
         return defs.map((e) => dir + e);
     } theme_utils.dirlist(dir, true, callback);
 }
@@ -65,5 +78,4 @@ export function getLogos(dir, callback) {
 export function getUserImage(user) {
     if (window.__is_debug === true) {return "./assets/media/profile.jpg"}
     return user.image || greeter_config.branding.user_image;
-    //return "./assets/media/profile.jpg" || user.image || greeter_config.branding.user_image;
 }

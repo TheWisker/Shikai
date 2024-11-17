@@ -6,9 +6,9 @@
 
 /*!
  * 
- * shikai 1.5.3 distribution
+ * shikai 1.6.0 distribution
  *
- * Copyright (c) 2023, TheWisker (https://github.com/TheWisker)
+ * Copyright (c) 2024, TheWisker (https://github.com/TheWisker)
  * All rights reserved.
  *
  * This source code is licensed under the GNU license found in the
@@ -92,7 +92,7 @@
  * @license Shikai
  * Avatar.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -102,7 +102,7 @@
  * @license Shikai
  * Behaviour.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -112,7 +112,7 @@
  * @license Shikai
  * Checkbox.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -122,7 +122,7 @@
  * @license Shikai
  * Clock.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -132,7 +132,7 @@
  * @license Shikai
  * Colorpicker.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -142,7 +142,7 @@
  * @license Shikai
  * Commands.js
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -152,7 +152,7 @@
  * @license Shikai
  * Copy.js
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -162,7 +162,7 @@
  * @license Shikai
  * Date.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -172,7 +172,7 @@
  * @license Shikai
  * Dictionary.js
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -182,7 +182,7 @@
  * @license Shikai
  * DoubleButton.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -192,7 +192,7 @@
  * @license Shikai
  * Dropmenu.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -202,7 +202,7 @@
  * @license Shikai
  * Evoker.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -212,7 +212,7 @@
  * @license Shikai
  * Hostname.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -222,7 +222,7 @@
  * @license Shikai
  * LoginWindow/index.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -232,7 +232,7 @@
  * @license Shikai
  * Logo.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -242,7 +242,7 @@
  * @license Shikai
  * Notifications.js
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -252,7 +252,7 @@
  * @license Shikai
  * Operations.js
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -262,7 +262,7 @@
  * @license Shikai
  * Options.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -272,7 +272,7 @@
  * @license Shikai
  * Password.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -282,7 +282,7 @@
  * @license Shikai
  * Reducer.js
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -292,7 +292,7 @@
  * @license Shikai
  * Runtime.js
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -302,7 +302,7 @@
  * @license Shikai
  * Sectionbar/index.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -312,7 +312,7 @@
  * @license Shikai
  * Session.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -322,7 +322,7 @@
  * @license Shikai
  * Settings.js
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -332,7 +332,7 @@
  * @license Shikai
  * SettingsWindow/index.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -342,7 +342,7 @@
  * @license Shikai
  * Sidebar/index.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -352,7 +352,7 @@
  * @license Shikai
  * Storage.js
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -362,7 +362,7 @@
  * @license Shikai
  * Store.js
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -372,7 +372,7 @@
  * @license Shikai
  * Style.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -382,7 +382,7 @@
  * @license Shikai
  * Switch.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -392,7 +392,7 @@
  * @license Shikai
  * Textarea.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -402,7 +402,7 @@
  * @license Shikai
  * Themes.js
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -412,7 +412,7 @@
  * @license Shikai
  * Themes.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -422,7 +422,7 @@
  * @license Shikai
  * Userbar/index.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -432,7 +432,7 @@
  * @license Shikai
  * Username.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -442,7 +442,7 @@
  * @license Shikai
  * Window.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -452,7 +452,7 @@
  * @license Shikai
  * js/index.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -472,7 +472,7 @@
  * @license Shikai
  * monitor.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.

@@ -32,8 +32,11 @@ body:
     id: version
     attributes:
       label: Shikai Version
-      description: What version of our software are you running?
+      description: What version of the theme are you running?
       options:
+        - v1.6.0
+        - v1.5.3
+        - v1.5.2
         - v1.5.1
         - v1.5.0
         - v1.4.3
@@ -71,16 +74,16 @@ body:
     validations:
       required: true
   - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs
+      description: Add any relevant log output
+      render: shell
+  - type: textarea
     id: context
     attributes:
       label: Additional Context
       description: Add any other context about the problem here
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output.
-      render: shell
   - type: checkboxes
     id: terms
     attributes:

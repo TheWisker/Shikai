@@ -25,7 +25,7 @@
 
 ## Web Greeter [[↑][index]]
 
-**Shikai** is based on **[Web Greeter][web-greeter]** so we give our acknowledgments.
+**Shikai** is based on **[Web Greeter][web-greeter]**, **[Nody Greeter][nody-greeter]** and **[Sea Greeter][sea-greeter]** so we give our acknowledgments.
 
 ## HTML and CSS [[↑][index]]
 
@@ -39,7 +39,7 @@
 
 - **[NodeJS][nodejs]**
 - **[ReactJS][reactjs]** as a widget library
-- **[ReduxJS][reduxjs]** as a settings library
+- **[ReduxJS][reduxjs]** as a state library
 
 ## Webpack [[↑][index]]
 
@@ -70,6 +70,8 @@
 
 [lightdm]: https://github.com/canonical/lightdm
 [web-greeter]: https://github.com/JezerM/web-greeter
+[nody-greeter]: ttps://github.com/JezerM/nody-greeterh
+[sea-greeter]: https://github.com/JezerM/sea-greeter
 [html]: https://developer.mozilla.org/en-US/docs/Web/HTML
 [css]: https://developer.mozilla.org/en-US/docs/Web/CSS
 [sass]: https://sass-lang.com/

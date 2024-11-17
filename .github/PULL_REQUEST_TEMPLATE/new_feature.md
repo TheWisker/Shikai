@@ -1,5 +1,5 @@
 ---
-name: New feature
+name: New Feature
 about: Create a pull request about a new feature
 title: "[Enhancement] Title"
 labels: enhancement
@@ -9,14 +9,14 @@ assignees: TheWisker
 
 # Shikai Pull Request
 
-This is a **template** for a **new feature** pull request for **Shikai**.
+This is a **template** for a **New Feature** pull request for **Shikai**.
 
 ## Explanation
 
 1. Include a **summary** of the changes and the **additions** made.
 2. Include relevant **motivation** and **context**.
 3. List any **dependency** changes that are required for this pull request.
-4. List exactly what it **changes**: **adds** and **removes**.
+4. Explain exactly what it **changes**: **adds** and **removes**.
 
 ## Checklist
 

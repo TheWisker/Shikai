@@ -13,12 +13,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] - 2024-11-17
+
+Made some changes to help the project reach a more mature state
+
+### Added
+- Portuguese translation as in this [pull request](https://github.com/TheWisker/Shikai/pull/14)
+- Default user and default session option in web-greeter.yml, under branding
+
+### Changed
+- Revamped the readme
+- Demo wallpaper selection
+- Synchronized wallpapers between windows when using greeter in multihead mode
+
+### Fixed
+- Typo when retrieving ligthdm.selected_user_hint, in Operation.js, which made such hint useless
+- Was supposed to fix the delay to password prompt autofocus feature as it is only working on the web demo version but could not as explained in this [issue](https://github.com/JezerM/web-greeter/issues/86)
+
 ## [1.5.3] - 2023-09-03
- 
+
 Fixed the issue were when the hostname was too long it would push the clock out of bounds
 
 ### Added
-- Nothing added 
+- Nothing added
 
 ### Changed
 - Some CSS realated to the hostname
@@ -27,7 +44,7 @@ Fixed the issue were when the hostname was too long it would push the clock out 
 - The [issue](https://github.com/TheWisker/Shikai/issues/11) were when the hostname was too long it would push the clock out of bounds
 
 ## [1.5.2] - 2023-07-21
- 
+
 Added scroll to the style page and improved and fixed the colorpickers
 
 ### Added
@@ -42,9 +59,9 @@ Added scroll to the style page and improved and fixed the colorpickers
 - Some minor style issues
 
 ## [1.5.1] - 2023-06-27
- 
+
 Patched the bug where certain keys did not work well in the password input
- 
+
 ### Added
 - Nothing added
 
@@ -55,9 +72,9 @@ Patched the bug where certain keys did not work well in the password input
 - The bug where certain keys did not work well in the password input
 
 ## [1.5.0] - 2023-06-27
- 
+
 Changed password caret so it is more symmetric
- 
+
 ### Added
 - Translations for the two new setting entries
 
@@ -68,9 +85,9 @@ Changed password caret so it is more symmetric
 - No fixes
 
 ## [1.4.3] - 2023-06-22
- 
+
 Added LICENSE information to **Shikai**.
- 
+
 ### Added
 - License information
 - General project information files
@@ -83,12 +100,12 @@ Added LICENSE information to **Shikai**.
 - No fixes
 
 ## [1.4.2] - 2023-05-31
- 
+
 Fixed Arabic hint duplication for **Shikai**.
- 
+
 ### Added
 - Nothing added
- 
+
 ### Changed
 - No changes
 
@@ -96,13 +113,13 @@ Fixed Arabic hint duplication for **Shikai**.
 - Fixed Arabic hint duplication
 
 ## [1.4.1] - 2023-05-30
- 
+
 Added Arabic language for **Shikai**.
- 
+
 ### Added
 
 - Added Arabic language with the help of @Faisal-beep22
- 
+
 ### Changed
 - No changes
 
@@ -111,12 +128,12 @@ Added Arabic language for **Shikai**.
 - Fixed Arabic font-size related problems
 
 ## [1.3.1] - 2023-04-12
- 
+
 Fixed fatal error for **Shikai**.
- 
+
 ### Added
 - Nothing added
- 
+
 ### Changed
 - Removed some wallpapers
 
@@ -124,12 +141,12 @@ Fixed fatal error for **Shikai**.
 - Fixed a error where when trying to login the theme crashed!
 
 ## [1.3.0] - 2023-04-08
- 
+
 Drag handles for **Shikai**.
- 
+
 ### Added
 - Added draggable windows!
- 
+
 ### Changed
 - No changes
 
@@ -138,12 +155,12 @@ Drag handles for **Shikai**.
 - Fixed some js bugs!
 
 ## [1.2.1] - 2023-04-06
- 
+
 Japanese font for **Shikai**.
- 
+
 ### Added
 - Added japanesse font!
- 
+
 ### Changed
 - No changes
 
@@ -151,15 +168,15 @@ Japanese font for **Shikai**.
 - Fixed some css problems!
 
 ## [1.2.0] - 2023-04-06
- 
+
 Language update for **Shikai**.
- 
+
 ### Added
 
 - Added languages!
 - Added delete localStorage and themes buttons!
 - Added 1s delay to start session so the corresponding login successful animation triggers and fixed the login failed animation being delayed 2s because of linux authentications delays.
- 
+
 ### Changed
 - No changes
 
@@ -167,12 +184,12 @@ Language update for **Shikai**.
 - Fixed starting session for sessions whose name does not match key by @teschnei.
 
 ## [1.0.3] - 2023-04-03
- 
+
 AUR and fixes for **Shikai**.
- 
+
 ### Added
 - Added AUR package!
- 
+
 ### Changed
 - No changes
 
@@ -180,12 +197,12 @@ AUR and fixes for **Shikai**.
 - Fixed install scripts!
 
 ## [1.0.2] - 2023-04-02
- 
+
 Scripts and fixes for **Shikai**.
- 
+
 ### Added
 - Added install scripts!
- 
+
 ### Changed
 - No changes
 
@@ -193,12 +210,12 @@ Scripts and fixes for **Shikai**.
 - Fixed storage bugs!
 
 ## [1.0.1] - 2023-04-01
- 
+
 Multi-monitor support for **Shikai**.
- 
+
 ### Added
 - Added multi-monitor support!
- 
+
 ### Changed
 - No changes
 
@@ -206,9 +223,9 @@ Multi-monitor support for **Shikai**.
 - No fixes
 
 ## [1.0.0] - 2023-03-31
- 
+
 **First** oficial version of **Shikai**.
- 
+
 ### Added
 
 - Custom time and date formats!
@@ -220,10 +237,10 @@ Multi-monitor support for **Shikai**.
 - Idle login window auto-hiding at 60s of inactivity!
 - Custom backgrounds configured via web-greeter.yml!
 - Custom user images configured via a .face image on user home folders!
- 
+
 ### Changed
 - No changes
- 
+
 ### Fixed
 - No fixes
 

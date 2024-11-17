@@ -2,7 +2,7 @@
  * @license Shikai
  * Userbar/index.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -22,8 +22,6 @@ import Date from "./Date";
 import Drag from "../../../../assets/drag.svg";
 
 class Userbar extends React.Component {
-    componentDidMount() {document.getElementById("password").focus();}
-
     render() {
         return (<div className={"userbar " + cxs({background: `linear-gradient(${this.props.background.top} 0%, ${this.props.background.bottom} 100%)`})}>
             <div id="login_handle" onDoubleClick={() => {this.props.action()}}>

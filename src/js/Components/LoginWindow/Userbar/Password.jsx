@@ -2,7 +2,7 @@
  * @license Shikai
  * Password.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -21,10 +21,14 @@ class Password extends React.Component {
         super(props);
         this.state = {value: "", active: false};
         this.update = this.update.bind(this);
+        this.inputRef = React.createRef();
         if (window.__is_debug != true) {this.auth_event = () => {lightdm.respond(this.state.value); setTimeout(() => {if (!lightdm.is_authenticated) {this.props.failure();}}, 250)};}
     }
 
-    componentDidMount() {if (window.__is_debug != true) {lightdm.show_prompt.connect(this.auth_event);}}
+    componentDidMount() {
+        if (window.__is_debug != true) {lightdm.show_prompt.connect(this.auth_event);}
+        setTimeout(() => {this.inputRef.current.focus();}, 250);
+    }
     
     componentWillUnmount() {if (window.__is_debug != true) {lightdm.show_prompt.disconnect(this.auth_event);}}
 
@@ -39,14 +43,13 @@ class Password extends React.Component {
             } else if (e.which == 8 || e.which == 46) { //Backspace key or Supr key
                 this.setState({value: this.state.value.slice(0, -1)});
             } else {
-                console.log(e.key, e.keyCode);
                 this.setState({value: this.state.value + e.key});
             }; e.preventDefault();
         }
     }
     
     render() {
-        return (<div id="password" disabled={this.props.inactive} tabIndex="0" value={this.state.value} onKeyDown={this.update} onFocus={() => {this.setState({active: true})}} onBlur={() => {this.setState({active: false})}} className={
+        return (<div id="password" ref={this.inputRef} disabled={this.props.inactive} tabIndex="0" value={this.state.value} onKeyDown={this.update} onFocus={() => {this.setState({active: true})}} onBlur={() => {this.setState({active: false})}} className={
             cxs({
                 color: this.props.color,
                 borderTop: this.props.border.top,

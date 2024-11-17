@@ -14,7 +14,7 @@ body:
     id: explanation
     attributes:
       label: Explanation
-      description: Clear and concise description of the feature request
+      description: Clear and concise description of the feature you request
       placeholder: I would like that ... is added and ... is changed because ...
     validations:
       required: true
@@ -22,8 +22,8 @@ body:
     id: behavior
     attributes:
       label: Expected Behavior
-      description: Clear and concise description of what you expected to happen
-      placeholder: I would like that when I ... ... happens
+      description: Clear and concise description of what you expect to happen
+      placeholder: I would like that when I ... then ... happens
     validations:
       required: true
   - type: textarea

@@ -6,7 +6,7 @@ const credits = {
     "Faisal Almalki": {
         "lang": ["Arabic"],
     	"url": "https://github.com/Faisal-beep22"
-    }
+    },
     "Tiago M. Neves": {
         "lang": ["Portuguese"],
         "url": "https://github.com/tiagomneves-pt"

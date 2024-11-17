@@ -1,5 +1,5 @@
 ---
-name: Bug fix
+name: Bug Fix
 about: Create a pull request about a bug fix
 title: "[BUG] Title"
 labels: bug
@@ -9,14 +9,14 @@ assignees: TheWisker
 
 # Shikai Pull Request
 
-This is a **template** for a **bug fix** pull request for **Shikai**.
+This is a **template** for a **Bug Fix** pull request for **Shikai**.
 
 ## Explanation
 
 1. Include a **summary** of the changes and the **related issue**.
 2. Include relevant **motivation** and **context**.
 3. List any **dependency** changes that are required for this pull request.
-4. List exactly what it **fixes**.
+4. Explain exactly what it **fixes**.
 
 ## Checklist
 

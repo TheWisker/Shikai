@@ -2,7 +2,7 @@
  * @license Shikai
  * LoginWindow/index.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -29,11 +29,7 @@ export default class LoginWindow extends React.Component {
     dragEvent(_, _data) {this.setState({data: {x: _data.x, y: _data.y}});}
 
     dragStop(_, data) {localStorage.setItem("LoginDrag", JSON.stringify({x: data.x, y: data.y}));}
-    //{left: ((screen.availWidth/2) - (window_width/2)), right: ((screen.availWidth/2) + (window_width)), top: (screen.availHeight/2) - (window_height/2), bottom: (screen.availHeight/2) + (window_height)}
-    render() { //disabled={!this.props.active}
-        //if (this.state.data.x == 0) {classes.push("origin_left");}
-        //if (this.state.data.x == screen.availWidth - window_width) {classes.push("origin_right");}
-        //let t = (this.props.active) ? null : ("translate(" + (((this.state.data.x + (window_width/2)) <= (screen.availWidth/2)) ? (-(this.state.data.x + window_width)) : (screen.availWidth - this.state.data.x)) + "px, 0px)");
+    render() {
         let bounds = {left: -((screen.availWidth/2) - (window_width/2)), right: ((screen.availWidth/2) - (window_width/2)), top: -((screen.availHeight/2) - (window_height/2)), bottom: ((screen.availHeight/2) - (window_height/2))};
         return (<Draggable axis="both" handle="#login_handle" bounds={bounds} position={this.state.data} onDrag={this.dragEvent} onStop={this.dragStop}>
             <div id="login_drag">

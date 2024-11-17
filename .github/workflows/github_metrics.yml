@@ -26,9 +26,7 @@ jobs:
           git config --global user.email $email
           git config --global init.defaultBranch master
           git config --global --add safe.directory /__w/$repo_name/$repo_name
-          
           echo "Configured Git Credentials"
-    
       - name: Base Metrics
         uses: TheWisker/GitHubMetrics@master
         with:
@@ -99,7 +97,6 @@ jobs:
           #plugin_lines_sections:
           #plugin_lines_repositories_limit:
           plugin_lines_history_limit: 1
-          
       - name: Languages Metrics
         uses: TheWisker/GitHubMetrics@master
         with:
@@ -172,7 +169,6 @@ jobs:
           #plugin_languages_recent_categories:
           plugin_languages_recent_load: 1000
           plugin_languages_recent_days: 365
-      
       - name: Contributors Metrics
         uses: TheWisker/GitHubMetrics@master
         with:
@@ -234,7 +230,6 @@ jobs:
           plugin_contributors_contributions: yes
           #plugin_contributors_sections:
           #plugin_contributors_categories:
-
       - name: Licenses Metrics
         uses: TheWisker/GitHubMetrics@master
         with:
@@ -293,26 +288,21 @@ jobs:
           plugin_licenses_setup: npm install
           #plugin_licenses_ratio:
           plugin_licenses_legal: yes
-
       - name: Checkout
         uses: actions/checkout@v3
         with:
           ref: 'master'
-
       - name: Flush Metrics
         shell: bash
         run: |
           rm -fr ./assets/metrics
           mkdir -p ./assets/metrics
           cp -f /metrics_renders/* ./assets/metrics
-          
           echo "Flushed Metrics"
-
       - name: Update Repository
         shell: bash
         run: |
           git add .
           git commit -m "Metrics Update"
           git push
-          
           echo "Updated Repository"

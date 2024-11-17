@@ -12,7 +12,8 @@
 
 These are the **Shikai** project **contributors**, ordered from most recent to least recent:
 
-- [Josh]https://github.com/Hibyehello) => Opened an [issue](https://github.com/TheWisker/Shikai/issues/11) which resulted in a bug fix.
+- [Tiago M. Neves](https://github.com/tiagomneves-pt) => Made a [pull request](https://github.com/TheWisker/Shikai/pull/14) which resulted in added portuguese translation.
+- [Josh](https://github.com/Hibyehello) => Opened an [issue](https://github.com/TheWisker/Shikai/issues/11) which resulted in a bug fix.
 - [Talin Sharma](https://github.com/TalinTheDev) => Made a [pull request](https://github.com/TheWisker/Shikai/pull/10) which resulted in an enhancement and some style fixes.
 - [Talin Sharma](https://github.com/TalinTheDev) => Opened an [issue](https://github.com/TheWisker/Shikai/issues/7) which resulted in an enhancement.
 - [Faisal Almalki](https://github.com/Faisal-beep22) => Added Arab language file in this [issue](https://github.com/TheWisker/Shikai/issues/5) and this [pull request](https://github.com/TheWisker/Shikai/pull/6).

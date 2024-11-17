@@ -2,7 +2,7 @@
  * @license Shikai
  * Session.jsx
  *
- * Copyright (c) 2023, TheWisker.
+ * Copyright (c) 2024, TheWisker.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.
@@ -24,7 +24,7 @@ class Session extends React.Component {
                 if (lightdm.is_authenticated) {
                     this.props.success();
                     notify(data.get(this.props.lang, "notifications.logged_in") + " " + this.props.user.username + "!", types.Success);
-                    setTimeout(() => {lightdm.start_session(this.props.session.key);}, 1000);
+                    setTimeout(() => {lightdm.start_session(this.props.session.key);}, 750);
                 } else {notify(data.get(this.props.lang, "notifications.wrong_password"), types.Error);}
             };
         }
