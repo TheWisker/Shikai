@@ -121,7 +121,9 @@ You can install **Shikai** from the [AUR][aur] repository:
 
 - **Package** [shikai-theme][shikai-package]:
 
-![AUR Version](https://img.shields.io/aur/version/shikai-theme?style=for-the-badge&logo=archlinux&label=shikai-theme)
+<a href="https://aur.archlinux.org/packages/shikai-theme">
+    <img src="https://img.shields.io/aur/version/shikai-theme?style=for-the-badge&logo=archlinux&label=shikai-theme"></img>
+</a>
 
 > [!TIP]
 > For **information** on **how** to **install** an [AUR][aur] *package* read [this][aur-wiki] *wiki*
