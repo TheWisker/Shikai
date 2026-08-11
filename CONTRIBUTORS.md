@@ -12,6 +12,7 @@
 
 These are the **Shikai** project **contributors**, ordered from most recent to least recent:
 
+- [Hikaru2070](https://github.com/hikaru2070) => Made this [pull request](https://github.com/TheWisker/Shikai/pull/23) improving the japanese translation a lot.
 - [Tiago M. Neves](https://github.com/tiagomneves-pt) => Made a [pull request](https://github.com/TheWisker/Shikai/pull/14) which resulted in added portuguese translation.
 - [Josh](https://github.com/Hibyehello) => Opened an [issue](https://github.com/TheWisker/Shikai/issues/11) which resulted in a bug fix.
 - [Talin Sharma](https://github.com/TalinTheDev) => Made a [pull request](https://github.com/TheWisker/Shikai/pull/10) which resulted in an enhancement and some style fixes.
