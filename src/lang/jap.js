@@ -11,78 +11,78 @@
 export default {
     names: {
         short: "jap",
-        long: "japanesse"
+        long: "japanese"
     },
     data: {
         demo: {
             hostname: "ホスト名",
             notifications: {
-                info: "インフォ通知！",
-                success: "合格通知！",
-                warning: "警告通知！",
-                error: "エラー通知！"
+                info: "情報通知",
+                success: "成功通知",
+                warning: "警告通知",
+                error: "エラー通知"
             },
-            hint: "ヒント：",
+            hint: "ヒント:",
             hints: [
-                "パスワードは「password」です!",
-                "左上隅にカーソルを合わせます。",
-                "背景をクリックして変更します。",
-                "設定メニューを閉じて、変更を保存してください!",
-                "非アクティブ状態が 60 秒続くと、テーマはアイドル状態になります。",
-                "ドラッグ ハンドルをダブルクリックして、デフォルトの位置に戻します。"
+                "パスワードは「password」です",
+                "画面左上にカーソルを合わせると表示されます",
+                "背景をクリックすると変更できます",
+                "設定メニューを閉じると変更が保存されます",
+                "60秒間操作がないと idle 状態になります",
+                "ドラッグハンドルをダブルクリックすると初期位置に戻ります"
             ]
         },
         commands: {
             names: {
-                sleep: "寝る",
-                reboot: "リブート",
-                shutdown: "電源を切る",
-                hibernate: "冬眠する"
+                sleep: "スリープ",
+                reboot: "再起動",
+                shutdown: "シャットダウン",
+                hibernate: "休止状態"
             },
             messages: {
-                sleep: "昼寝をしている...",
-                reboot: "再起動しています...",
-                shutdown: "シャットダウンしています...",
-                hibernate: "冬眠中...",
-                unavailable: "アクションが利用できません!"
+                sleep: "スリープに移行中...",
+                reboot: "再起動中...",
+                shutdown: "シャットダウン中...",
+                hibernate: "休止状態に移行中...",
+                unavailable: "この操作は利用できません"
             }
         },
         settings: {
             behaviour: {
-                name: "行動",
+                name: "動作設定",
                 sections: {
                     lang: {
                         name: "言語"
                     },
                     general: {
-                        name: "一般",
+                        name: "全般",
                         options: {
-                            logo: "ロゴが有効",
-                            hostname: "ホスト名が有効",
-                            avatar: "アバター有効",
-                            username: "ユーザー名が有効",
-                            session: "セッションが有効"
+                            logo: "ロゴを表示",
+                            hostname: "ホスト名を表示",
+                            avatar: "アバターを表示",
+                            username: "ユーザー名を表示",
+                            session: "セッションを表示"
                         }
                     },
                     commands: {
-                        name: "コマンド",
+                        name: "電源コマンド",
                         options: {
-                            shutdown: "電源オフが有効",
-                            reboot: "再起動が有効",
-                            sleep: "スリープ有効",
-                            hibernate: "休止状態が有効"
+                            shutdown: "シャットダウンを有効化",
+                            reboot: "再起動を有効化",
+                            sleep: "スリープを有効化",
+                            hibernate: "休止状態を有効化"
                         }
                     },
                     time: {
-                        name: "時計と日付",
+                        name: "日付と時刻",
                         options: {
                             clock: {
-                                enabled: "クロック有効",
-                                format: "時計のフォーマット"
+                                enabled: "時計を表示",
+                                format: "時計の形式"
                             },
                             date: {
-                                enabled: "有効日",
-                                format: "日付形式"
+                                enabled: "日付を表示",
+                                format: "日付の形式"
                             }
                         }
                     },
@@ -90,43 +90,43 @@ export default {
                         name: "その他",
                         options: {
                             idle: {
-                                enabled: "アイドル状態で非表示",
-                                value: "アイドル タイムアウト (秒)"
+                                enabled: "無操作時に非表示",
+                                value: "タイムアウト時間 (秒)"
                             },
-                            evoker: "設定ボタンが見えない"
+                            evoker: "設定ボタンを非表示"
                         }
                     }
                 }
             },
             style: {
-                name: "スタイル",
+                name: "スタイル設定",
                 sections: {
                     main: {
-                        name: "主要",
+                        name: "メイン",
                         options: {
-                            avatar: "主要",
-                            text: "テキストの色",
+                            avatar: "アバターの色",
+                            text: "文字色",
                             sidebar: "サイドバーの色",
-                            userbar_top: "ユーザーバーの上部の色",
-                            userbar_bottom: "ユーザーバーの下部の色",
-                            session_text: "セッションのテキストの色",
-                            session_background: "セッションの背景色",
-                            password_text: "パスワードのテキストの色",
-                            password_background: "パスワードの背景色",
-                            icon_background: "アイコンの背景色",
-                            icon_foreground: "アイコンの前景色",                            
+                            userbar_top: "ユーザーバー (上部) の色",
+                            userbar_bottom: "ユーザーバー (下部) の色",
+                            session_text: "セッション文字色",
+                            session_background: "セッション背景色",
+                            password_text: "パスワード文字色",
+                            password_background: "パスワード背景色",
+                            icon_background: "アイコン背景色",
+                            icon_foreground: "アイコン前景色"
                         }
                     },
                     misc: {
                         name: "その他",
                         options: {
-                            vertical: "パスワードの上下の境界線",
-                            horizontal: "パスワードの左右の境界線",
-                            password: "パスワード境界半径",
-                            session: "セッション境界半径",
+                            vertical: "パスワード枠線 (上下)",
+                            horizontal: "パスワード枠線 (左右)",
+                            password: "パスワード枠線の角丸",
+                            session: "セッション枠線の角丸",
                             caret: {
-                                left: "パスワード左装飾記号",
-                                right: "パスワード右の装飾記号"
+                                left: "パスワード左側の装飾記号",
+                                right: "パスワード右側の装飾記号"
                             }
                         }
                     }
@@ -135,29 +135,29 @@ export default {
             themes: {
                 name: "テーマ",
                 current: {
-                    name: "現在",
+                    name: "現在のテーマ",
                     option: "名前"
                 },
-                saved: "保存しました"
+                saved: "保存済み"
             }
         },
         notifications: {
-            logged_in: "次のユーザーとしてログイン",
-            wrong_password: "間違ったパスワード！",
-            delete_local: "ローカルストレージが削除されました!",
-            delete_themes: "テーマが削除されました！",
-            theme_activated: "活性化！",
-            theme_removed: "削除されました！",
-            theme_added: "追加した！"
+            logged_in: "ログイン中:",
+            wrong_password: "パスワードが正しくありません",
+            delete_local: "LocalStorage を削除しました",
+            delete_themes: "テーマを削除しました",
+            theme_activated: "が有効化されました",
+            theme_removed: "が削除されました",
+            theme_added: "が追加されました"
         },
         buttons: {
-            switch: "スイッチ",
-            confirmation: "これは、元に戻すことはできません！",
-            delete_local: "ローカルストレージ を削除する",
-            delete_themes: "テーマを削除する",
+            switch: "切り替え",
+            confirmation: "この操作は取り消せません",
+            delete_local: "LocalStorage を削除",
+            delete_themes: "テーマを削除",
             remove: "削除",
             save: "保存",
-            use: "使用"
+            use: "適用"
         },
         time: {
             months: {

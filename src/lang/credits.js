@@ -10,6 +10,10 @@ const credits = {
     "Tiago M. Neves": {
         "lang": ["Portuguese"],
         "url": "https://github.com/tiagomneves-pt"
+    },
+    "Hikaru2070": {
+        "lang": ["Japanese"],
+        "url": "https://github.com/hikaru2070"
     }
 }
 
