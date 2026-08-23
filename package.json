@@ -64,5 +64,8 @@
   },
   "browserslist": [
     "last 5 version"
-  ]
+  ],
+  "overrides": {
+    "lodash": "4.18.0"
+  }
 }
