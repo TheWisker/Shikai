@@ -14,6 +14,10 @@ const credits = {
     "Hikaru2070": {
         "lang": ["Japanese"],
         "url": "https://github.com/hikaru2070"
+    },
+    "CreateCN": {
+        "lang": ["Simplified Chinese"],
+        "url": "https://github.com/CreateCN"
     }
 }
 

@@ -20,8 +20,9 @@ import french from "./fre";
 
 // New languages here
 import portuguese from "./por"
+import chinese from "./chi"
 
-export const langs = [english, spanish, japanesse, arab, german, french, portuguese /*New languages here*/];
+export const langs = [english, spanish, japanesse, arab, german, french, portuguese, chinese /*New languages here*/];
 export const names = langs.map(lang => lang.names.long);
 export const data = function() {
     let _data = {get(lang, path) {return query(this[lang], path);}};
